@@ -2,12 +2,11 @@
 layout: page
 title: Active and Co 
 description: "Active and Co - Conception d'application Web et Mobile"
-tagline Supporting tagline
 ---
 {% include JB/setup %}
 
 <div class="hero-unit">
-  <h1>Nous construisons des application pour des gens formidables !</h1>
+  <h1>Design, Web, Mobile... Mais bien !</h1>
   <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
   <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
@@ -21,15 +20,18 @@ tagline Supporting tagline
     <p><a class="btn" href="#">View details &raquo;</a></p>
   </div>
   <div class="span4">
-    <h2>Application Web</h2>
+    <h2>Développement Web</h2>
     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
     <p><a class="btn" href="#">View details &raquo;</a></p>
  </div>
   <div class="span4">
-    <h2>Application Mobiles</h2>
+    <h2>Développement Mobile</h2>
     <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     <p><a class="btn" href="#">View details &raquo;</a></p>
   </div>
 </div>
 
 <hr>
+
+
+
