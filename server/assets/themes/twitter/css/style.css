@@ -1,5 +1,6 @@
 /* Override some defaults */
 html, body {
+  background-color: #eee;
 }
 .navbar {
   margin-bottom: 0;
@@ -68,4 +69,3 @@ html, body {
 	color:#FFF;
 }
 	
-
