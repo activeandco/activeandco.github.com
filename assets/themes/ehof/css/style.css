@@ -2,9 +2,35 @@
 html, body {
   background-color: #fff;
 }
+
+body {
+  padding-top: 60px;
+}
+
 .navbar {
   margin-bottom: 0;
 }
+
+.navbar-fixed-top .navbar-inner {
+  background-image: none;
+  border-bottom: 1px dashed #ccc;
+  box-shadow: none;
+}
+
+.navbar .nav {
+  padding-top: 40px;
+}
+
+
+.navbar .nav li > a:hover {
+  border-bottom: 4px solid #3F82C4; 
+}
+
+.navbar .nav .active > a{
+  box-shadow: none;
+  background-color: white;
+}
+  
 .container > footer {
   margin-top: 20px;
 }
@@ -69,3 +95,36 @@ html, body {
 	color:#FFF;
 }
 	
+
+/* responsive */
+@media (max-width: 480px) {
+  body {
+    padding-top: 0px;
+  }
+  .brand {
+    width: 300px;
+  }
+  .hero-unit h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px; 
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+/*
+min 768 and max 979
+min 1200px
+*/
