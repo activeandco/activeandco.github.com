@@ -3,23 +3,22 @@ html, body {
   background-color: #fff;
 }
 
-body {
-  padding-top: 60px;
-}
-
 .navbar {
   margin-bottom: 0;
 }
 
-.navbar-fixed-top .navbar-inner {
+.navbar .navbar-inner {
   background-image: none;
   background_color: #fff;
   border-bottom: 1px dashed #ccc;
-  box-shadow: none;
+  box-shadow: none; 
+}
+
+.site-logo {
+  width: 200px;
 }
 
 .navbar .nav {
-  padding-top: 40px;
 }
 
 
