@@ -13,6 +13,7 @@ body {
 
 .navbar-fixed-top .navbar-inner {
   background-image: none;
+  background_color: #fff;
   border-bottom: 1px dashed #ccc;
   box-shadow: none;
 }
