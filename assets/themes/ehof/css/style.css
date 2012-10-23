@@ -9,7 +9,7 @@ html, body {
 
 .navbar .navbar-inner {
   background-image: none;
-  background_color: #fff;
+  background-color: #fff;
   border-bottom: 1px dashed #ccc;
   box-shadow: none; 
 }
