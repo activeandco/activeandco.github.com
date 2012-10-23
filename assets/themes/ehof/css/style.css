@@ -4,7 +4,7 @@ html, body {
 }
 
 .navbar {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .navbar .navbar-inner {

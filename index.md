@@ -6,9 +6,9 @@ description: "Active and Co - Conception d'application Web et Mobile"
 {% include JB/setup %}
 
 <div class="hero-unit">
-  <h1>Nous réalisons des applications. Du concept au design final.</h1>
-  <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-  <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+  <h1>Nous réalisons des applications</h1>
+  <p>Du concept au design final.</p>
+  <p><a class="btn btn-primary btn-large">Vous avez un projet ?</a></p>
 </div>
 
 
