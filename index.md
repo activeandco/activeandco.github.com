@@ -7,8 +7,11 @@ description: "Active and Co - Conception d'application Web et Mobile"
 
 <div class="hero-unit">
   <h1>Nous réalisons des applications</h1>
-  <p>Du concept au design final.</p>
-  <p><a class="btn btn-primary btn-large">Vous avez un projet ?</a></p>
+  <p>
+    Nous sommes une équipe de developpeurs passionnés par la création de grand produits
+    Nous travaillons avec des entrepreuneurs innovants et des marques établies afin de porter des idées du concept au marché. 
+  </p>
+  <p>Vous avez un projet ? <a class="btn btn-primary btn-large">Contactez-nous !</a></p>
 </div>
 
 
@@ -16,13 +19,17 @@ description: "Active and Co - Conception d'application Web et Mobile"
 <div class="row">
   <div class="span4">
     <h2>Web design</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+    <p>
+      HTML5, CSS3, Responsive web design, UX design, web ergonomie... tout est là.
+    </p>
+    <p><a class="btn" href="#">Voir nos réalisations</a></p>
   </div>
   <div class="span4">
     <h2>Développement Web</h2>
-    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-    <p><a class="btn" href="#">View details &raquo;</a></p>
+    <p>
+      Ruby on Rails, Architecture, scalable, optimisation de base de données
+    </p>
+    <p><a class="btn" href="#">Voir les applictations</a></p>
  </div>
   <div class="span4">
     <h2>Développement Mobile</h2>
@@ -32,6 +39,3 @@ description: "Active and Co - Conception d'application Web et Mobile"
 </div>
 
 <hr>
-
-
-
