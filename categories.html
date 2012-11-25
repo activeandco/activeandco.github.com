@@ -11,6 +11,9 @@ group: navigation
   {% include JB/categories_list %}
 </ul>
 
+<div>
+  <i class="icon-chevron-right"></i>
+</div>
 
 {% for category in site.categories %} 
   <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>

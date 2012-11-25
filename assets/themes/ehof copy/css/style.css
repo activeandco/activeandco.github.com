@@ -159,38 +159,3 @@ html, body {
 min 768 and max 979
 min 1200px
 */
-
-.center-text {
-  text-align: center;
-}
-
-
-.skill-icon {
-  font-size: 90px;
-  line-height: 100%;
-} 
-
-.hereweare {
-  background-color: #fff;
-}
-
-.contact-us {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.contact-us-btn {
-  text-transform: uppercase;
-  letter-spacing: -0.07em;
-  word-spacing: .1em;
-  color: black;
-  font-size: 11pt;
-  font-weight: bold;
-  background: #eee url("../img/yellow-arrow.png") no-repeat;
-  line-height: 62px;
-  text-indent: 35px;
-  width: 250px;
-  height:70px;
-  padding: 22px 46px 19px 24px;
-  margin-left: 30px;
-}
