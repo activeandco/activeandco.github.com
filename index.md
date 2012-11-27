@@ -20,7 +20,7 @@ description: "active and co - Conception d'applications Web et Mobiles"
   <div>
     <span class="contact-us">Vous avez un projet ? </span>
     <span class="contact-us-btn">
-      <a>Contactez-nous !</a>
+      <a href="mailto:hello@activeand.co">Contactez-nous !</a>
     </span>
   </div>
 </section>

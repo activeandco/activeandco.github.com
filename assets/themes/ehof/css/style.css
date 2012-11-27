@@ -82,6 +82,10 @@ html, body {
   margin-top: 13px; 
 }
 
+footer {
+  color: grey;
+  font-size: .7em;
+}
 
 /* tag_box ======================================================== */
 
