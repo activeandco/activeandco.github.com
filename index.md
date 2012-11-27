@@ -7,7 +7,7 @@ description: "Active and Co - Conception d'applications Web et Mobiles"
 
 <div class="center-text">
   <hr />
-  <h3 class="hereweare">Bonjour, Nous sommes active and co :)</h3>
+  <h3 class="hereweare">Bonjour, Nous sommes active and co</h3>
 </div>
 
 <div class="hero-unit">
