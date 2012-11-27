@@ -9,10 +9,10 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Active and Co
-tagline: Concetpion d'application Web et Mobile
+title : active and co
+tagline: Concetpion d'applications Web et Mobiles
 author :
-  name : Active and Co 
+  name : active and co 
   email : hello@activeand.co
   github : username
   twitter : username

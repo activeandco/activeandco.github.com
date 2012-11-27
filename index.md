@@ -1,52 +1,62 @@
 ---
 layout: page
-title: Active and Co 
-description: "Active and Co - Conception d'applications Web et Mobiles"
+title: active and co 
+description: "active and co - Conception d'applications Web et Mobiles"
 ---
 {% include JB/setup %}
 
+  
+
 <div class="center-text">
-  <hr />
-  <h3 class="hereweare">Bonjour, Nous sommes active and co</h3>
+  <h3 class="line"><span class="bg vcard">Bonjour, nous sommes <span class="org">active and co</span></span></h3>
 </div>
 
-<div class="hero-unit">
-  <h1>Nous concevons et réalisons des applications</h1>
+<section class="hero-unit center-text">
+  <h1>Nous concevons et réalisons des applications.</h1>
   <p>
-    Nous sommes une équipe passionnée par la création de grand produits.</p>
-  <p>
-    Nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs concepts en produits.
+    Nous sommes une équipe passionnée par la création d'applications originales.<br />
+    Nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs idées et concepts en produits finis.
   </p>
   <div>
     <span class="contact-us">Vous avez un projet ? </span>
     <span class="contact-us-btn">
-      <a>Contactez-nous</a>
+      <a>Contactez-nous !</a>
     </span>
   </div>
+</section>
+
+<div class="center-text">
+  <h3 class="line"><span class="bg">Ce que nous pouvons faire pour vous</span></h3>
 </div>
 
 <div class="row">
   <div class="span4 center-text">
     <span class="pictograms hundred">V</span>
-    <h2>Web Design</h2>
+    <h3>Web Design</h3>
+    <!--
     <p>
-      HTML5, CSS3, Responsive web design, UX design, ergonomie web.
+      HTML5, CSS3, Responsive web design, UX design, Ergonomie web.
     </p>
+    -->
     <p><a class="btn" href="#">En savoir +</a></p>
   </div>
 
   <div class="span4 center-text">
     <i class="icon-cogs skill-icon">&nbsp;</i>
-    <h2>Web Apps</h2>
+    <h3>Applications Web</h3>
+    <!--
     <p>
-      Application web, Ruby on Rails, Architecture, scalable, optimisation de base de données
+      Consulting technique, rédaction de cahier des charges, Application web, Ruby on Rails, Architecture, scalable, optimisation de base de données
     </p>
+    -->
     <p><a class="btn" href="#">En savoir +</a></p>
  </div>
   <div class="span4 center-text">
     <span class="pictograms hundred">O</span> 
-    <h2>Mobile Apps</h2>
+    <h3>Applications Mobiles</h3>
+    <!--
     <p>Application smartphone</p>
+    -->
     <p><a class="btn" href="#">En savoir +</a></p>
   </div>
 </div>

@@ -31,6 +31,17 @@ html, body {
   background-color: white;
 }
   
+.spacer-top::before
+{
+  content:'';
+  margin: 19px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  width: 100%;
+  display: block;
+  -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+  -moz-mask-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+}
+
 .container > footer {
   margin-top: 20px;
 }
@@ -130,6 +141,10 @@ html, body {
   h2 {
     font-size: 24px; 
   }
+  .line {
+    -webkit-mask-image: none; 
+    -moz-mask-image: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -170,8 +185,19 @@ min 1200px
   line-height: 100%;
 } 
 
-.hereweare {
+.line {
+  background: url("../img/line.gif") center repeat-x;
   background-color: #fff;
+  -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+  -moz-mask-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+  color: #3F82C4;;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.line span.bg {
+  background-color: #fff;
+  padding: 0 15px 0 15px;
 }
 
 .contact-us {
