@@ -14,8 +14,8 @@ description: "active and co - Conception d'applications Web et Mobiles"
 <section class="hero-unit center-text">
   <h1>Nous concevons des applications web et mobiles.</h1>
   <p>
-    Nous sommes passionnés par la création d'applications originales.<br />
-    Nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs idées et concepts en produits performants.
+    Passionnés par la création d'applications originales, 
+    nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs idées en produits performants.
   </p>
   <div>
     <span class="contact-us">Vous avez un projet ? </span>
