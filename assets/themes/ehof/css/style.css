@@ -87,6 +87,21 @@ footer {
   font-size: .7em;
 }
 
+.line {
+  background: url("../img/line.gif") center repeat-x;
+  background-color: #fff;
+  -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+  -moz-mask-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
+  color: #3F82C4;;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.line span.bg {
+  background-color: #fff;
+  padding: 0 15px 0 15px;
+}
+
 /* tag_box ======================================================== */
 
 .tag_box {
@@ -189,20 +204,7 @@ min 1200px
   line-height: 100%;
 } 
 
-.line {
-  background: url("../img/line.gif") center repeat-x;
-  background-color: #fff;
-  -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
-  -moz-mask-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0) 100%);
-  color: #3F82C4;;
-  text-transform: uppercase;
-  font-size: 1em;
-}
 
-.line span.bg {
-  background-color: #fff;
-  padding: 0 15px 0 15px;
-}
 
 .contact-us {
   font-size: 1.2em;

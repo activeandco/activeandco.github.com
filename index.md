@@ -12,10 +12,10 @@ description: "active and co - Conception d'applications Web et Mobiles"
 </div>
 
 <section class="hero-unit center-text">
-  <h1>Nous concevons et réalisons des applications.</h1>
+  <h1>Nous concevons des applications web et mobiles.</h1>
   <p>
-    Nous sommes une équipe passionnée par la création d'applications originales.<br />
-    Nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs idées et concepts en produits finis.
+    Nous sommes passionnés par la création d'applications originales.<br />
+    Nous aidons les entrepreuneurs innovants et les marques établies à transformer leurs idées et concepts en produits performants.
   </p>
   <div>
     <span class="contact-us">Vous avez un projet ? </span>
@@ -38,7 +38,7 @@ description: "active and co - Conception d'applications Web et Mobiles"
       HTML5, CSS3, Responsive web design, UX design, Ergonomie web.
     </p>
     -->
-    <p><a class="btn" href="#">En savoir +</a></p>
+    <p><a href="#" class="btn" rel="popover">En savoir +</a></p>
   </div>
 
   <div class="span4 center-text">
@@ -49,7 +49,7 @@ description: "active and co - Conception d'applications Web et Mobiles"
       Consulting technique, rédaction de cahier des charges, Application web, Ruby on Rails, Architecture, scalable, optimisation de base de données
     </p>
     -->
-    <p><a class="btn" href="#">En savoir +</a></p>
+    <p><a class="btn" href="#" rel="popover" >En savoir +</a></p>
  </div>
   <div class="span4 center-text">
     <span class="pictograms hundred">O</span> 
@@ -57,8 +57,7 @@ description: "active and co - Conception d'applications Web et Mobiles"
     <!--
     <p>Application smartphone</p>
     -->
-    <p><a class="btn" href="#">En savoir +</a></p>
+    <p><a class="btn" href="#" rel="popover">En savoir +</a></p>
   </div>
 </div>
 
-<hr>

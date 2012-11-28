@@ -1,7 +1,8 @@
-#---
+---
 layout: page
-title: "Blog"
+title: "Expertise"
 description: ""
-group: navigation
 ---
 {% include JB/setup %}
+
+En cours de redaction 
