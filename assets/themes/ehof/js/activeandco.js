@@ -5,16 +5,16 @@ $(function() {
       placement:'top',
       delay: { show: 0, hide: 100 }
     })
-    .click(function(e) {
-      e.preventDefault();
-      //$(this).delay('90').popover('hide');
-    })
-    .mouseleave(function(e) {
-      $(".popover")
-      .delay(50)
-      .animate({ top: '-=200px' }, 500, 'easeInBack')
-      .fadeOut(0, function(){
-        $("a[rel=popover]").delay(550).popover('hide');
-      });
-    })
+  .click(function(e) {
+    e.preventDefault();
+    $(this)
+    .next() // select div.popover
+    .delay(1500)
+    .animate({ top: '-=200px' }, 500, 'easeInBack')
+    .fadeOut(0, function(){
+      $(this)
+      .prev() // select anchor
+      .popover('hide');
+    });
+  })
 });
