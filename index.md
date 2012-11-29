@@ -8,7 +8,7 @@ description: "active and co - Conception d'applications Web et Mobiles"
   
 
 <div class="center-text">
-  <h3 class="line"><span class="bg vcard">Bonjour, nous sommes <span class="org">active and co</span></span></h3>
+  <h3 class="line"><span class="bg vcard">Bonjour, nous sommes <span class="fn org">active and co</span></span></h3>
 </div>
 
 <section class="hero-unit center-text">
