@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "L Equipe"
-description: ""
+title: "L'Équipe"
+description: "L'Équipe - active and co""
 ---
 {% include JB/setup %}
 

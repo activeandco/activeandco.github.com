@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Expertise"
-description: ""
+description: "Expertise - active and co""
 ---
 {% include JB/setup %}
 

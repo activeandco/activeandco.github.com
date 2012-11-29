@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Portfolio 
-description: "active and co - Conception d'applications Web et Mobiles"
+description: "Portfolio - active and co"
 ---
 {% include JB/setup %}
 
