@@ -78,6 +78,10 @@ html, body {
   margin-bottom: 24px;
 }
 
+.hero-unit p {
+  padding: 0 5% 0 5%;
+}
+
 .navbar .btn-navbar {
   margin-top: 13px; 
 }
@@ -102,36 +106,34 @@ footer {
   padding: 0 15px 0 15px;
 }
 
-/* tag_box ======================================================== */
+.center-text {
+  text-align: center;
+}
 
-.tag_box {
-	list-style:none;
-	margin:0;
-	padding:5px 0 ;
-	overflow:hidden;
+.skill-icon {
+  font-size: 90px;
+  line-height: 100%;
+} 
+
+.contact-us {
+  font-size: 1.2em;
+  font-weight: bold;
 }
-.tag_box li {
-	line-height:28px;
-}
-.tag_box.inline li {
-	float:left;
-}
-.tag_box a {
-	padding: 3px 6px;
-	margin: 2px;
-	background: #eee;
-	color:#005F6B;
-	border-radius: 3px;
-	text-decoration:none;
-}
-.tag_box a span{
-	vertical-align:super;
-	font-size:0.8em;
-}
-.tag_box a.active {
-	background:#57A957;
-	border:1px solid #4C964D;
-	color:#FFF;
+
+.contact-us-btn {
+  text-transform: uppercase;
+  letter-spacing: -0.07em;
+  word-spacing: .1em;
+  color: black;
+  font-size: 11pt;
+  font-weight: bold;
+  background: #eee url("../img/yellow-arrow.png") no-repeat;
+  line-height: 62px;
+  text-indent: 35px;
+  width: 250px;
+  height:70px;
+  padding: 22px 46px 19px 24px;
+  margin-left: 30px;
 }
 
 /* responsive */
@@ -175,6 +177,17 @@ footer {
     border: none;
   }
 
+  .contact-us-btn {
+    display:block;
+    padding: 0;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    text-indent: 0;
+
+  }
+
 }
 
 @media (max-width: 979px) {
@@ -189,40 +202,17 @@ footer {
     border-bottom: 4px solid #3F82C4; 
   }
 }
+
+@media (min-width: 1200px) {
+ 
+  .hero-unit h1 {
+    font-size: 46px;
+    margin-bottom: 24px;
+  }
+ 
+}
 /*
 min 768 and max 979
-min 1200px
 */
 
-.center-text {
-  text-align: center;
-}
 
-
-.skill-icon {
-  font-size: 90px;
-  line-height: 100%;
-} 
-
-
-
-.contact-us {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.contact-us-btn {
-  text-transform: uppercase;
-  letter-spacing: -0.07em;
-  word-spacing: .1em;
-  color: black;
-  font-size: 11pt;
-  font-weight: bold;
-  background: #eee url("../img/yellow-arrow.png") no-repeat;
-  line-height: 62px;
-  text-indent: 35px;
-  width: 250px;
-  height:70px;
-  padding: 22px 46px 19px 24px;
-  margin-left: 30px;
-}
