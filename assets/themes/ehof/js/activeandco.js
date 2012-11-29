@@ -14,7 +14,7 @@ $(function() {
       .delay(50)
       .animate({ top: '-=200px' }, 500, 'easeInBack')
       .fadeOut(0, function(){
-        $("a[rel=popver]").delay(550).popover('hide');
+        $("a[rel=popover]").delay(550).popover('hide');
       });
     })
 });
