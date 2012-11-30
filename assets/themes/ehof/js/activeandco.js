@@ -1,5 +1,5 @@
 $(function() {
-  $("a[rel=popover]")
+  $("a[data-toggle=popover]")
     .popover({
       content:'En cours de rédaction',
       placement:'top',
