@@ -37,8 +37,8 @@ description: "active and co - Conception d'applications Web et Mobiles"
     <p>
       HTML5, CSS3, Responsive web design, UX design, Ergonomie web.
     </p>
-    -->
     <p><a href="#" data-toggle="popover" class="btn">En savoir +</a></p>
+    -->
   </div>
 
   <div class="span4 center-text">
@@ -48,16 +48,16 @@ description: "active and co - Conception d'applications Web et Mobiles"
     <p>
       Consulting technique, rédaction de cahier des charges, Application web, Ruby on Rails, Architecture, scalable, optimisation de base de données
     </p>
-    -->
     <p><a class="btn" data-toggle="popover" href="#">En savoir +</a></p>
+    -->
  </div>
   <div class="span4 center-text">
     <span class="pictograms hundred">O</span> 
     <h3>Applications Mobiles</h3>
     <!--
     <p>Application smartphone</p>
-    -->
     <p><a class="btn" data-toggle="popover" href="#">En savoir +</a></p>
+    -->
   </div>
 </div>
 
