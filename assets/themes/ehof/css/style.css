@@ -122,18 +122,12 @@ footer {
 
 .contact-us-btn {
   text-transform: uppercase;
-  letter-spacing: -0.07em;
-  word-spacing: .1em;
-  color: black;
   font-size: 11pt;
-  font-weight: bold;
-  background: #eee url("../img/yellow-arrow.png") no-repeat;
   line-height: 62px;
-  text-indent: 35px;
-  width: 250px;
-  height:70px;
-  padding: 22px 46px 19px 24px;
+  padding: 16px;
   margin-left: 30px;
+  background-color: #FFDA45;
+  border-radius: 5px;
 }
 
 /* responsive */
