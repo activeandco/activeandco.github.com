@@ -60,8 +60,8 @@ description: "active and co - Conception d'applications Web et Mobiles"
     -->
   </div>
 
-  <div style="width: 100%; height: 5000px;">
-   Suite... 
+  <div style="width: 100%; height: 1000px;">
+   . 
   </div>
 </div>
 
