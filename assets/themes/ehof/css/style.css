@@ -123,6 +123,18 @@ footer {
   text-align: center;
 }
 
+.skills-container {
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0px 1px 8px #9FC0D6;
+  margin: 0 40px 0 40px;
+  padding: 20px;
+}
+
+.skills-container h3 {
+  border-top: 1px solid #D1E2DD;
+}
+
 .skill-icon {
   font-size: 90px;
   line-height: 100%;
