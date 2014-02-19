@@ -19,8 +19,12 @@ header {
 }
 
 .cubix {
-  position: absolute;
   background-color: #fff;
+  margin: 1%;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  float: left;
 }
 
 .cubix-hoverable {
@@ -130,10 +134,11 @@ nav.main {
 .slide {
   background-attachment: fixed;
   background-color: #EBE9E6;
-  width:100%;
-  height:100%;
-  position: relative;
   box-shadow:inset 0px 10px 10px rgba(0,0,0,0.3);
+  height:100%;
+  overflow: scroll;
+  position: relative;
+  width:100%;
 }
 
 .wrapper{
@@ -144,12 +149,8 @@ nav.main {
 }
 
 .section-name{
-  position:absolute;
-  bottom:0px;
-  left:0px;
-  font-size:100px;
+  font-size:5em;
   font-weight:bold;
-  color:rgba(255,255,255,0.3);
   color:rgba(100,100,100,0.3);
 }
 
@@ -176,21 +177,16 @@ nav.main {
 *******************************/
 
 #slide1 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQIHWNgYGCoB2LiAHaVACruAP8af/BmAAAAAElFTkSuQmCC),url(../img/Computer-Code.jpg);
-  background-size: auto, auto, cover;
-  background-repeat: repeat, repeat, no-repeat;
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQIHWNgYGCoB2LiAHaVACruAP8af/BmAAAAAElFTkSuQmCC),url(../img/Computer-Code.jpg);*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../img/Computer-Code.jpg);
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
 }
 
 #slide1 header h1{
-  padding: 2em 0 1em 28%;
+  padding: 3em 0 3em 28%;
   color: #EEE;
   font-size: 4em;
-}
-
-#slide1 #cube1 {
-  margin: 0;
-  width: 30%;
-  height: 30%;
 }
 
 /******************************
@@ -199,8 +195,8 @@ nav.main {
 
 #slide2 img:first-child{
   position:absolute;
-top: 700px;
-left: -150px;
+  top: 700px;
+  left: -150px;
 }
 #slide2 img:nth-child(2){
   position:absolute;
@@ -294,4 +290,16 @@ address a {
   font-size:28px;
   text-decoration: none;
   color: #666;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  html, body {
+    font-size: 10px;
+  }
+
+
+  .logo-square {
+    visibility: hidden;
+  }
 }
