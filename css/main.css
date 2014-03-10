@@ -314,6 +314,7 @@ nav.main {
   -webkit-transition-property: opacity;
   -webkit-transition: opacity .3s cubic-bezier(0.645,0.045,0.355,1);
   background: rgba(20, 116, 250, 0.9);
+  background: rgba(32, 139, 255, 0.9);
   bottom: 12px;
   left: 12px;
   opacity: 0;

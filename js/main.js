@@ -33,7 +33,7 @@ $(function(){
       else {
         $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').next().removeClass('active');
       }
-    });
+    }, { offset: '25%' });
   }, overlayDelay);
 
   //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class 
