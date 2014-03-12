@@ -14,6 +14,7 @@ body {
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 p { margin: 1em 0; }
 img { max-width: 100%; }
+ul {list-style: none;}
 
 /*  Header */
 header {
@@ -335,8 +336,17 @@ nav.main {
 }
 
 /******************************
- SLIDE 3
+ Process
 *******************************/
+
+.processes {
+  margin-bottom: 300px;
+}
+
+.processes > div {
+  float: left;
+  width: 33%;
+}
 
 /******************************
  SLIDE 4
