@@ -7,7 +7,7 @@
 html, body { height: 100%; }
 
 body {
-  font: 14px 'Quicksand', sans-serif;
+  font: 16px 'Quicksand', sans-serif;
   color: #444;
 }
 
@@ -16,16 +16,21 @@ p { margin: 1em 0; }
 img { max-width: 100%; }
 ul {list-style: none;}
 
-/*  Header */
-header {
-  width: 100%;
+h1 {
+  font-size: 20px;
 }
+
+h2 {
+  font-size: 18px;
+}
+/*  Header */
+
 .side-bar-toggle {
   position: fixed;
   top: 0.75rem;
   right: 0.75rem;
   font-size: 2.25em;
-  color: #FFF;
+  color: #B8B8B8;
   z-index: 1;
 }
 
@@ -114,12 +119,11 @@ nav.main {
   visibility: hidden;
 }
 
-
-
 .slide {
   background-attachment: fixed;
   background-color: #EBE9E6;
   background-color: #DAC19D;
+  background-color: #fff;
   box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   position: relative;
@@ -127,25 +131,25 @@ nav.main {
 }
 
 .overlay {
-   -webkit-transition: all .1s ease-out;
-    background: #000;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
+ -webkit-transition: all .1s ease-out;
+  background: #000;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
 }
+
 .reached .overlay {
   opacity: 0;
   visibility: hidden;
 }
 
-
 .section-name{
-  font-size:5em;
-  font-weight:bold;
-  color:rgba(100,100,100,0.3);
+  font-size: 75px;
+  font-weight: 100;
+  color: #505050;
   text-align: right;
   padding-right: 5%;
 }
@@ -172,49 +176,42 @@ nav.main {
  SLIDE 1
 *******************************/
 
-#slide1 header {
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQIHWNgYGCoB2LiAHaVACruAP8af/BmAAAAAElFTkSuQmCC),url(../img/Computer-Code.jpg);*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../img/intro.jpg);
-  background-image: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.3) 99%, rgba(0,0,0,0.3) 100%), url(../img/intro.jpg); /* FF3.6+ */
-  background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0)), color-stop(99%,rgba(0,0,0,0.3)), color-stop(100%,rgba(0,0,0,0.3))), url(../img/intro.jpg); /* Chrome,Safari4+ */
-  background-image: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.3) 99%,rgba(0,0,0,0.3) 100%), url(../img/intro.jpg); /* Chrome10+,Safari5.1+ */
-  background-image: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.3) 99%,rgba(0,0,0,0.3) 100%), url(../img/intro.jpg); /* Opera 12+ */
-  background-image: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.3) 99%,rgba(0,0,0,0.3) 100%), url(../img/intro.jpg); /* IE10+ */
-  background-image: radial-gradient(ellipse at center,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.3) 99%,rgba(0,0,0,0.3) 100%), url(../img/intro.jpg); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#4d000000',GradientType=1 ), url(../img/intro.jpg); /* IE6-9 fallback on horizontal gradient */
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
-
-  /*background-image: none;*/
-  /*background-color: #5F7CAF;*/
-
+#slide1 .visual {
+  background-image: url(../img/intro.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-#slide1 header > p {
-  padding: 200px 0 10px 10px;
-  color: #EEE;
-  font-size: 25px;
+#slide1 .visual > p {
+  padding: 50px 0 300px 10px;
+  color: #FFF;
+  font-size: 42px;
   margin: 0;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 
 #slide1  h1  {
-  border: 4px solid;
-  color: #FFF;
+  color: #CECECE;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 100;
   text-transform: uppercase;
   margin: auto;
-  margin-bottom: 100px;
-  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-top: 75px;
   padding: 10px;
   text-align: center;
   width: 75%;
 }
 
+.competences {
+  background-color: #FFF;
+  height: 300px;
+}
+
 .competences > * {
   float: left;
   width: 25%;
-  margin-bottom: 50px;
 }
 
 .competence {
@@ -229,7 +226,6 @@ nav.main {
   -o-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  margin-bottom: 200px;
 }
 
 .competence:nth-child(1) {
@@ -292,12 +288,45 @@ nav.main {
 }
 
 .competence-description {
-  color: #fff;
+  color: #C0C0C0;
+  padding: 20px;
+  border: 5px solid #FFF;
+  margin: 10px;
+  height: 44px;
+  border-top: 1px solid #F0F0F0;
 }
 
 /******************************
- SLIDE 2
+  Offer
 *******************************/
+
+#slide2 {
+  height: 500px;
+  background-color: #2B2B2B;
+  
+}
+
+.offer {
+  float: left;
+  font-weight: 100;
+  margin: 1%;
+  text-align: right;
+  width: 30%;
+}
+
+.offer h2 {
+  color: #fff;
+  margin: 70px 0 35px 0;
+}
+
+.offer li {
+  color: #979797;
+  margin-bottom: 8px;
+}
+
+/***************************
+  Portfolio
+ ***************************/
 
 .cubix {
   background-color: #fff;
@@ -335,6 +364,10 @@ nav.main {
   color: #fc0;
 }
 
+#portfolio .olivier-carvin {
+  background-image: url(../img/portfolio/olivier-carvin.png);
+}
+
 /******************************
  Process
 *******************************/
@@ -345,15 +378,16 @@ nav.main {
 
 .processes > div {
   float: left;
-  width: 33%;
+  width: 30%;
+  margin: 1%;
 }
 
 /******************************
- SLIDE 4
+ Contact
 *******************************/
 
-#slide4{
-  /*box-shadow: 0px 10px 10px rgba(0,0,0,0.3);*/
+#slide-contact{
+  height: 1500px;
 }
 
 address {
