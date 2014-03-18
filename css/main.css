@@ -1,34 +1,28 @@
 /* Global Reset */
+
 * {
   margin: 0;
   padding: 0;
 }
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
 body {
-  font: 16px 'Quicksand', sans-serif;
+  font: 100% 'Quicksand', sans-serif;
   color: #444;
 }
 
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 { font-size: 100%; }
-p { margin: 1em 0; }
 img { max-width: 100%; }
+
 ul {list-style: none;}
 
-h1 {
-  font-size: 20px;
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  body {font-size: 80%;}
 }
 
-h2 {
-  font-size: 18px;
-}
 /*  Header */
 
 .side-bar-toggle {
@@ -53,17 +47,17 @@ h2 {
   background: #333;
   color: #999;
   overflow-y: none;
-  margin-top:0px;
-  margin-right:0px;
+  margin-top:0;
+  margin-right:0;
 }
 
-#content {
+.content {
   height: 100%;
   position: relative;
   box-shadow: 1px 1px 10px #000;
 }
 
-nav.main {
+.main {
   position: fixed;
   bottom: 0;
 }
@@ -91,11 +85,10 @@ nav.main {
   -o-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   background-color: #FFF;
+  border: 10px solid #EBE9E6;
   box-shadow: 1px 1px 10px #555;
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   height: 300px;
-  width: 300px;
-  border: 10px solid #EBE9E6;
   left: -159px;
   position: fixed;
   top: -220px;
@@ -122,7 +115,7 @@ and (max-width : 480px) {
 
 .progress-bar {
   -webkit-transition: all 2s ease-out;
-  width: 0px;
+  width: 0;
   height: 3px;
   background-color: white;
   position: fixed;
@@ -140,7 +133,7 @@ and (max-width : 480px) {
   background-color: #EBE9E6;
   background-color: #DAC19D;
   background-color: #fff;
-  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   position: relative;
   width:100%;
@@ -163,7 +156,7 @@ and (max-width : 480px) {
 }
 
 .section-name{
-  font-size: 75px;
+  font-size: 3em;
   font-weight: 100;
   color: #505050;
   text-align: right;
@@ -183,6 +176,11 @@ and (max-width : 480px) {
   border: 2px solid #EEE;
 }
 
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  .button{left: 43%;}
+}
+
 .button:hover{
   background-color:#494949;
   cursor:pointer;
@@ -192,24 +190,38 @@ and (max-width : 480px) {
  SLIDE 1
 *******************************/
 
-#slide1 .visual {
+.visual {
+  background-attachment: fixed;
   background-image: url(../img/intro.jpg);
+  background-position: bottom right;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-#slide1 .visual > p {
-  padding: 50px 0 300px 10px;
+.word-emphasis {
+  color: #fc0;
+}
+
+.visual-text {
   color: #FFF;
-  font-size: 42px;
-  margin: 0;
+  font-size: 3em;
   font-weight: 100;
   text-transform: uppercase;
 }
 
-#slide1  h1  {
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  .visual-text {
+    font-size: 2em;
+  }
+}
+
+
+.baseline  {
   color: #CECECE;
-  font-size: 38px;
+  font-size: 3em;
   font-weight: 100;
   text-transform: uppercase;
   margin: auto;
@@ -222,20 +234,10 @@ and (max-width : 480px) {
 
 .competences {
   background-color: #FFF;
-  height: 300px;
+  overflow: hidden;
+  width: 100%;
 }
 
-.competences > * {
-  float: left;
-  width: 25%;
-}
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-
-  .competences > * {
-    float: none;
-    width: 95%;
-  }
-}
 
 .competence {
   text-align: center;
@@ -249,6 +251,17 @@ and (max-width : 480px) {
   -o-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
+  float: left;
+  width: 25%;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+  .competence {
+    float: none;
+    width: 95%;
+  }
+
 }
 
 .competence:nth-child(1) {
@@ -291,9 +304,9 @@ and (max-width : 480px) {
   transform: scale(1)
 }
 
-.competence-icon {
+.competence .icon {
   width: 140px;
-  font-size: 60px;
+  font-size: 4em;
   color: #fff;
   height: 140px;
   margin: auto;
@@ -302,15 +315,15 @@ and (max-width : 480px) {
   border: 10px solid #fff;
 }
 
-.competence-icon > div {
+.competence .icon > div {
   margin-top: 40px;
 }
 
-.competence-caption {
+.competence h2 {
   text-align: center;
 }
 
-.competence-description {
+.competence p {
   color: #C0C0C0;
   padding: 20px;
   border: 5px solid #FFF;
@@ -325,16 +338,15 @@ and (max-width : 480px) {
   Offer
 *******************************/
 
-#slide2 {
-  height: 500px;
+.slide-offer {
   background-color: #2B2B2B;
-  
 }
 
 .offer {
   float: left;
   font-weight: 100;
   margin: 1%;
+  margin-bottom: 20%;
   text-align: right;
   width: 30%;
 }
@@ -348,7 +360,6 @@ and (max-width : 480px) {
   color: #979797;
   margin-bottom: 8px;
 }
-
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
 
@@ -395,11 +406,8 @@ and (max-width : 480px) {
   filter: alpha(opacity=100);
 }
 
-.word-emphasis {
-  color: #fc0;
-}
 
-#portfolio .olivier-carvin {
+.portfolio .olivier-carvin {
   background-image: url(../img/portfolio/olivier-carvin.png);
 }
 
@@ -421,8 +429,8 @@ and (max-width : 480px) {
  Contact
 *******************************/
 
-#slide-contact{
-  height: 1500px;
+.contact{
+  height: 500px;
 }
 
 address {
@@ -431,10 +439,28 @@ address {
   left: 40%;
 }
 
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  address {
+    position:absolute;
+    top:20%;
+    left: 20%;
+  }
+}
+
 address a {
-  font-size:28px;
+  font-size: 2em;
   text-decoration: none;
   color: #666;
 }
 
 
+footer {
+  background-color:  #176EF0;
+  color: white;
+  text-align: right;
+  font-size: 70%;
+}
+
+footer p {
+  padding: 4em 2em 4em;
+}
