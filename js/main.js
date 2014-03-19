@@ -6,12 +6,24 @@ $(function(){
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
 
   //initialise Stellar.js if not on mobile
-  if (!isMobile()) {
-    $(window).stellar({
-      responsive: true
-      , horizontalScrolling:false
-    });
-  }
+  //if (!isMobile()) {
+    //$(window).stellar({
+      //responsive: true
+      //, horizontalScrolling:false
+    //});
+  //}
+
+  var defaultIconColor =  $('.competence-icon').css('background-color')
+  // home icon hovering
+  $('.competence-icon').hover(function(){
+    var color = $(this).attr('data-color')
+    $(this).css('background-color', color)
+    $('.word-emphasis').css('color', color)
+  },
+  function(){
+    $(this).css('background-color', defaultIconColor)
+    $('.word-emphasis').css('color', defaultIconColor)
+  })
 
   //Cache some variables
   var links = $('.navigation').find('li'),
@@ -36,7 +48,7 @@ $(function(){
       else {
         $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').next().removeClass('active');
       }
-    }, { offset: '25%' });
+    }, { offset: '35%' });
   }, overlayDelay);
 
   //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class 
