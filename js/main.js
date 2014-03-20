@@ -104,7 +104,7 @@ $(function(){
     hideSide()
   })
 
-  $('.content').click(function(){
+  $('.movable').click(function(){
     if (sideOpen)
       hideSide()
   })
@@ -120,7 +120,7 @@ $(function(){
     $('.icon-close').hide('drop', 100, function(){
       $('.icon-menu').show('fade', 200)
     })
-    $(".content").animate({'left': '0px'}, 100, cb)
+    $(".movable").animate({'left': '0px'}, 100, cb)
     sideOpen = false
   }
 
@@ -128,7 +128,7 @@ $(function(){
     $('.icon-menu').hide('drop', 200, function(){
       $('.icon-close').show('fade', 1000)
     })
-    $(".content").animate({'left': '-260px'}, 500)
+    $(".movable").animate({'left': '-260px'}, 500)
     sideOpen = true
   }
 
