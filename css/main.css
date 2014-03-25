@@ -1,5 +1,9 @@
 /* Global Reset */
 
+
+/* 
+ * green #31AD01
+ * */
 * {
   margin: 0;
   padding: 0;
@@ -418,25 +422,17 @@ and (max-width : 480px) {
 
 .portfolio-detail {
   background-color: #303030;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
   bottom: 0;
+  color: #FFF;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
   -webkit-animation-duration: .5s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
-  color: #FFF;
 }
 
-.portfolio-detail a {
-  background-color: #FFAE47;
-  float: right;
-  font-size: 5em;
-  width: 90px;
-  height: 90px;
-  display: inline-block;
-}
 
 .hover-in .portfolio-detail {
     -webkit-animation-name: inKeyframes;
@@ -460,6 +456,68 @@ and (max-width : 480px) {
     top: 100%;
   }
 }
+
+.roll-more {
+  float: right;
+  background: #31AD01;
+  overflow: hidden;
+
+  -webkit-perspective: 1000px;
+     -moz-perspective: 600px;
+     -ms-perspective: 600px;
+     perspective: 600px;
+
+  -webkit-perspective-origin: 50% 50%;
+     -moz-perspective-origin: 50% 50%;
+     -ms-perspective-origin: 50% 50%;
+     perspective-origin: 50% 50%;
+}
+
+.roll-more span {
+  background-color: #FFAE47;
+  font-size: 80px;
+  width: 90px;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease;
+  -webkit-transform-origin: 50% 0%;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.roll-more span:after {
+  content: attr(data-title);
+  background: #31AD01;
+  position: absolute;
+  left: 0;
+  width: 90px;
+  -webkit-transform-origin:  0% 50% ;
+  -moz-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg );
+  -moz-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg );
+  -ms-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg );
+  transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg );
+}
+
+.roll-more:hover span {
+  background: #31AD01;
+  left: -2px;
+  -webkit-transform: translate3d( -45px, 0px, -30px ) rotateY( 90deg );
+  -moz-transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg );
+  -ms-transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg );
+  transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg );
+}
+
 
 .crm-maranatha {
   background-image: url(../img/portfolio/crm-maranatha.png);

@@ -1,6 +1,6 @@
 $(function(){
 
-  var overlayDelay = 2000
+  var overlayDelay = 2
   $('.progress-bar').addClass('start')
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
@@ -13,17 +13,18 @@ $(function(){
     //});
   //}
 
+  // Home icon hovering
   var defaultIconColor =  $('.competence-icon').css('background-color')
-  // home icon hovering
-  $('.competence-icon').hover(function(){
-    var color = $(this).attr('data-color')
-    $(this).css('background-color', color)
-    $('.word-emphasis').css('color', color)
-  },
-  function(){
-    $(this).css('background-color', defaultIconColor)
-    $('.word-emphasis').css('color', defaultIconColor)
-  })
+  $('.competence-icon').hover(
+    function(){
+      var color = $(this).attr('data-color')
+      $(this).css('background-color', color)
+      $('.word-emphasis').css('color', color)
+    },
+    function(){
+      $(this).css('background-color', defaultIconColor)
+      $('.word-emphasis').css('color', defaultIconColor)
+    })
 
   //Cache some variables
   var links = $('.navigation').find('li'),
