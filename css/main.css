@@ -381,7 +381,7 @@ and (max-width : 480px) {
 .portfolio-item {
   background-color: #fff;
   float: left;
-  height: 300px;
+  height: 20em;
   margin: 1%;
   overflow: hidden;
   position: relative;
@@ -417,7 +417,7 @@ and (max-width : 480px) {
   color: #fff;
   font-variant: small-caps;
   font-weight: 100;
-  margin-top: 100px;
+  margin-top: 7em;
 }
 
 .portfolio-detail {
@@ -444,10 +444,10 @@ and (max-width : 480px) {
 
 @-webkit-keyframes inKeyframes {
   20% {
-    top: 20%;
+    top: 12em;
   }
   100% {
-    top: 70%;
+    top: 15em;
   }
 }
 
@@ -456,13 +456,67 @@ and (max-width : 480px) {
     top: 100%;
   }
 }
+.scene {
+  -webkit-perspective: 1400;
+  -webkit-perspective-origin: 50% 50%; 
+  float: right;
+}
+
+.cube {
+  position: relative;
+  margin: 1px 1px auto;
+  height: 5em;
+  width: 5em;
+  -webkit-transition: -webkit-transform .3s ease;
+  -webkit-transform-style: preserve-3d;
+}
+
+.cube:hover {
+  -webkit-transform: rotateY(90deg);
+}
+
+.face {
+  position: absolute;
+  height: 5em;
+  width: 5em;
+  background-color: #FFDA47;
+}
+
+.face a {
+  line-height: 1em;
+  font-size: 500%;
+}
+
+.cube .one  {
+      -webkit-transform: rotateX(90deg) translateZ(2.5em);
+    }
+
+    .cube .two {
+      -webkit-transform: translateZ(2.5em);
+    }
+
+    .cube .three {
+      -webkit-transform: rotateY(90deg) translateZ(2.5em);
+    }
+
+    .cube .four {
+      -webkit-transform: rotateY(180deg) translateZ(2.5em);
+    }
+
+    .cube .five {
+      -webkit-transform: rotateY(-90deg) translateZ(2.5em);
+      background: #31AD01;
+    }
+
+    .cube .six {
+      -webkit-transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg);
+    }
 
 .roll-more {
   float: right;
   background: #31AD01;
-  overflow: hidden;
 
-  -webkit-perspective: 1000px;
+  -webkit-perspective: 600px;
      -moz-perspective: 600px;
      -ms-perspective: 600px;
      perspective: 600px;
@@ -474,8 +528,6 @@ and (max-width : 480px) {
 }
 
 .roll-more span {
-  background-color: #FFAE47;
-  font-size: 80px;
   width: 90px;
   position: relative;
   display: inline-block;
