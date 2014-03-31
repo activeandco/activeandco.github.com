@@ -3,6 +3,8 @@
 
 /* 
  * green #31AD01
+ * yelow: #FC0;
+ * 
  * */
 * {
   margin: 0;
@@ -387,8 +389,32 @@ and (max-width : 480px) {
   position: relative;
   text-align: center;
   width: 23%;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
 
+.grow {
+  -webkit-animation-name: grow;
+  position: fixed;
+  border: 6px solid black;
+  z-index: 12;
+}
+
+@-webkit-keyframes grow {
+  50% {
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 20em;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 99%;
+  }
+}
 .portfolio-mask, .hover-out .portfolio-mask {
   -moz-transition: opacity .3s cubic-bezier(0.645,0.045,0.355,1);
   -ms-transition: opacity .3s cubic-bezier(0.645,0.045,0.355,1);

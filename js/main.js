@@ -14,7 +14,7 @@ $(function(){
   //}
 
   // Home icon hovering
-  var defaultIconColor =  $('.competence-icon').css('background-color')
+  var defaultIconColor =  "#FC0"
   $('.competence-icon').hover(
     function(){
       var color = $(this).attr('data-color')
@@ -112,6 +112,22 @@ $(function(){
       $(this).removeClass('hover-in')
     }
   )
+
+  // show portfolio detail
+  $('.face > a').click(function(e){
+    var parentBox
+    , top
+    , left
+    e.preventDefault()
+    parentBox = $(this).closest('.portfolio-item')
+    top =  parentBox.offset().top - $(document).scrollTop()
+    left = parentBox.offset().left
+    parentBox.addClass('grow')
+    parentBox.css('top', top)
+    parentBox.css('left', left)
+
+
+  })
 
   // Side bar stuffs
   var sideOpen = false
