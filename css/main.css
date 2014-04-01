@@ -4,7 +4,7 @@
 /* 
  * green #31AD01
  * yelow: #FC0;
- * 
+ * blue:#4084C5
  * */
 * {
   margin: 0;
@@ -16,8 +16,13 @@ html, body {
 }
 
 body {
-  font: 100% 'Quicksand', sans-serif;
   color: #444;
+  font: 100% 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400;
 }
 
 img { max-width: 100%; }
@@ -39,6 +44,7 @@ a {color: white; text-decoration: none;}
   font-size: 2.25em;
   color: #B8B8B8;
   z-index: 1;
+  cursor: pointer;
 }
 
 .icon-close {
@@ -158,7 +164,6 @@ and (max-width : 480px) {
 
 .section-name{
   font-size: 3.5em;
-  font-weight: 100;
   color: #505050;
   text-align: right;
   padding-right: 5%;
@@ -212,7 +217,6 @@ and (max-width : 480px) {
 .visual-text {
   color: #FFF;
   font-size: 3em;
-  font-weight: 100;
   text-transform: uppercase;
 }
 
@@ -226,7 +230,6 @@ and (max-width : 480px) {
 .baseline  {
   color: #CECECE;
   font-size: 3em;
-  font-weight: 100;
   text-transform: uppercase;
   margin: auto;
   margin-bottom: 50px;
@@ -342,12 +345,11 @@ and (max-width : 480px) {
 *******************************/
 
 .slide-offer {
-  background-color: #2B2B2B;
+  background-color: #2E3234;
 }
 
 .offer {
   float: left;
-  font-weight: 100;
   margin: 1%;
   margin-bottom: 20%;
   text-align: right;
@@ -360,7 +362,7 @@ and (max-width : 480px) {
 }
 
 .offer li {
-  color: #979797;
+  color: #b4b4b4;
   margin-bottom: 8px;
 }
 
@@ -442,14 +444,15 @@ and (max-width : 480px) {
 .portfolio-title {
   color: #fff;
   font-variant: small-caps;
-  font-weight: 100;
   margin-top: 7em;
 }
 
 .portfolio-detail {
   background-color: #303030;
+  background-color: #2E3234;
   bottom: 0;
   color: #FFF;
+  color: #b4b4b4;
   left: 0;
   position: absolute;
   right: 0;
@@ -457,6 +460,10 @@ and (max-width : 480px) {
   -webkit-animation-duration: .5s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
+}
+
+.portfolio-detail p {
+  margin-top: 1em;
 }
 
 
@@ -531,7 +538,7 @@ and (max-width : 480px) {
 
     .cube .five {
       -webkit-transform: rotateY(-90deg) translateZ(2.5em);
-      background: #31AD01;
+      background: #4084C5;
     }
 
     .cube .six {
@@ -646,17 +653,26 @@ and (max-width : 480px) {
 /******************************
  Contact
 *******************************/
-
-.contact{
-  height: 500px;
+.contact {
+  color: #ccc;
+  text-align: center;
+}
+.need-quote {
+  color: #aaa;
+  margin: 4em 0 1em;
+  font-size: 3em;
 }
 
+.contact-us {
+  margin-bottom: 2em;
+}
 address {
+  display: inline-block;
+  font-style: normal;
   background-color: #fc0;
-  left: 40%;
-  padding: 1.5em;
-  position: absolute;
-  top: 40%;
+  padding: 1.2em;
+  margin-bottom: 10em;
+  border-radius: 2px;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
@@ -668,24 +684,30 @@ address {
 }
 
 address a {
-  font-size: 2em;
+  font-size: 1.4em;
   text-decoration: none;
   color: #FFF;
 }
 
+/*
+ *
+ * Footer
+ *
+ */
 
 footer {
-  background-color: #176EF0;
+  background-color: #4084C5;
   color: white;
-  text-align: right;
+  text-align: center;
   font-size: 70%;
   position: relative;
+  padding: 5em 2em 5em;
 }
 
-footer p {
-  padding: 4em 2em 4em;
+footer .madein {
+  float: right;
+  font-size: 90%;
 }
-
 
 /* Utils */
 .v-spacer {
