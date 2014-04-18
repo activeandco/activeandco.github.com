@@ -400,7 +400,7 @@ and (max-width : 480px) {
   -webkit-animation-name: grow;
   position: fixed;
   border: 6px solid black;
-  z-index: 12;
+  z-index: 1;
 }
 
 @-webkit-keyframes grow {
