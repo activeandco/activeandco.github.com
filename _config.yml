@@ -1,3 +1,4 @@
 name: Active and Co
 markdown: redcarpet
 pygments: true
+relative_permalinks: false
