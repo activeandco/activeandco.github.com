@@ -1,9 +1,43 @@
 /* Global Reset */
 /* 
  * green #31AD01
- * yelow: #FC0;
- * blue:#4084C5
  * */
+
+yellow = #FC0
+blue = #5999D6
+
+// Mixins
+transform()
+  -moz-transform arguments
+  -o-transform arguments
+  -webkit-transform arguments
+  -ms-transform arguments
+  transform arguments
+
+border-radius(radius)
+  -moz-border-radius: radius;
+  -webkit-border-radius: radius;
+  -o-border-radius: radius;
+  border-radius: radius;
+
+animation()
+  -webkit-animation arguments
+  animation arguments
+
+transition()
+  -moz-transition arguments
+  -o-transition arguments
+  -ms-transition arguments
+  -webkit-transition arguments
+  transition arguments
+
+box-shadow()
+  -moz-box-shadow: arguments;
+  -o-box-shadow: arguments;
+  -webkit-box-shadow: arguments;
+  box-shadow: arguments;
+
+
 *
   margin: 0
   padding: 0
@@ -85,10 +119,7 @@ a
   color: #eee
 
 .logo-wrapper
-  -moz-transform: rotate(-45deg)
-  -ms-transform: rotate(-45deg)
-  -o-transform: rotate(-45deg)
-  -webkit-transform: rotate(-45deg)
+  transform: rotate(-45deg)
   background-color: #FFF
   border: 10px solid #EBE9E6
   box-shadow: 1px 1px 10px #555
@@ -111,17 +142,18 @@ a
   width: 170px
 
 .progress-bar
-  -webkit-transition: all 2s ease-out
+  transition: all 2s ease-out
   width: 0
   height: 3px
   background-color: #3F82C4
   position: fixed
   top: 0
   z-index: 4
+  visibility: hidden
 
 .start
   width: 110%
-  visibility: hidden
+  visibility: visible
 
 .slide
   background-attachment: fixed
@@ -132,7 +164,7 @@ a
   width: 100%
 
 .overlay
-  -webkit-transition: all .1s ease-out
+  transition: all .2s ease-out
   background: #000
   bottom: 0
   left: 0
@@ -478,9 +510,6 @@ a
   width: 90px
   position: relative
   display: inline-block
-  -webkit-transition: all 400ms ease
-  -moz-transition: all 400ms ease
-  -ms-transition: all 400ms ease
   transition: all 400ms ease
   -webkit-transform-origin: 50% 0%
   -moz-transform-origin: 50% 0%
@@ -501,17 +530,11 @@ a
   -moz-transform-origin: 50% 0%
   -ms-transform-origin: 50% 0%
   transform-origin: 50% 0%
-  -webkit-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
-  -moz-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
-  -ms-transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
   transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
 
 .roll-more:hover span
   background: #31AD01
   left: -2px
-  -webkit-transform: translate3d( -45px, 0px, -30px ) rotateY( 90deg )
-  -moz-transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
-  -ms-transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
   transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
 
 .crm-maranatha
@@ -591,7 +614,7 @@ address a
  *
  */
 footer
-  background-color: #4084C5
+  background-color: blue
   color: white
   text-align: center
   font-size: 70%
@@ -616,24 +639,18 @@ footer .madein
   right: 0
   width: 300px
   height: 300px
-  background: #ED4E6E
+  background: yellow
   pointer-events: none
-  -webkit-transition: -webkit-transform 0.3s
-  transition: transform 0.3s
-  -webkit-transform: translateX(100%) translateY(-100%) rotate(45deg)
-  transform: translateX(100%) translateY(-100%) rotate(45deg)
+  transition all 0.3s
+  transform translateX(100%) translateY(-100%) rotate(45deg)
 
 .waiting.animate
-  -webkit-transform: translateX(50%) translateY(-50%) rotate(45deg)
-  transform: translateX(50%) translateY(-50%) rotate(45deg)
+  transform translateX(50%) translateY(-50%) rotate(45deg)
 
 .waiting::before 
   margin-left: -40px
   width: 80px
   height: 80px
-  border-right-color: #BB344F
-  border-left-color: #BB344F
-  -webkit-animation: rotation 3s linear infinite
   animation: rotation 3s linear infinite
 
 .waiting::before, .waiting::after
@@ -650,9 +667,8 @@ footer .madein
   margin-left: -20px
   width: 40px
   height: 40px
-  border-top-color: #BB344F
-  border-bottom-color: #BB344F
-  -webkit-animation: rotation 1s linear infinite
+  border-top-color: blue
+  border-bottom-color: blue
   animation: rotation 1s linear infinite
 
 @keyframes rotation
@@ -667,30 +683,4 @@ footer .madein
     -webkit-transform: rotate(360deg)
 
 
-
-// Mixins
-//transform(transform)
-//-moz-transform: transform
-//-o-transform: transform
-//-webkit-transform: transform
-//transform: transform 
-
-border-radius(radius)
-  -moz-border-radius: radius;
-  -webkit-border-radius: radius;
-  border-radius: radius;
-
-
-//transition(transition)
-//-moz-transition: transition;
-//-o-transition: transition;
-//-webkit-transition: transition;
-//transition: transition;
-
-
-box-shadow()
-  -moz-box-shadow: arguments;
-  -o-box-shadow: arguments;
-  -webkit-box-shadow: arguments;
-  box-shadow: arguments;
 

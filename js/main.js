@@ -7,8 +7,11 @@ $(function(){
 // Page loaded
 $(window).bind("load", function() {
 
-  $('.progress-bar').removeClass('start')
-  var overlayDelay = 2
+  var overlayDelay = 2000
+  setTimeout(function(){
+    $('.progress-bar').removeClass('start')
+    $('.waiting').removeClass('animate')
+  }, overlayDelay)
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
 
