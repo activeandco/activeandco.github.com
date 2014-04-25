@@ -124,16 +124,18 @@ $(window).bind("load", function() {
   // show portfolio detail
   $('.face > a').click(function(e){
     e.preventDefault()
-    var parentBox
-    , top
-    , left
-    , newLocation = this.href
-    parentBox = $(this).closest('.portfolio-item')
-    top =  parentBox.offset().top - $(document).scrollTop()
-    left = parentBox.offset().left
-    parentBox.addClass('grow')
-    parentBox.css('top', top)
-    parentBox.css('left', left)
+
+    // old grow stuffs
+    //var parentBox
+    //, top
+    //, left
+    //, newLocation = this.href
+    //parentBox = $(this).closest('.portfolio-item')
+    //top =  parentBox.offset().top - $(document).scrollTop()
+    //left = parentBox.offset().left
+    //parentBox.addClass('grow')
+    //parentBox.css('top', top)
+    //parentBox.css('left', left)
 
     $(".slide").removeClass('reached')
     setTimeout(function(){
