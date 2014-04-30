@@ -173,7 +173,7 @@ a {
   bottom: 5px;
   left: 48%;
   background-color: #333;
-  background-image: url("../images/arrow.png");
+  background-image: url("../img/arrow.png");
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   -o-border-radius: 30px;
@@ -522,29 +522,28 @@ a {
   transform: translate3d(45px, 0px, -30px) rotateY(90deg);
 }
 .crm-maranatha {
-  background-image: url("../img/portfolio/crm-maranatha.png");
+  background-image: url("../img/portfolio/thumbs/crm-maranatha.jpg");
 }
 .sant-et-diet {
-  background-image: url("../img/portfolio/sant-et-diet.png");
-  background-position: 729px 0px;
+  background-image: url("../img/portfolio/thumbs/sant-et-diet.jpg");
 }
 .csoftware {
-  background-image: url("../img/portfolio/csoftware.png");
+  background-image: url("../img/portfolio/thumbs/csoftware.jpg");
 }
 .ambre-marketing {
-  background-image: url("../img/portfolio/ambre-marketing.png");
+  background-image: url("../img/portfolio/thumbs/ambre-marketing.jpg");
 }
 .olivier-carvin {
-  background-image: url("../img/portfolio/olivier-carvin.png");
+  background-image: url("../img/portfolio/thumbs/olivier-carvin.jpg");
 }
 .riderpack {
-  background-image: url("../img/portfolio/riderpack.png");
+  background-image: url("../img/portfolio/thumbs/riderpack.jpg");
 }
 .la-carriole {
-  background-image: url("../img/portfolio/la-carriole.png");
+  background-image: url("../img/portfolio/thumbs/la-carriole.jpg");
 }
 .mediarewards {
-  background-image: url("../img/portfolio/mediarewards.png");
+  background-image: url("../img/portfolio/thumbs/mediarewards.jpg");
 }
 /******************************
  Process
@@ -675,6 +674,35 @@ footer .madein {
   border-bottom-color: #5999d6;
   -webkit-animation: rotation 1s linear infinite;
   animation: rotation 1s linear infinite;
+}
+.portfolio-intro {
+  margin: auto;
+  margin-bottom: 4em;
+  width: 80%;
+}
+.portfolio-img-container {
+  border: 1px solid #fff;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4em;
+  -moz-box-shadow: 0px 0px 8px #808080;
+  -o-box-shadow: 0px 0px 8px #808080;
+  -webkit-box-shadow: 0px 0px 8px #808080;
+  box-shadow: 0px 0px 8px #808080;
+}
+a.visite-site-btn {
+  background-color: #fc0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  display: block;
+  font-size: 1.4em;
+  margin: auto;
+  margin-bottom: 7em;
+  padding: 1em;
+  text-align: center;
+  width: 13em;
 }
 @-moz-keyframes inKeyframes {
   20% {

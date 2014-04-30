@@ -6,6 +6,7 @@ $(function(){
 
 // Page loaded
 $(window).bind("load", function() {
+  "use strict;"
 
   var overlayDelay = 2000
   setTimeout(function(){
@@ -37,7 +38,7 @@ $(window).bind("load", function() {
     })
 
   //Cache some variables
-  var links = $('.navigation').find('li'),
+  var links = $('.navigation').find('a'),
   slide = $('.slide'),
   button = $('.button'),
   mywindow = $(window),
@@ -82,8 +83,12 @@ $(window).bind("load", function() {
   //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
   links.click(function (e) {
     e.preventDefault()
-    dataslide = $(this).attr('data-slide')
-    hideAndScroll(dataslide)
+    var dataslide = $(this).attr('data-slide')
+    var target_present = $('.slide[data-slide="' + dataslide + '"]').length
+    if(target_present) // slide if we can
+      hideAndScroll(dataslide)
+    else
+      window.location = this.href
   })
 
   $('.home-link').click(function(e){
