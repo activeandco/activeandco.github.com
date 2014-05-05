@@ -5,6 +5,7 @@
 
 yellow = #FC0
 blue = #5999D6
+grey = #ECE5D7
 
 // Mixins
 transform()
@@ -658,7 +659,37 @@ footer .madein
     -webkit-transform: rotate(360deg)
 
 
-// Portfolio details
+// Portfolio details pages
+.work
+  background-color: grey
+  padding-top: 100px
+  h1
+    font-size 2em
+    margin-bottom 1em
+
+.work-nav
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 3
+  background-color: white
+  box-shadow: 0px 0px 2px;
+  .navbar-inner
+    width 80%
+    padding 14px 0 14px 0
+    margin auto
+  .breadcrumb
+    color #bebebe
+    display inline
+    font-size 1.5em
+  a
+    color: blue
+  img.logo
+    float: right;
+    position: relative;
+    top: 4px;
+
 .portfolio-intro
   margin auto
   margin-bottom: 4em
@@ -669,7 +700,7 @@ footer .madein
   width: 80%
   margin: auto
   margin-bottom: 4em
-  box-shadow: 0px 0px 8px grey
+  box-shadow: 0px 0px 8px #333
   text-align: center
 
 .riderpack-bg

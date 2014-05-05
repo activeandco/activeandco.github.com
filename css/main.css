@@ -680,6 +680,44 @@ footer .madein {
   -webkit-animation: rotation 1s linear infinite;
   animation: rotation 1s linear infinite;
 }
+.work {
+  background-color: #ece5d7;
+  padding-top: 100px;
+}
+.work h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.work-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: #fff;
+  -moz-box-shadow: 0px 0px 2px;
+  -o-box-shadow: 0px 0px 2px;
+  -webkit-box-shadow: 0px 0px 2px;
+  box-shadow: 0px 0px 2px;
+}
+.work-nav .navbar-inner {
+  width: 80%;
+  padding: 14px 0 14px 0;
+  margin: auto;
+}
+.work-nav .breadcrumb {
+  color: #bebebe;
+  display: inline;
+  font-size: 1.5em;
+}
+.work-nav a {
+  color: #5999d6;
+}
+.work-nav img.logo {
+  float: right;
+  position: relative;
+  top: 4px;
+}
 .portfolio-intro {
   margin: auto;
   margin-bottom: 4em;
@@ -690,10 +728,10 @@ footer .madein {
   width: 80%;
   margin: auto;
   margin-bottom: 4em;
-  -moz-box-shadow: 0px 0px 8px #808080;
-  -o-box-shadow: 0px 0px 8px #808080;
-  -webkit-box-shadow: 0px 0px 8px #808080;
-  box-shadow: 0px 0px 8px #808080;
+  -moz-box-shadow: 0px 0px 8px #333;
+  -o-box-shadow: 0px 0px 8px #333;
+  -webkit-box-shadow: 0px 0px 8px #333;
+  box-shadow: 0px 0px 8px #333;
   text-align: center;
 }
 .riderpack-bg {
