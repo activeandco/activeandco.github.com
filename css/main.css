@@ -364,6 +364,7 @@ a {
   background-color: #ece5d7;
 }
 .portfolio-item {
+  background-repeat: no-repeat;
   background-color: #fff;
   float: left;
   height: 20em;
@@ -528,10 +529,12 @@ a {
   background-image: url("../img/portfolio/thumbs/sant-et-diet.jpg");
 }
 .csoftware {
-  background-image: url("../img/portfolio/thumbs/csoftware.jpg");
+  background-image: url("../img/portfolio/thumbs/csoftware.png");
+  background-position: 20px 20px;
 }
 .ambre-marketing {
-  background-image: url("../img/portfolio/thumbs/ambre-marketing.jpg");
+  background-image: url("../img/portfolio/thumbs/ambre-marketing.gif");
+  background-position: 20px 20px;
 }
 .olivier-carvin {
   background-image: url("../img/portfolio/thumbs/olivier-carvin.jpg");
@@ -543,7 +546,9 @@ a {
   background-image: url("../img/portfolio/thumbs/la-carriole.jpg");
 }
 .mediarewards {
-  background-image: url("../img/portfolio/thumbs/mediarewards.jpg");
+  background-image: url("../img/portfolio/thumbs/mediarewards.svg");
+  background-size: 200px 200px;
+  background-position: 20px -35px;
 }
 /******************************
  Process
@@ -689,6 +694,10 @@ footer .madein {
   -o-box-shadow: 0px 0px 8px #808080;
   -webkit-box-shadow: 0px 0px 8px #808080;
   box-shadow: 0px 0px 8px #808080;
+  text-align: center;
+}
+.riderpack-bg {
+  background-color: #525252;
 }
 a.visite-site-btn {
   background-color: #fc0;
