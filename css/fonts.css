@@ -44,3 +44,6 @@
 .icon-pencil:before {
   content: "\e607";
 }
+.icon-checkmark:before {
+  content: "\e604";
+}

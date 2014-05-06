@@ -49,7 +49,11 @@ body
 
 body
   color: #444
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  //font: 18px "Helvetica Neue", Helvetica, Arial;
   font: 100% 'Quicksand', sans-serif
+  //text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
   font-weight: 400
 
 h1,
@@ -661,14 +665,16 @@ footer .madein
 
 // Portfolio details pages
 .work
-  background-color: grey
+  background-color: #F8F5ED
   padding-top: 100px
-  h1
+  .work-title
     font-size 2em
     margin-bottom 1em
+  .work-desc
+    color: #535353;
+    font-weight: 700;
   ul
     color: #616161;
-    text-shadow: 0px 1px 1px #FFF;
   li
     padding 5px 10px 0 10px
 
@@ -690,25 +696,43 @@ footer .madein
     font-size 1.5em
   a
     color: blue
+  a:hover
+    color: #333
+
   img.logo
-    float: right;
-    position: relative;
-    top: 4px;
+    float: right
+    position: relative
+    top: 4px
 
-.portfolio-intro
-  margin auto
-  margin-bottom: 4em
-  width 80%
+.work-intro
+  margin-left: 10%
+  float left
+  width 40%
 
-.portfolio-img-container
-  border: 1px solid #FFF
-  width: 80%
-  margin: auto
-  margin-bottom: 4em
-  box-shadow: 0px 0px 8px #333
+.work-panel
+  background-color: #FFF
+  box-shadow: 0px 0px 10px #C4C0C0
+  float: left
+  margin-right: 10%
+  position: relative
+  top: 33px
+  width: 40%
+  .icon-checkmark
+    color #919191
+  ul
+    padding .5em
+
+.work-snap
+  padding: 4em 10% 4em 10%
   text-align: center
   img
     width 100%
+    border: 1px solid #FFF
+    box-shadow: 0px 0px 8px #333
+
+.work-snap-1
+  background-color: #EBEBEB
+
 
 .riderpack-bg
   background-color: #525252
@@ -723,3 +747,10 @@ a.visite-site-btn
   padding 1em
   text-align center
   width 13em
+
+
+// Utils
+.row:after
+  content: "";
+  display: table;
+  clear: both;
