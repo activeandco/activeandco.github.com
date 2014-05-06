@@ -6,13 +6,13 @@ $(function(){
 
 // Page loaded
 $(window).bind("load", function() {
-  "use strict;"
+  "use strict";
 
-  var overlayDelay = 2000
+  var timerDelay = 2000
   setTimeout(function(){
-    $('.progress-bar').removeClass('start')
+    $('.progress-bar').remove()
     $('.waiting').removeClass('animate')
-  }, overlayDelay)
+  }, timerDelay)
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
 
@@ -46,6 +46,7 @@ $(window).bind("load", function() {
 
   //Setup waypoints plugin
   slide.waypoint(function (direction) {
+    var dataslide
     $(this).addClass('reached')
     //cache the variable of the data-slide attribute associated with each slide
     dataslide = $(this).attr('data-slide');
@@ -93,6 +94,7 @@ $(window).bind("load", function() {
 
   $('.home-link').click(function(e){
     e.preventDefault()
+    var dataslide
     dataslide = $(this).attr('data-slide')
     if(sideOpen)
       hideAndScroll(dataslide)
