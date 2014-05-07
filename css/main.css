@@ -14,13 +14,23 @@ body {
   color: #444;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font: 100% 'Quicksand', sans-serif;
+  font-family: 'Muli', sans-serif;
   font-weight: 400;
 }
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+.baseline,
+.section-name,
+.need-quote,
+.work-nav,
+.visual-text {
+  font: 100% 'Quicksand', sans-serif;
   font-weight: 400;
 }
 img {
@@ -161,6 +171,8 @@ a {
   visibility: hidden;
 }
 .section-name {
+  font: 100% 'Quicksand', sans-serif;
+  font-weight: 400;
   font-size: 3.5em;
   color: #505050;
   text-align: right;
@@ -220,6 +232,8 @@ a {
   }
 }
 .baseline {
+  font: 100% 'Quicksand', sans-serif;
+  font-weight: 400;
   color: #d6d6d6;
   font-size: 3em;
   text-transform: uppercase;
@@ -687,12 +701,12 @@ footer .madein {
   padding-top: 100px;
 }
 .work .work-title {
+  color: #535353;
   font-size: 2em;
   margin-bottom: 1em;
 }
 .work .work-desc {
-  color: #535353;
-  font-weight: 700;
+  color: #808080;
 }
 .work ul {
   color: #616161;
@@ -768,25 +782,27 @@ footer .madein {
   -webkit-box-shadow: 0px 0px 8px #333;
   box-shadow: 0px 0px 8px #333;
 }
-.work-snap-1 {
+.work-snap:nth-child(1) {
   background-color: #ebebeb;
 }
-.riderpack-bg {
-  background-color: #525252;
+.work-snap:nth-child(3) {
+  background-color: #333;
 }
-a.visite-site-btn {
+.visit-site {
+  background-color: #fff;
+  text-align: center;
+  padding: 15em 0 15em 0;
+}
+.visit-site-btn {
   background-color: #fc0;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
-  display: block;
   font-size: 1.4em;
   margin: auto;
   margin-bottom: 7em;
   padding: 1em;
-  text-align: center;
-  width: 13em;
 }
 .row:after {
   content: "";

@@ -15,5 +15,33 @@ layout: default
 
 <div class="slide work">
   <div class="overlay"></div>
-  {{ content }}
+  <div class="row">
+    <div class="work-intro">
+      <h1 class="work-title">{{ page.work-title }}</h1>
+      <h2 class="work-desc">{{ page.work-desc }}</h2>
+    </div>
+
+    <div class="work-panel">
+      <ul>
+        {% for item in page.work-items %}
+          <li><i class="icon-checkmark"></i>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="snapshots">
+    {% for src in page.snapshot-src %}
+      <div class="work-snap">
+        <img src="{{ src }}" alt="" />
+      </div>
+    {% endfor %}
+  </div>
 </div>
+<div class="row">
+  
+</div>
+{% if page.work-url  %}
+  <div class="visit-site">
+    <a class="visit-site-btn" href="http://{{ page.work-url }}">{{ page.work-url }}</a>
+  </div>
+{% endif %}
