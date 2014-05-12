@@ -104,6 +104,7 @@ $(window).bind("load", function() {
 
   //When the user clicks on the button, get the get the data-slide attribute value of the button and pass that variable to the goToByScroll function
   button.click(function (e) {
+    var dataslide
     e.preventDefault();
     dataslide = $(this).attr('data-slide');
     goToByScroll(dataslide);
@@ -134,7 +135,7 @@ $(window).bind("load", function() {
     var newLocation = this.href
     $(".slide").removeClass('reached')
     setTimeout(function(){
-      window.location = newLocation
+      location.href = newLocation
     }, 1000)
   })
 

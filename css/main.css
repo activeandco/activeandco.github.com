@@ -55,7 +55,7 @@ a {
   right: 0.75rem;
   font-size: 2.25em;
   color: #b8b8b8;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
 }
 .icon-close {
@@ -76,15 +76,15 @@ a {
 .movable {
   position: relative;
 }
-.main {
-  position: fixed;
-  bottom: 0;
-}
 .navigation li {
   margin: 0 0 1em 0.5em;
 }
 .navigation a {
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: #999;
   text-decoration: none;
   text-transform: uppercase;
@@ -117,7 +117,22 @@ a {
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .logo-wrapper {
-    visibility: hidden;
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    height: 50px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
   }
 }
 .logo {
@@ -125,6 +140,14 @@ a {
   position: fixed;
   top: 265px;
   width: 170px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .logo {
+    position: relative;
+    top: 17px;
+    left: 20px;
+    width: 150px;
+  }
 }
 .progress-bar {
   -moz-transition: all 2s ease-out;
@@ -164,7 +187,7 @@ a {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 2;
+  z-index: 10;
 }
 .reached .overlay {
   opacity: 0;
@@ -243,6 +266,13 @@ a {
   padding: 10px;
   text-align: center;
   width: 75%;
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  .baseline {
+    width: 100%;
+    margin-top: 1em;
+    padding: 0;
+  }
 }
 .competences {
   background-color: #fff;
@@ -389,6 +419,24 @@ a {
   position: relative;
   text-align: center;
   width: 23%;
+}
+@media only screen and (min-width : 960px) and (max-width : 1200px) {
+  .portfolio-item {
+    width: 31%;
+  }
+}
+@media only screen and (min-width : 480px) and (max-width : 960px) {
+  .portfolio-item {
+    width: 46%;
+  }
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  .portfolio-item {
+    float: none;
+    width: 98%;
+    margin: 10px auto 10px auto;
+    text-align: center;
+  }
 }
 .portfolio-mask,
 .hover-out .portfolio-mask {
@@ -608,29 +656,33 @@ address a {
   padding: 1em;
   text-decoration: none;
 }
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-  address {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-  }
-}
 /*
- *
  * Footer
- *
  */
+.sticky-footer {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -20em;
+}
+.sticky-footer .push {
+  height: 20em;
+}
 footer {
   background-color: #5999d6;
   color: #fff;
   text-align: center;
-  font-size: 70%;
-  position: relative;
-  padding: 15em 2em 5em;
+  height: 20em;
+}
+footer .footer-content {
+  padding-top: 10em;
+}
+footer .mention {
+  font-size: 75%;
 }
 footer .madein {
   float: right;
-  font-size: 90%;
+  font-size: 70%;
 }
 /* Utils */
 .v-spacer {
@@ -658,6 +710,7 @@ footer .madein {
   -webkit-transform: translateX(100%) translateY(-100%) rotate(45deg);
   -ms-transform: translateX(100%) translateY(-100%) rotate(45deg);
   transform: translateX(100%) translateY(-100%) rotate(45deg);
+  z-index: 3;
 }
 .waiting.animate {
   -moz-transform: translateX(50%) translateY(-50%) rotate(45deg);
@@ -751,6 +804,7 @@ footer .madein {
   margin-left: 10%;
   float: left;
   width: 40%;
+  padding-bottom: 2em;
 }
 .work-panel {
   background-color: #fff;
@@ -768,6 +822,16 @@ footer .madein {
   color: #919191;
 }
 .work-panel ul {
+  padding: 0.5em;
+}
+.work-panel-whithout-snap {
+  background-color: #fff;
+  padding: 4em 10% 2em 10%;
+}
+.work-panel-whithout-snap .icon-checkmark {
+  color: #919191;
+}
+.work-panel-whithout-snap ul {
   padding: 0.5em;
 }
 .work-snap {
@@ -886,7 +950,6 @@ footer .madein {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
   }
 
   50% {
@@ -895,7 +958,6 @@ footer .madein {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
   }
 
   100% {
@@ -904,7 +966,6 @@ footer .madein {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
   }
 }
 @-webkit-keyframes rotation {
@@ -914,7 +975,6 @@ footer .madein {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
   }
 
   50% {
@@ -923,7 +983,6 @@ footer .madein {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
   }
 
   100% {
@@ -932,7 +991,6 @@ footer .madein {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
   }
 }
 @-o-keyframes rotation {
@@ -942,7 +1000,6 @@ footer .madein {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
   }
 
   50% {
@@ -951,7 +1008,6 @@ footer .madein {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
   }
 
   100% {
@@ -960,7 +1016,6 @@ footer .madein {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
   }
 }
 @-ms-keyframes rotation {
@@ -970,7 +1025,6 @@ footer .madein {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
   }
 
   50% {
@@ -979,7 +1033,6 @@ footer .madein {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
   }
 
   100% {
@@ -988,7 +1041,6 @@ footer .madein {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
   }
 }
 @keyframes rotation {
@@ -998,7 +1050,6 @@ footer .madein {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
   }
 
   50% {
@@ -1007,7 +1058,6 @@ footer .madein {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
   }
 
   100% {
@@ -1016,6 +1066,5 @@ footer .madein {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
   }
 }

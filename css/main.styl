@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6
   font: 100% 'Quicksand', sans-serif
   font-weight: 400
 
+
 img
   max-width: 100%
 
@@ -82,7 +83,7 @@ a
   right: 0.75rem
   font-size: 2.25em
   color: #B8B8B8
-  z-index: 1
+  z-index: 2
   cursor: pointer
 
 .icon-close
@@ -103,15 +104,11 @@ a
 .movable
   position: relative
 
-.main
-  position: fixed
-  bottom: 0
-
 .navigation li
   margin: 0 0 1em .5em
 
 .navigation a
-  -webkit-transition: all .2s ease-in-out
+  transition: all .2s ease-in-out
   color: #999
   text-decoration: none
   text-transform: uppercase
@@ -137,13 +134,28 @@ a
 
 @media only screen and (min-width: 320px) and (max-width: 480px)
   .logo-wrapper
-    visibility: hidden
+    transform rotate(0deg)
+    filter unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=0)')
+    height 50px
+    width 100%
+    position relative
+    top 0
+    left 0
+    box-shadow none
+    border none
 
 .logo
-  left: 22px
-  position: fixed
-  top: 265px
-  width: 170px
+  left 22px
+  position fixed
+  top 265px
+  width 170px
+
+@media only screen and (min-width: 320px) and (max-width: 480px)
+  .logo
+    position relative
+    top 17px
+    left 20px
+    width 150px
 
 .progress-bar
   transition: all 2s ease-out
@@ -168,18 +180,18 @@ a
   width: 100%
 
 .overlay
-  transition: all 1s ease-out
-  background: #000
-  bottom: 0
-  left: 0
-  position: absolute
-  right: 0
-  top: 0
-  z-index: 2
+  transition all 1s ease-out
+  background #000
+  bottom 0
+  left 0
+  position absolute
+  right 0
+  top 0
+  z-index 10
 
 .reached .overlay
-  opacity: 0
-  visibility: hidden
+  opacity 0
+  visibility hidden
 
 .section-name
   font: 100% 'Quicksand', sans-serif
@@ -249,6 +261,12 @@ a
   padding: 10px
   text-align: center
   width: 75%
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .baseline
+    width 100%
+    margin-top 1em
+    padding 0
 
 .competences
   background-color: #FFF
@@ -369,7 +387,7 @@ a
   background-color: #ECE5D7
 
 .portfolio-item
-  background-repeat: no-repeat;
+  background-repeat: no-repeat
   background-color: #fff
   float: left
   height: 20em
@@ -378,6 +396,22 @@ a
   position: relative
   text-align: center
   width: 23%
+
+
+@media only screen and (min-width : 960px) and (max-width : 1200px)
+  .portfolio-item
+    width 31%
+
+@media only screen and (min-width : 480px) and (max-width : 960px)
+  .portfolio-item
+    width 46%
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .portfolio-item
+    float none
+    width 98%
+    margin: 10px auto 10px auto 
+    text-align center
 
 .portfolio-mask, .hover-out .portfolio-mask
   transition: opacity .3s cubic-bezier(0.645,0.045,0.355,1)
@@ -584,29 +618,33 @@ address
     padding: 1em
     text-decoration: none
 
-@media only screen and (min-width : 320px) and (max-width : 480px)
-  address
-    position: absolute
-    top: 20%
-    left: 20%
-
-
 /*
- *
  * Footer
- *
  */
+footerheight = 20em
+.sticky-footer
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -(footerheight)
+  .push
+    height: footerheight
+
 footer
   background-color: blue
   color: white
   text-align: center
-  font-size: 70%
-  position: relative
-  padding: 15em 2em 5em
+  height: footerheight
+
+footer .footer-content
+  padding-top (footerheight / 2)
+
+footer .mention
+  font-size: 75%
 
 footer .madein
-  float: right
-  font-size: 90%
+  float right
+  font-size: 70%
 
 /* Utils */
 .v-spacer
@@ -626,6 +664,7 @@ footer .madein
   pointer-events: none
   transition all 0.3s
   transform translateX(100%) translateY(-100%) rotate(45deg)
+  z-index 3
 
 .waiting.animate
   transform translateX(50%) translateY(-50%) rotate(45deg)
@@ -657,13 +696,10 @@ footer .madein
 @keyframes rotation
   0%
     transform: rotate(0deg)
-    -webkit-transform: rotate(0deg)
   50%
     transform: rotate(180deg)
-    -webkit-transform: rotate(180deg)
   100%
     transform: rotate(360deg)
-    -webkit-transform: rotate(360deg)
 
 
 // Portfolio details pages
@@ -711,6 +747,7 @@ footer .madein
   margin-left: 10%
   float left
   width 40%
+  padding-bottom: 2em
 
 .work-panel
   background-color: #FFF
@@ -720,6 +757,14 @@ footer .madein
   position: relative
   top: 33px
   width: 40%
+  .icon-checkmark
+    color #919191
+  ul
+    padding .5em
+
+.work-panel-whithout-snap
+  background-color: #FFF
+  padding: 4em 10% 2em 10%
   .icon-checkmark
     color #919191
   ul
@@ -751,7 +796,6 @@ footer .madein
   margin auto
   margin-bottom: 7em
   padding 1em
-
 
 // Utils
 .row:after
