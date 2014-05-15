@@ -32,12 +32,24 @@ transition()
   -webkit-transition arguments
   transition arguments
 
-box-shadow()
-  -moz-box-shadow: arguments;
-  -o-box-shadow: arguments;
-  -webkit-box-shadow: arguments;
-  box-shadow: arguments;
+transition-delay()
+  -webkit-transition-delay: arguments
+  -moz-transition-delay: arguments
+  -o-transition-delay: arguments
+  -ms-transition-delay: arguments
+  transition-delay: arguments
 
+box-shadow()
+  -moz-box-shadow arguments
+  -o-box-shadow arguments
+  -webkit-box-shadow arguments
+  box-shadow arguments
+
+background-size()
+  -webkit-background-size arguments
+  -moz-background-size arguments
+  -o-background-size arguments
+  background-size arguments
 
 *
   margin: 0
@@ -46,6 +58,13 @@ box-shadow()
 html,
 body
   height: 100%
+
+html
+  height:100%;
+  min-height:100%;
+
+body
+  min-height:100%;
 
 body
   color: #444
@@ -89,24 +108,28 @@ a
 .icon-close
   display: none
 
+sidebar-width = 260px
+
 .layout-sidebar
   position: fixed
-  right: 0
+  right: -(sidebar-width)
   top: 0
-  width: 260px
-  height: 100%
+  bottom: 0
+  width: sidebar-width
   background: #333
   color: #999
-  margin-top: 0
-  margin-right: 0
+
 
   .main
-    position: fixed
+    position: absolute
     bottom: 0
 
 .movable
+  transition: left .5s ease-in-out
   position: relative
-  left 0
+
+.move
+  left -(sidebar-width)
 
 .navigation li
   margin: 0 0 1em .5em
@@ -179,7 +202,7 @@ a
   background-attachment: fixed
   background-color: #fff
   overflow: hidden
-  position: relative
+  position relative
   /* needed to z-index */
   width: 100%
 
@@ -231,17 +254,13 @@ a
  SLIDE 1
 *******************************/
 .visual
-  width: 100%
-  padding-top: 100px
-  padding-bottom: 100px
-  background: url(../img/intro.jpg) no-repeat bottom right fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding-top 100px
+  padding-bottom 100px
+  background url(../img/intro.jpg) no-repeat top right fixed;
+  background-size cover
 
 .word-emphasis
-  -webkit-transition: color 500ms
+  transition: color 500ms
   color: #fc0
 
 .visual-text
@@ -298,50 +317,30 @@ a
     width: 95%
 
 .competence:nth-child(1)
-  -webkit-transition-delay: 80ms
-  -moz-transition-delay: 80ms
-  -o-transition-delay: 80ms
-  -ms-transition-delay: 80ms
   transition-delay: 80ms
 
 .competence:nth-child(2)
-  -webkit-transition-delay: 160ms
-  -moz-transition-delay: 160ms
-  -o-transition-delay: 160ms
-  -ms-transition-delay: 160ms
   transition-delay: 160ms
 
 .competence:nth-child(3)
-  -webkit-transition-delay: 240ms
-  -moz-transition-delay: 240ms
-  -o-transition-delay: 240ms
-  -ms-transition-delay: 240ms
   transition-delay: 240ms
 
 .competence:nth-child(4)
-  -webkit-transition-delay: 320ms
-  -moz-transition-delay: 320ms
-  -o-transition-delay: 320ms
-  -ms-transition-delay: 320ms
   transition-delay: 320ms
 
 .reached .competence
-  -webkit-transform: scale(1)
-  -moz-transform: scale(1)
-  -o-transform: scale(1)
-  -ms-transform: scale(1)
   transform: scale(1)
 
 .competence-icon
-  -webkit-transition: background-color 500ms
-  width: 140px
-  font-size: 4em
+  background-color: #fc0
+  border-radius: 50%
+  border: 10px solid #fff
   color: #fff
+  font-size: 4em
   height: 140px
   margin: auto
-  border-radius: 50%
-  background-color: #fc0
-  border: 10px solid #fff
+  transition: background-color 500ms
+  width: 140px
 
 .competence-icon > div
   margin-top: 40px
@@ -446,9 +445,11 @@ a
   position: absolute
   right: 0
   top: 100%
-  -webkit-animation-duration: .5s
-  -webkit-animation-timing-function: ease-in-out
-  -webkit-animation-fill-mode: forwards
+  overflow: hidden /* hide webkit cube overflow */
+  //-webkit-animation-duration: .5s
+  //-webkit-animation-timing-function: ease-in-out
+  //-webkit-animation-fill-mode: forwards
+  animation: .5s ease-in-out forwards
 
 .portfolio-detail p
   margin-top: 1em
@@ -474,18 +475,24 @@ a
 .scene
   -webkit-perspective: 1400
   -webkit-perspective-origin: 50% 50%
+  -moz-perspective: 1400
+  -moz-perspective-origin: 50% 50%
+  perspective: 1400
+  perspective-origin: 50% 50%
   float: right
 
 .cube
   position: relative
-  margin: 1px 1px auto
+  //margin: 1px 1px auto
   height: 5em
   width: 5em
   -webkit-transition: -webkit-transform .3s ease
   -webkit-transform-style: preserve-3d
+  transition: transform .3s ease
+  transform-style: preserve-3d
 
 .cube:hover
-  -webkit-transform: rotateY(90deg)
+  transform: rotateY(90deg)
 
 .face
   position: absolute
@@ -498,23 +505,23 @@ a
   font-size: 500%
 
 .cube .one
-  -webkit-transform: rotateX(90deg) translateZ(2.5em)
+  transform: rotateX(90deg) translateZ(2.5em)
 
 .cube .two
-  -webkit-transform: translateZ(2.5em)
+  transform: translateZ(2.5em)
 
 .cube .three
-  -webkit-transform: rotateY(90deg) translateZ(2.5em)
+  transform: rotateY(90deg) translateZ(2.5em)
 
 .cube .four
-  -webkit-transform: rotateY(180deg) translateZ(2.5em)
+  transform: rotateY(180deg) translateZ(2.5em)
 
 .cube .five
-  -webkit-transform: rotateY(-90deg) translateZ(2.5em)
+  transform: rotateY(-90deg) translateZ(2.5em)
   background: #4084C5
 
 .cube .six
-  -webkit-transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
+  transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
 
 .roll-more
   float: right
