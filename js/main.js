@@ -162,21 +162,24 @@ $(window).bind("load", function() {
   }
 
   // Helper functions
-  function hideSide() {
+  function hideSide(cb) {
+    var delay = parseFloat($('.movable').css('transitionDuration')) * 1000
     $('.icon-close').hide('drop', 100, function(){
       $('.icon-menu').show('fade', 200)
     })
-
-    $(".layout-sidebar").css({'right': '-260px'})
     $(".movable").removeClass('move')
-    sideOpen = false
+    // replace sidebar after movable transition
+    setTimeout(function(){
+      sideOpen = false
+      $(".layout-sidebar").css({'right': '-260px'})
+      cb()
+    }, delay)
   }
 
   function showSide() {
     $('.icon-menu').hide('drop', 200, function(){
       $('.icon-close').show('fade', 1000)
     })
-    //$(".movable").animate({'left': '-260px'}, 500)
     $(".layout-sidebar").css({'right': '0'})
     $(".movable").addClass('move')
     sideOpen = true

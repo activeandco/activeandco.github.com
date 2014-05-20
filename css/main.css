@@ -1,7 +1,6 @@
-/* Global Reset */
-/* 
+/*
  * green #31AD01
- * */
+ */
 * {
   margin: 0;
   padding: 0;
@@ -88,6 +87,7 @@ a {
   -webkit-transition: left 0.5s ease-in-out;
   transition: left 0.5s ease-in-out;
   position: relative;
+  left: 0;
 }
 .move {
   left: -260px;
@@ -819,6 +819,7 @@ footer .madein {
   color: #535353;
   font-size: 2em;
   margin-bottom: 1em;
+  border-bottom: 20px solid #ffe26f;
 }
 .work .work-desc {
   color: #808080;
@@ -885,6 +886,7 @@ footer .madein {
 }
 .work-panel ul {
   padding: 0.5em;
+  border: 20px solid rgba(89,153,214,0.71);
 }
 .work-panel-whithout-snap {
   background-color: #fff;
