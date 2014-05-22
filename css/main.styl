@@ -22,12 +22,13 @@ border-radius(radius)
 
 animation()
   -webkit-animation arguments
+  -moz-animation arguments
+  -o-animation arguments
   animation arguments
 
 transition()
   -moz-transition arguments
   -o-transition arguments
-  -ms-transition arguments
   -webkit-transition arguments
   transition arguments
 
@@ -35,7 +36,6 @@ transition-delay()
   -webkit-transition-delay: arguments
   -moz-transition-delay: arguments
   -o-transition-delay: arguments
-  -ms-transition-delay: arguments
   transition-delay: arguments
 
 box-shadow()
@@ -159,7 +159,7 @@ sidebar-width = 260px
   width: 300px
   z-index: 1
 
-@media only screen and (min-width: 320px) and (max-width: 480px)
+@media only screen and (min-width: 220px) and (max-width: 480px)
   .logo-wrapper
     transform rotate(0deg)
     filter unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=0)')
@@ -173,7 +173,7 @@ sidebar-width = 260px
 
 .logo
   left 22px
-  position fixed
+  position relative
   top 265px
   width 170px
 
@@ -436,7 +436,6 @@ sidebar-width = 260px
   margin-top: 7em
 
 .portfolio-detail
-  background-color: #303030
   background-color: #2E3234
   bottom: 0
   color: #FFF
@@ -446,9 +445,6 @@ sidebar-width = 260px
   right: 0
   top: 100%
   overflow: hidden /* hide webkit cube overflow */
-  //-webkit-animation-duration: .5s
-  //-webkit-animation-timing-function: ease-in-out
-  //-webkit-animation-fill-mode: forwards
   animation: .5s ease-in-out forwards
 
 .portfolio-detail p
@@ -461,23 +457,24 @@ sidebar-width = 260px
 
 .hover-out .portfolio-detail
   -webkit-animation-name: outKeyframes
-  animation-name: inKeyframes
+  animation-name: outKeyframes
 
 @keyframes inKeyframes
   20%
     top: 12em
   100%
     top: 15em
+
 @keyframes outKeyframes
   100%
     top: 100%
 
 .scene
-  -webkit-perspective: 1400
+  -webkit-perspective: 1400px
   -webkit-perspective-origin: 50% 50%
-  -moz-perspective: 1400
+  -moz-perspective: 1400px
   -moz-perspective-origin: 50% 50%
-  perspective: 1400
+  perspective: 1400px
   perspective-origin: 50% 50%
   float: right
 
@@ -486,13 +483,16 @@ sidebar-width = 260px
   //margin: 1px 1px auto
   height: 5em
   width: 5em
-  -webkit-transition: -webkit-transform .3s ease
-  -webkit-transform-style: preserve-3d
   transition: transform .3s ease
   transform-style: preserve-3d
+  -webkit-transition: -webkit-transform .3s ease
+  -webkit-transform-style: preserve-3d
+  z-index: 44400
 
 .cube:hover
   transform: rotateY(90deg)
+
+
 
 .face
   position: absolute
@@ -523,6 +523,51 @@ sidebar-width = 260px
 .cube .six
   transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
 
+html[data-useragent*='rv:11'] .cube
+  transform none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .cube:hover
+  color: blue;
+  transform: none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .scene
+  perspective none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .cube .one
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .two
+  transform: none;
+  transition none
+  transform-style: none
+html[data-useragent*='rv:11'] .cube .three
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .four
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .five
+  transform: none;
+  transition none
+  transform-style: none
+html[data-useragent*='rv:11'] .cube .six
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+
 .roll-more
   float: right
   background: #31AD01
@@ -535,36 +580,34 @@ sidebar-width = 260px
   -ms-perspective-origin: 50% 50%
   perspective-origin: 50% 50%
 
-.roll-more span
-  width: 90px
-  position: relative
-  display: inline-block
-  transition: all 400ms ease
-  -webkit-transform-origin: 50% 0%
-  -moz-transform-origin: 50% 0%
-  -ms-transform-origin: 50% 0%
-  transform-origin: 50% 0%
-  -webkit-transform-style: preserve-3d
-  -moz-transform-style: preserve-3d
-  -ms-transform-style: preserve-3d
-  transform-style: preserve-3d
+//.roll-more span
+//width: 90px
+//position: relative
+//display: inline-block
+//transition: all 400ms ease
+//-webkit-transform-origin: 50% 0%
+//-moz-transform-origin: 50% 0%
+//transform-origin: 50% 0%
+//-webkit-transform-style: preserve-3d
+//-moz-transform-style: preserve-3d
+//transform-style: preserve-3d
 
-.roll-more span:after
-  content: attr(data-title)
-  background: #31AD01
-  position: absolute
-  left: 0
-  width: 90px
-  -webkit-transform-origin: 0% 50%
-  -moz-transform-origin: 50% 0%
-  -ms-transform-origin: 50% 0%
-  transform-origin: 50% 0%
-  transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
+//.roll-more span:after
+//content: attr(data-title)
+//background: #31AD01
+//position: absolute
+//left: 0
+//width: 90px
+//-webkit-transform-origin: 0% 50%
+//-moz-transform-origin: 50% 0%
+//-ms-transform-origin: 50% 0%
+//transform-origin: 50% 0%
+//transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
 
-.roll-more:hover span
-  background: #31AD01
-  left: -2px
-  transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
+//.roll-more:hover span
+//background: #31AD01
+//left: -2px
+//transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
 
 .crm-maranatha
   background-image: url(../img/portfolio/thumbs/crm-maranatha.jpg)
@@ -591,8 +634,8 @@ sidebar-width = 260px
 
 .mediarewards
   background-image: url(../img/portfolio/thumbs/mediarewards.svg)
-  background-size: 200px 200px;
-  background-position: 20px -35px;
+  background-size: 50%
+  background-position: 20px 20px
 
 /******************************
  Process

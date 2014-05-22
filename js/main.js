@@ -3,6 +3,9 @@ $(function(){
   $('.progress-bar').addClass('start')
 })
 
+// set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
+var doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
 
 // Page loaded
 $(window).bind("load", function() {

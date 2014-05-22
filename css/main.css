@@ -83,7 +83,6 @@ a {
 .movable {
   -moz-transition: left 0.5s ease-in-out;
   -o-transition: left 0.5s ease-in-out;
-  -ms-transition: left 0.5s ease-in-out;
   -webkit-transition: left 0.5s ease-in-out;
   transition: left 0.5s ease-in-out;
   position: relative;
@@ -98,7 +97,6 @@ a {
 .navigation a {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #999;
@@ -131,7 +129,7 @@ a {
   width: 300px;
   z-index: 1;
 }
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 220px) and (max-width: 480px) {
   .logo-wrapper {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -153,7 +151,7 @@ a {
 }
 .logo {
   left: 22px;
-  position: fixed;
+  position: relative;
   top: 265px;
   width: 170px;
 }
@@ -168,7 +166,6 @@ a {
 .progress-bar {
   -moz-transition: all 2s ease-out;
   -o-transition: all 2s ease-out;
-  -ms-transition: all 2s ease-out;
   -webkit-transition: all 2s ease-out;
   transition: all 2s ease-out;
   width: 0;
@@ -194,7 +191,6 @@ a {
 .overlay {
   -moz-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
-  -ms-transition: all 1s ease-out;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
   background: #000;
@@ -258,7 +254,6 @@ a {
 .word-emphasis {
   -moz-transition: color 500ms;
   -o-transition: color 500ms;
-  -ms-transition: color 500ms;
   -webkit-transition: color 500ms;
   transition: color 500ms;
   color: #fc0;
@@ -306,7 +301,6 @@ a {
   -ms-transition: -ms-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
   -moz-transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
   -o-transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
-  -ms-transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
   -webkit-transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
   transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175);
   -webkit-transform: scale(0);
@@ -331,28 +325,24 @@ a {
   -webkit-transition-delay: 80ms;
   -moz-transition-delay: 80ms;
   -o-transition-delay: 80ms;
-  -ms-transition-delay: 80ms;
   transition-delay: 80ms;
 }
 .competence:nth-child(2) {
   -webkit-transition-delay: 160ms;
   -moz-transition-delay: 160ms;
   -o-transition-delay: 160ms;
-  -ms-transition-delay: 160ms;
   transition-delay: 160ms;
 }
 .competence:nth-child(3) {
   -webkit-transition-delay: 240ms;
   -moz-transition-delay: 240ms;
   -o-transition-delay: 240ms;
-  -ms-transition-delay: 240ms;
   transition-delay: 240ms;
 }
 .competence:nth-child(4) {
   -webkit-transition-delay: 320ms;
   -moz-transition-delay: 320ms;
   -o-transition-delay: 320ms;
-  -ms-transition-delay: 320ms;
   transition-delay: 320ms;
 }
 .reached .competence {
@@ -375,7 +365,6 @@ a {
   margin: auto;
   -moz-transition: background-color 500ms;
   -o-transition: background-color 500ms;
-  -ms-transition: background-color 500ms;
   -webkit-transition: background-color 500ms;
   transition: background-color 500ms;
   width: 140px;
@@ -461,7 +450,6 @@ a {
 .hover-out .portfolio-mask {
   -moz-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -ms-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-property: opacity;
@@ -482,7 +470,6 @@ a {
   margin-top: 7em;
 }
 .portfolio-detail {
-  background-color: #303030;
   background-color: #2e3234;
   bottom: 0;
   color: #fff;
@@ -494,6 +481,8 @@ a {
   overflow: hidden;
 /* hide webkit cube overflow */
   -webkit-animation: 0.5s ease-in-out forwards;
+  -moz-animation: 0.5s ease-in-out forwards;
+  -o-animation: 0.5s ease-in-out forwards;
   animation: 0.5s ease-in-out forwards;
 }
 .portfolio-detail p {
@@ -506,14 +495,14 @@ a {
 }
 .hover-out .portfolio-detail {
   -webkit-animation-name: outKeyframes;
-  animation-name: inKeyframes;
+  animation-name: outKeyframes;
 }
 .scene {
-  -webkit-perspective: 1400;
+  -webkit-perspective: 1400px;
   -webkit-perspective-origin: 50% 50%;
-  -moz-perspective: 1400;
+  -moz-perspective: 1400px;
   -moz-perspective-origin: 50% 50%;
-  perspective: 1400;
+  perspective: 1400px;
   perspective-origin: 50% 50%;
   float: right;
 }
@@ -521,14 +510,14 @@ a {
   position: relative;
   height: 5em;
   width: 5em;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transform-style: preserve-3d;
   -moz-transition: transform 0.3s ease;
   -o-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transform-style: preserve-3d;
+  z-index: 44400;
 }
 .cube:hover {
   -moz-transform: rotateY(90deg);
@@ -590,6 +579,115 @@ a {
   -ms-transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg);
   transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg);
 }
+html[data-useragent*='rv:11'] .cube {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+}
+html[data-useragent*='rv:11'] .cube:hover {
+  color: #5999d6;
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+}
+html[data-useragent*='rv:11'] .scene {
+  perspective: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+}
+html[data-useragent*='rv:11'] .cube .one {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+  display: none;
+}
+html[data-useragent*='rv:11'] .cube .two {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+}
+html[data-useragent*='rv:11'] .cube .three {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+  display: none;
+}
+html[data-useragent*='rv:11'] .cube .four {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+  display: none;
+}
+html[data-useragent*='rv:11'] .cube .five {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+}
+html[data-useragent*='rv:11'] .cube .six {
+  -moz-transform: none;
+  -o-transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  transform-style: none;
+  display: none;
+}
 .roll-more {
   float: right;
   background: #31ad01;
@@ -601,49 +699,6 @@ a {
   -moz-perspective-origin: 50% 50%;
   -ms-perspective-origin: 50% 50%;
   perspective-origin: 50% 50%;
-}
-.roll-more span {
-  width: 90px;
-  position: relative;
-  display: inline-block;
-  -moz-transition: all 400ms ease;
-  -o-transition: all 400ms ease;
-  -ms-transition: all 400ms ease;
-  -webkit-transition: all 400ms ease;
-  transition: all 400ms ease;
-  -webkit-transform-origin: 50% 0%;
-  -moz-transform-origin: 50% 0%;
-  -ms-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.roll-more span:after {
-  content: attr(data-title);
-  background: #31ad01;
-  position: absolute;
-  left: 0;
-  width: 90px;
-  -webkit-transform-origin: 0% 50%;
-  -moz-transform-origin: 50% 0%;
-  -ms-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
-  -moz-transform: translate3d(105%, 0px, 0px) rotateY(-90deg);
-  -o-transform: translate3d(105%, 0px, 0px) rotateY(-90deg);
-  -webkit-transform: translate3d(105%, 0px, 0px) rotateY(-90deg);
-  -ms-transform: translate3d(105%, 0px, 0px) rotateY(-90deg);
-  transform: translate3d(105%, 0px, 0px) rotateY(-90deg);
-}
-.roll-more:hover span {
-  background: #31ad01;
-  left: -2px;
-  -moz-transform: translate3d(45px, 0px, -30px) rotateY(90deg);
-  -o-transform: translate3d(45px, 0px, -30px) rotateY(90deg);
-  -webkit-transform: translate3d(45px, 0px, -30px) rotateY(90deg);
-  -ms-transform: translate3d(45px, 0px, -30px) rotateY(90deg);
-  transform: translate3d(45px, 0px, -30px) rotateY(90deg);
 }
 .crm-maranatha {
   background-image: url("../img/portfolio/thumbs/crm-maranatha.jpg");
@@ -670,11 +725,11 @@ a {
 }
 .mediarewards {
   background-image: url("../img/portfolio/thumbs/mediarewards.svg");
-  -webkit-background-size: 200px 200px;
-  -moz-background-size: 200px 200px;
-  -o-background-size: 200px 200px;
-  background-size: 200px 200px;
-  background-position: 20px -35px;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
+  background-position: 20px 20px;
 }
 /******************************
  Process
@@ -764,7 +819,6 @@ footer .madein {
   pointer-events: none;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   -moz-transform: translateX(100%) translateY(-100%) rotate(45deg);
@@ -786,6 +840,8 @@ footer .madein {
   width: 80px;
   height: 80px;
   -webkit-animation: rotation 3s linear infinite;
+  -moz-animation: rotation 3s linear infinite;
+  -o-animation: rotation 3s linear infinite;
   animation: rotation 3s linear infinite;
 }
 .waiting::before,
@@ -809,6 +865,8 @@ footer .madein {
   border-top-color: #5999d6;
   border-bottom-color: #5999d6;
   -webkit-animation: rotation 1s linear infinite;
+  -moz-animation: rotation 1s linear infinite;
+  -o-animation: rotation 1s linear infinite;
   animation: rotation 1s linear infinite;
 }
 .work {
