@@ -12,11 +12,8 @@ doc.setAttribute('data-useragent', navigator.userAgent);
 $(window).load( function() {
   "use strict";
 
-  var timerDelay = 2000
-  setTimeout(function(){
-    $('.progress-bar').remove()
-    $('.waiting').removeClass('animate')
-  }, timerDelay)
+  $('.progress-bar').remove()
+  $('.waiting').removeClass('animate')
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
 
