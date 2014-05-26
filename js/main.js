@@ -8,7 +8,8 @@ var doc = document.documentElement;
 doc.setAttribute('data-useragent', navigator.userAgent);
 
 // Page loaded
-$(window).bind("load", function() {
+//$(window).bind("load", function() {
+$(window).load( function() {
   "use strict";
 
   var timerDelay = 2000
@@ -49,13 +50,12 @@ $(window).bind("load", function() {
 
   //Setup waypoints plugin
   slide.waypoint(function (direction) {
-    var dataslide
-    $(this).addClass('reached')
     //cache the variable of the data-slide attribute associated with each slide
-    dataslide = $(this).attr('data-slide');
+    var dataslide = $(this).attr('data-slide');
     //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and
     //remove the active class from the previous navigation link
     if (direction === 'down') {
+      $(this).addClass('reached')
       $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').prev().removeClass('active');
     }
     // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to active and
@@ -175,7 +175,8 @@ $(window).bind("load", function() {
     setTimeout(function(){
       sideOpen = false
       $(".layout-sidebar").css({'right': '-260px'})
-      cb()
+      if(cb)
+        cb()
     }, delay)
   }
 
