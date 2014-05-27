@@ -1,6 +1,5 @@
 // DOM loaded
 $(function(){
-  $('.progress-bar').addClass('start')
 })
 
 // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
@@ -12,7 +11,6 @@ doc.setAttribute('data-useragent', navigator.userAgent);
 $(window).load( function() {
   "use strict";
 
-  $('.progress-bar').remove()
   $('.waiting').removeClass('animate')
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
