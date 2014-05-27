@@ -47,18 +47,11 @@ $(window).load( function() {
 
   //Setup waypoints plugin
   slide.waypoint(function (direction) {
-    //cache the variable of the data-slide attribute associated with each slide
     var dataslide = $(this).attr('data-slide');
-    //If the user scrolls up change the navigation link that has the same data-slide attribute as the slide to active and
-    //remove the active class from the previous navigation link
+    $('.navigation a[data-slide!="'+ dataslide +'"]').removeClass('active')
+    $('.navigation a[data-slide="' + dataslide + '"]').addClass('active')
     if (direction === 'down') {
       $(this).addClass('reached')
-      $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').prev().removeClass('active');
-    }
-    // else If the user scrolls down change the navigation link that has the same data-slide attribute as the slide to active and
-    //remove the active class from the next navigation link
-    else {
-      $('.navigation li[data-slide="' + dataslide + '"]').addClass('active').next().removeClass('active');
     }
   }, { offset: '35%' });
 
@@ -66,10 +59,8 @@ $(window).load( function() {
   //from navigation link slide 2 and adds it to navigation link slide 1.
   mywindow.scroll(function () {
     if (mywindow.scrollTop() == 0) {
-      $('.navigation li[data-slide="1"]').addClass('active');
-      $('.navigation li[data-slide="2"]').removeClass('active');
-      $('.navigation li[data-slide="3"]').removeClass('active');
-      $('.navigation li[data-slide="4"]').removeClass('active');
+      $('.navigation a[data-slide="1"]').addClass('active');
+      $('.navigation a[data-slide!="1"]').removeClass('active');
     }
   });
 
