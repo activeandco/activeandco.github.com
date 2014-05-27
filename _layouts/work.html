@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="slide sticky-footer">
+<div class="work-nav">
+  <div class="navbar-inner">
+    <nav class="breadcrumb">
+      <a href="/" title="retour accueil">../</a><a href="/#portfolio" title="retour portfolio">work/</a>{{ page.breadcrumb }}
+    </nav>
+    <a href="/">
+      <img src="/img/logo-7.png" class="logo" alt="logo active and co" />
+    </a>
+  </div>
+</div>
+
+<div class="work">
+  <div class="overlay"></div>
+  <div class="row">
+    <div class="work-intro">
+      <h1 class="work-title">{{ page.work-title }}</h1>
+      <h2 class="work-desc">{{ page.work-desc }}</h2>
+    </div>
+
+    {% if page.snapshot-src %}
+      <div class="work-panel">
+        <ul>
+          {% for item in page.work-items %}
+            <li><i class="icon-checkmark"></i>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div><!-- end .row -->
+  {% if page.snapshot-src == nil %}
+    <div class="work-panel-whithout-snap">
+      <ul>
+        {% for item in page.work-items %}
+          <li><i class="icon-checkmark"></i>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <div class="snapshots">
+      {% for src in page.snapshot-src %}
+        <div class="work-snap">
+          <img src="{{ src }}" alt="" />
+        </div>
+      {% endfor %}
+  </div>
+</div>
+{% if page.work-url  %}
+  <div class="visit-site">
+    <a class="visit-site-btn" href="http://{{ page.work-url }}">{{ page.work-url }}</a>
+  </div>
+{% endif %}
+<div class="push"></div><!-- required for stycky footer -->
+</div><!-- end sticky footer -->

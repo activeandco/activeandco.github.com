@@ -1,0 +1,868 @@
+/*
+ * green #31AD01
+ */
+
+yellow = #FC0
+blue = #5999D6
+grey = #ECE5D7
+
+// Mixins
+transform()
+  -moz-transform arguments
+  -o-transform arguments
+  -webkit-transform arguments
+  -ms-transform arguments
+  transform arguments
+
+border-radius(radius)
+  -moz-border-radius: radius;
+  -webkit-border-radius: radius;
+  -o-border-radius: radius;
+  border-radius: radius;
+
+animation()
+  -webkit-animation arguments
+  -moz-animation arguments
+  -o-animation arguments
+  animation arguments
+
+transition()
+  -moz-transition arguments
+  -o-transition arguments
+  -webkit-transition arguments
+  transition arguments
+
+transition-delay()
+  -webkit-transition-delay: arguments
+  -moz-transition-delay: arguments
+  -o-transition-delay: arguments
+  transition-delay: arguments
+
+box-shadow()
+  -moz-box-shadow arguments
+  -o-box-shadow arguments
+  -webkit-box-shadow arguments
+  box-shadow arguments
+
+background-size()
+  -webkit-background-size arguments
+  -moz-background-size arguments
+  -o-background-size arguments
+  background-size arguments
+
+*
+  margin: 0
+  padding: 0
+
+html
+body
+  height: 100%
+
+html
+  height:100%;
+  min-height:100%;
+
+body
+  min-height:100%;
+
+body
+  color: #444
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Muli', sans-serif;
+  font-weight: 400
+
+h1, h2, h3, h4, h5, h6
+  font-weight 400
+
+.baseline, .section-name, .need-quote, .work-nav, .visual-text
+  font: 100% 'Quicksand', sans-serif
+  font-weight: 400
+
+
+img
+  max-width: 100%
+
+ul
+  list-style: none
+
+a
+  color: white
+  text-decoration: none
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  body
+    font-size: 80%
+
+/*  Header */
+.side-bar-toggle
+  position: fixed
+  top: 0.75rem
+  right: 0.75rem
+  font-size: 2.25em
+  color: #B8B8B8
+  z-index: 2
+  cursor: pointer
+
+.icon-close
+  display: none
+
+sidebar-width = 260px
+
+.layout-sidebar
+  position: fixed
+  right: -(sidebar-width)
+  top: 0
+  bottom: 0
+  width: sidebar-width
+  background: #333
+  color: #999
+
+
+  .main
+    position: absolute
+    bottom: 0
+
+.movable
+  transition left .5s ease-in-out
+  position relative
+  left 0
+
+.move
+  left -(sidebar-width)
+
+.navigation li
+  margin 0 0 1em .5em
+
+.navigation a
+  transition: all .2s ease-in-out
+  color: #999
+  text-decoration: none
+  text-transform: uppercase
+  font-size: 1.4em
+  width: 53px
+
+.navigation a:hover,
+.active a
+  color: #eee
+
+.logo-wrapper
+  transform: rotate(-45deg)
+  background-color: #FFF
+  border: 10px solid #EBE9E6
+  box-shadow: 1px 1px 10px #555
+  filter: unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=3)')
+  height: 300px
+  left: -159px
+  position: fixed
+  top: -220px
+  width: 300px
+  z-index: 1
+
+@media only screen and (min-width: 220px) and (max-width: 480px)
+  .logo-wrapper
+    transform rotate(0deg)
+    filter unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=0)')
+    height 50px
+    width 100%
+    position relative
+    top 0
+    left 0
+    box-shadow none
+    border none
+
+.logo
+  left 22px
+  position relative
+  top 265px
+  width 170px
+
+@media only screen and (min-width: 320px) and (max-width: 480px)
+  .logo
+    position relative
+    top 17px
+    left 20px
+    width 150px
+
+.progress-bar
+  transition: all 2s ease-out
+  width: 0
+  height: 3px
+  background-color: #3F82C4
+  position: fixed
+  top: 0
+  z-index: 4
+  visibility: hidden
+
+.start
+  width: 110%
+  visibility: visible
+
+.slide
+  background-attachment: fixed
+  background-color: #fff
+  overflow hidden
+  position relative
+  /* needed to z-index */
+  width: 100%
+
+.overlay
+  transition all 1s ease-out
+  background #000
+  bottom 0
+  left 0
+  position absolute
+  right 0
+  top 0
+  z-index 10
+
+.reached .overlay
+  opacity 0
+  visibility hidden
+
+.section-name
+  font: 100% 'Quicksand', sans-serif
+  font-weight: 400
+  font-size: 3.5em
+  color: #505050
+  text-align: right
+  padding-right: 5%
+  margin: 1%
+
+.button
+  display: block
+  width: 50px
+  height: 50px
+  position: absolute
+  bottom: 5px
+  left: 48%
+  background-color: #333
+  background-image: url(../img/arrow.png)
+  border-radius: 30px
+  border: 2px solid #EEE
+  opacity: .3
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .button
+    left: 43%
+
+.button:hover
+  background-color: #494949
+  cursor: pointer
+
+/******************************
+ SLIDE 1
+*******************************/
+.visual
+  padding-top 100px
+  padding-bottom 100px
+  background url(../img/intro.jpg) no-repeat top right fixed;
+  background-size cover
+
+.word-emphasis
+  transition: color 500ms
+  color: #fc0
+
+.visual-text
+  color: #FFF
+  font-size: 3em
+  text-transform: uppercase
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .visual-text
+    font-size: 2em
+
+.baseline
+  font: 100% 'Quicksand', sans-serif
+  font-weight: 400
+  color: #d6D6D6
+  font-size: 3em
+  text-transform: uppercase
+  margin: auto
+  margin-bottom: 50px
+  margin-top: 75px
+  padding: 10px
+  text-align: center
+  width: 75%
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .baseline
+    width 100%
+    margin-top 1em
+    padding 0
+
+.competences
+  background-color: #FFF
+  overflow: hidden
+  width: 100%
+
+.competence
+  text-align: center
+  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
+  -moz-transition: -moz-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
+  -o-transition: -o-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
+  -ms-transition: -ms-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
+  transform: scale(0)
+  float: left
+  width: 25%
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .competence
+    float: none
+    width: 95%
+
+.competence:nth-child(1)
+  transition-delay: 1080ms
+
+.competence:nth-child(2)
+  transition-delay: 1160ms
+
+.competence:nth-child(3)
+  transition-delay: 1240ms
+
+.competence:nth-child(4)
+  transition-delay: 1320ms
+
+.reached .competence
+  transform: scale(1)
+
+.competence-icon
+  background-color: #fc0
+  border-radius: 50%
+  border: 10px solid #fff
+  color: #fff
+  font-size: 4em
+  height: 140px
+  margin: auto
+  transition: background-color 500ms
+  width: 140px
+
+.competence-icon > div
+  margin-top: 40px
+
+.competence h2
+  text-align: center
+
+.competence p
+  color: #CFCFCF
+  padding: 20px
+  border: 5px solid #FFF
+  margin: 10px
+  height: 44px
+  border-top: 1px solid #F0F0F0
+
+/******************************
+  Offer
+*******************************/
+.slide-offer
+  background-color: #2E3234
+
+.offer
+  float: left
+  margin: 1%
+  margin-bottom: 20%
+  text-align: right
+  width: 30%
+
+.offer h2
+  color: #fff
+  margin: 70px 0 35px 0
+
+.offer li
+  color: #b4b4b4
+  margin-bottom: 8px
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .offer
+    float: none
+    width: 95%
+    text-align: center
+
+/***************************
+  Portfolio
+ ***************************/
+.portfolio
+  background-color: #ECE5D7
+
+.portfolio-item
+  background-repeat: no-repeat
+  background-color: #fff
+  float: left
+  height: 20em
+  margin: 1%
+  overflow: hidden
+  position: relative
+  text-align: center
+  width: 23%
+
+
+@media only screen and (min-width : 960px) and (max-width : 1200px)
+  .portfolio-item
+    width 31%
+
+@media only screen and (min-width : 480px) and (max-width : 960px)
+  .portfolio-item
+    width 46%
+
+@media only screen and (min-width : 320px) and (max-width : 480px)
+  .portfolio-item
+    float none
+    width 75%
+    margin: 20px auto 20px auto 
+    text-align center
+
+.portfolio-mask, .hover-out .portfolio-mask
+  transition: opacity .3s cubic-bezier(0.645,0.045,0.355,1)
+  transition-property: opacity
+  background-color: blue
+  bottom: 0
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+
+.hover-in .portfolio-mask
+  opacity: 0
+  filter: unquote('alpha(opacity=100)')
+
+.portfolio-title
+  color: rgba(238, 238, 238, 0.29)
+  font-variant: small-caps
+  margin-top: 7em
+
+.portfolio-detail
+  background-color: #2E3234
+  bottom: 0
+  color: #FFF
+  color: #b4b4b4
+  left: 0
+  position: absolute
+  right: 0
+  top: 100%
+  overflow: hidden /* hide webkit cube overflow */
+  animation: .5s ease-in-out forwards
+
+.portfolio-detail p
+  margin-top: 1em
+  font-size: 80%
+
+.hover-in .portfolio-detail
+  -webkit-animation-name: inKeyframes
+  animation-name: inKeyframes
+
+.hover-out .portfolio-detail
+  -webkit-animation-name: outKeyframes
+  animation-name: outKeyframes
+
+@keyframes inKeyframes
+  20%
+    top: 12em
+  100%
+    top: 15em
+
+@keyframes outKeyframes
+  100%
+    top: 100%
+
+.scene
+  -webkit-perspective: 1400px
+  -webkit-perspective-origin: 50% 50%
+  -moz-perspective: 1400px
+  -moz-perspective-origin: 50% 50%
+  perspective: 1400px
+  perspective-origin: 50% 50%
+  float: right
+
+.cube
+  position: relative
+  //margin: 1px 1px auto
+  height: 5em
+  width: 5em
+  transition: transform .3s ease
+  transform-style: preserve-3d
+  -webkit-transition: -webkit-transform .3s ease
+  -webkit-transform-style: preserve-3d
+
+.cube:hover
+  transform: rotateY(90deg)
+
+
+
+.face
+  position: absolute
+  height: 5em
+  width: 5em
+  background-color: #FFDA47
+
+.face a
+  line-height: 1em
+  font-size: 500%
+
+.cube .one
+  transform: rotateX(90deg) translateZ(2.5em)
+
+.cube .two
+  transform: translateZ(2.5em)
+
+.cube .three
+  transform: rotateY(90deg) translateZ(2.5em)
+
+.cube .four
+  transform: rotateY(180deg) translateZ(2.5em)
+
+.cube .five
+  transform: rotateY(-90deg) translateZ(2.5em)
+  background: #4084C5
+
+.cube .six
+  transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
+
+html[data-useragent*='rv:11'] .cube
+  transform none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .cube:hover
+  color: blue;
+  transform: none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .scene
+  perspective none
+  transition none
+  transform-style: none
+
+html[data-useragent*='rv:11'] .cube .one
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .two
+  transform: none;
+  transition none
+  transform-style: none
+html[data-useragent*='rv:11'] .cube .three
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .four
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+html[data-useragent*='rv:11'] .cube .five
+  transform: none;
+  transition none
+  transform-style: none
+html[data-useragent*='rv:11'] .cube .six
+  transform: none;
+  transition none
+  transform-style: none
+  display none
+
+//.roll-more
+//  float: right
+//  background: #31AD01
+//  -webkit-perspective: 600px
+//  -moz-perspective: 600px
+//  -ms-perspective: 600px
+//  perspective: 600px
+//  -webkit-perspective-origin: 50% 50%
+//  -moz-perspective-origin: 50% 50%
+//  -ms-perspective-origin: 50% 50%
+//  perspective-origin: 50% 50%
+
+//.roll-more span
+//width: 90px
+//position: relative
+//display: inline-block
+//transition: all 400ms ease
+//-webkit-transform-origin: 50% 0%
+//-moz-transform-origin: 50% 0%
+//transform-origin: 50% 0%
+//-webkit-transform-style: preserve-3d
+//-moz-transform-style: preserve-3d
+//transform-style: preserve-3d
+
+//.roll-more span:after
+//content: attr(data-title)
+//background: #31AD01
+//position: absolute
+//left: 0
+//width: 90px
+//-webkit-transform-origin: 0% 50%
+//-moz-transform-origin: 50% 0%
+//-ms-transform-origin: 50% 0%
+//transform-origin: 50% 0%
+//transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
+
+//.roll-more:hover span
+//background: #31AD01
+//left: -2px
+//transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
+
+.crm-maranatha
+  background-image: url(../img/portfolio/thumbs/crm-maranatha.jpg)
+
+.sant-et-diet
+  background-image: url(../img/portfolio/thumbs/sant-et-diet.jpg)
+
+.csoftware
+  background-image: url(../img/portfolio/thumbs/csoftware.png)
+  background-position: 20px 20px;
+
+.ambre-marketing
+  background-image: url(../img/portfolio/thumbs/ambre-marketing.gif)
+  background-position: 20px 20px;
+
+.olivier-carvin
+  background-image: url(../img/portfolio/thumbs/olivier-carvin.jpg)
+
+.riderpack
+  background-image: url(../img/portfolio/thumbs/riderpack.jpg)
+
+.la-carriole
+  background-image: url(../img/portfolio/thumbs/la-carriole.jpg)
+
+.mediarewards
+  background-image: url(../img/portfolio/thumbs/mediarewards.svg)
+  background-size: 50%
+  background-position: 20px 20px
+
+/******************************
+ Contact
+*******************************/
+.contact
+  color: #ccc
+  text-align: center
+
+.need-quote
+  color: #aaa
+  margin: 4em 0 1em
+  font-size: 3em
+
+.contact-us
+  margin-bottom: 2em
+
+address
+  display: inline-block
+  font-style: normal
+  margin-bottom: 10em
+  border-radius: 2px
+  a
+    background-color: #fc0
+    color: #FFF
+    font-size: 1.4em
+    padding: 1em
+    text-decoration: none
+
+/*
+ * Footer
+ */
+footerheight = 20em
+.sticky-footer
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -(footerheight)
+  .push
+    height: footerheight
+
+footer
+  background-color: blue
+  color: white
+  text-align: center
+  height: footerheight
+
+footer .footer-content
+  padding-top (footerheight / 2)
+
+footer .mention
+  font-size: 75%
+
+footer .madein
+  float right
+  font-size: 70%
+
+/* Utils */
+.v-spacer
+  clear: both
+  height: 75px
+
+.lighter-text
+  color: #ececec
+
+.waiting
+  position: fixed
+  top: 0
+  right: 0
+  width: 300px
+  height: 300px
+  background: yellow
+  pointer-events: none
+  transition all 0.3s
+  transform translateX(100%) translateY(-100%) rotate(45deg)
+  z-index 11
+
+.waiting.animate
+  transform translateX(50%) translateY(-50%) rotate(45deg)
+
+.waiting::before
+  margin-left: -40px
+  width: 80px
+  height: 80px
+  animation: rotation 3s linear infinite
+
+.waiting::before, .waiting::after
+  position: absolute
+  bottom: 30px
+  left: 50%
+  display: block
+  border: 5px solid #FFF
+  border-radius: 50%
+  content: ''
+
+.waiting::after
+  bottom: 50px
+  margin-left: -20px
+  width: 40px
+  height: 40px
+  border-top-color: blue
+  border-bottom-color: blue
+  animation: rotation 1s linear infinite
+
+@keyframes rotation
+  0%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(180deg)
+  100%
+    transform: rotate(360deg)
+
+
+// Portfolio details pages
+.work
+  background-color: #F8F5ED
+  padding-top: 100px
+  .work-title
+    color: #535353;
+    font-size 2em
+    margin-bottom 1em
+    border-bottom 20px solid #FFE26F
+  .work-desc
+    color: #808080
+  ul
+    color: #616161;
+  li
+    padding 5px 10px 0 10px
+
+.work-nav
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 3
+  background-color: white
+  box-shadow: 0px 0px 2px;
+  .navbar-inner
+    width 80%
+    padding 14px 0 14px 0
+    margin auto
+  .breadcrumb
+    color #bebebe
+    display inline
+    font-size 1.5em
+  a
+    color: blue
+  a:hover
+    color: #333
+
+  img.logo
+    float: right
+    position: relative
+    top: 4px
+
+@media only screen and (min-width : 320px) and (max-width : 960px)
+  .work-nav
+    .logo
+      display none
+
+.work-intro
+  margin-left: 10%
+  float left
+  width 40%
+  padding-bottom: 2em
+
+.work-panel
+  background-color: #FFF
+  box-shadow: 0px 0px 10px #C4C0C0
+  float: left
+  margin-right: 10%
+  position: relative
+  top: 33px
+  width: 40%
+  .icon-checkmark
+    color #919191
+  ul
+    padding .5em
+    border: 20px solid rgba(89, 153, 214, 0.71);
+  li
+    padding: 10px 10px 10px 10px
+    border-bottom: 1px solid #EEE
+  li:last-child
+    border-bottom: none
+
+@media only screen and (min-width : 320px) and (max-width : 960px)
+  .work-intro
+    float none
+    width 98%
+    margin 1%
+  .work-panel
+    float none
+    width 98%
+    margin 1%
+    position static
+
+.work-panel-whithout-snap
+  background-color: #FFF
+  padding: 4em 10% 2em 10%
+  .icon-checkmark
+    color #919191
+  ul
+    padding .5em
+
+.work-snap
+  padding: 4em 10% 4em 10%
+  text-align: center
+  img
+    width 100%
+    border: 1px solid #FFF
+    box-shadow: 0px 0px 8px #333
+
+.work-snap:nth-child(1)
+  background-color: #EBEBEB
+
+.work-snap:nth-child(3)
+  background-color: #333
+
+.visit-site
+  background-color #fff
+  text-align center
+  padding 15em 0 15em 0
+
+.visit-site-btn
+  background-color yellow
+  border-radius: 2px
+  font-size 1.4em
+  margin auto
+  margin-bottom: 7em
+  padding 1em
+
+// Utils
+.row:after
+  content: "";
+  display: table;
+  clear: both;
