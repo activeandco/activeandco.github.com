@@ -13,7 +13,8 @@ $(window).load( function() {
 
   $('.waiting').removeClass('animate')
   // inject contact info via js
-  $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
+  $('.phone-contact').append('+33 6 73 85 02 64')
+  $('.mail-contact').append('<a href="mailto:hello@activeand.co">hello@activeand.co</a></div>')
 
   // Home icon hovering
   var defaultIconColor =  "#FC0"
