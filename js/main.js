@@ -15,14 +15,6 @@ $(window).load( function() {
   // inject contact info via js
   $('address').html('<a href="mailto:hello@activeand.co">hello@activeand.co</a>')
 
-  //initialise Stellar.js if not on mobile
-  //if (!isMobile()) {
-    //$(window).stellar({
-      //responsive: true
-      //, horizontalScrolling:false
-    //});
-  //}
-
   // Home icon hovering
   var defaultIconColor =  "#FC0"
   $('.competence-icon').hover(

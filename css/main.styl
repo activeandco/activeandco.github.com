@@ -218,6 +218,10 @@ sidebar-width = 260px
   text-align: right
   padding-right: 5%
   margin: 1%
+  text-transform: lowercase;
+
+.section-name:before, .section-name:after
+  content: '/'
 
 .button
   display: block
@@ -508,91 +512,50 @@ sidebar-width = 260px
 .cube .six
   transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
 
-html[data-useragent*='rv:11'] .cube
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube
   transform none
   transition none
   transform-style: none
 
-html[data-useragent*='rv:11'] .cube:hover
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube:hover
   color: blue;
   transform: none
   transition none
   transform-style: none
 
-html[data-useragent*='rv:11'] .scene
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .scene
   perspective none
   transition none
   transform-style: none
 
-html[data-useragent*='rv:11'] .cube .one
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .one
   transform: none;
   transition none
   transform-style: none
   display none
-html[data-useragent*='rv:11'] .cube .two
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .two
   transform: none;
   transition none
   transform-style: none
-html[data-useragent*='rv:11'] .cube .three
-  transform: none;
-  transition none
-  transform-style: none
-  display none
-html[data-useragent*='rv:11'] .cube .four
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .three
   transform: none;
   transition none
   transform-style: none
   display none
-html[data-useragent*='rv:11'] .cube .five
-  transform: none;
-  transition none
-  transform-style: none
-html[data-useragent*='rv:11'] .cube .six
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .four
   transform: none;
   transition none
   transform-style: none
   display none
-
-//.roll-more
-//  float: right
-//  background: #31AD01
-//  -webkit-perspective: 600px
-//  -moz-perspective: 600px
-//  -ms-perspective: 600px
-//  perspective: 600px
-//  -webkit-perspective-origin: 50% 50%
-//  -moz-perspective-origin: 50% 50%
-//  -ms-perspective-origin: 50% 50%
-//  perspective-origin: 50% 50%
-
-//.roll-more span
-//width: 90px
-//position: relative
-//display: inline-block
-//transition: all 400ms ease
-//-webkit-transform-origin: 50% 0%
-//-moz-transform-origin: 50% 0%
-//transform-origin: 50% 0%
-//-webkit-transform-style: preserve-3d
-//-moz-transform-style: preserve-3d
-//transform-style: preserve-3d
-
-//.roll-more span:after
-//content: attr(data-title)
-//background: #31AD01
-//position: absolute
-//left: 0
-//width: 90px
-//-webkit-transform-origin: 0% 50%
-//-moz-transform-origin: 50% 0%
-//-ms-transform-origin: 50% 0%
-//transform-origin: 50% 0%
-//transform: translate3d( 105%, 0px, 0px ) rotateY( -90deg )
-
-//.roll-more:hover span
-//background: #31AD01
-//left: -2px
-//transform: translate3d( 45px, 0px, -30px ) rotateY( 90deg )
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .five
+  transform: none;
+  transition none
+  transform-style: none
+html[data-useragent*='rv:11'], html[data-useragent*='MSIE'] .cube .six
+  transform: none;
+  transition none
+  transform-style: none
+  display none
 
 .crm-maranatha
   background-image: url(../img/portfolio/thumbs/crm-maranatha.jpg)
