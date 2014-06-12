@@ -31,72 +31,52 @@ $(window).load( function() {
 
   //Cache some variables
   var links = $('.navigation').find('a'),
-  section = $('.section-name a'),
-  slide = $('.slide'),
-  button = $('.button'),
-  mywindow = $(window),
+  section = $('section'),
+  myWindow = $(window),
   htmlbody = $('html,body');
 
   //Setup waypoints plugin
-  slide.waypoint(function (direction) {
-    if (direction === 'down') {
-      $(this).addClass('reached')
-    }
-  }, { offset: '35%' })
+  // Overlay on slides stuffs
 
+  // Navigation highlight effect (in both direction) and url update
   section.waypoint(function (direction) {
-    var id = $(this).attr('href')
+    var id = $(this).attr('id')
     if(direction === 'down') {
-      $('.navigation a[href!="'+ id +'"]').removeClass('active')
-      $('.navigation a[href="' + id + '"]').addClass('active')
+      console.log(id)
+      $(this).addClass('reached')
+      highlightAndPushState(id)
     }
   }, {
     offset: '40%'
   }).waypoint(function(direction){
-    var id = $(this).attr('href')
+    var id = $(this).attr('id')
     if(direction === 'up') {
-      $('.navigation a[href!="'+ id +'"]').removeClass('active')
-      $('.navigation a[href="' + id + '"]').addClass('active')
+      console.log(id)
+      highlightAndPushState(id)
     }
   }, {
     offset: '-40%'
   })
 
-  //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class
-  //from navigation link slide 2 and adds it to navigation link slide 1.
-  mywindow.scroll(function () {
-    if (mywindow.scrollTop() == 0) {
-      $('.navigation a[data-slide="1"]').addClass('active');
-      $('.navigation a[data-slide!="1"]').removeClass('active');
+  function highlightAndPushState(id) {
+    if(id) {
+      $('.navigation a[href!="#'+ id +'"]').removeClass('active')
+      $('.navigation a[href="#' + id + '"]').addClass('active')
+      if(id === 'top')
+        history.pushState({}, window.document.title, '#');
+      else
+        history.pushState({}, window.document.title, '#' + id);
     }
-  })
-
+  }
 
   //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
   links.click(function (e) {
     e.preventDefault()
     var id = $(this).attr('href')
-    var target_present = $(id).length
-    if(target_present) // slide if we can
+    if($(id).length) // slide if we can
       hideAndScroll(id)
     else
       window.location = this.href
-  })
-
-  $('.home-link').click(function(e){
-    e.preventDefault()
-    if(sideOpen)
-      hideAndScroll(null)
-    else
-      goToByScroll(null)
-  })
-
-  //When the user clicks on the button, get the get the data-slide attribute value of the button and pass that variable to the goToByScroll function
-  button.click(function (e) {
-    var dataslide
-    e.preventDefault();
-    dataslide = $(this).attr('data-slide');
-    goToByScroll(dataslide);
   })
 
   // Portfolio Animations
