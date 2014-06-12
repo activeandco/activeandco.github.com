@@ -31,6 +31,7 @@ $(window).load( function() {
 
   //Cache some variables
   var links = $('.navigation').find('a'),
+  section = $('.section-name a'),
   slide = $('.slide'),
   button = $('.button'),
   mywindow = $(window),
@@ -38,13 +39,28 @@ $(window).load( function() {
 
   //Setup waypoints plugin
   slide.waypoint(function (direction) {
-    var dataslide = $(this).attr('data-slide');
-    $('.navigation a[data-slide!="'+ dataslide +'"]').removeClass('active')
-    $('.navigation a[data-slide="' + dataslide + '"]').addClass('active')
     if (direction === 'down') {
       $(this).addClass('reached')
     }
-  }, { offset: '35%' });
+  }, { offset: '35%' })
+
+  section.waypoint(function (direction) {
+    var id = $(this).attr('href')
+    if(direction === 'down') {
+      $('.navigation a[href!="'+ id +'"]').removeClass('active')
+      $('.navigation a[href="' + id + '"]').addClass('active')
+    }
+  }, {
+    offset: '40%'
+  }).waypoint(function(direction){
+    var id = $(this).attr('href')
+    if(direction === 'up') {
+      $('.navigation a[href!="'+ id +'"]').removeClass('active')
+      $('.navigation a[href="' + id + '"]').addClass('active')
+    }
+  }, {
+    offset: '-40%'
+  })
 
   //waypoints doesnt detect the first slide when user scrolls back up to the top so we add this little bit of code, that removes the class
   //from navigation link slide 2 and adds it to navigation link slide 1.
@@ -53,35 +69,26 @@ $(window).load( function() {
       $('.navigation a[data-slide="1"]').addClass('active');
       $('.navigation a[data-slide!="1"]').removeClass('active');
     }
-  });
+  })
 
-  //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The Jquery
-  //easing plugin is also used, so we passed in the easing method of 'easeInOutQuint' which is available throught the plugin.
-  function goToByScroll(dataslide) {
-    htmlbody.animate({
-      scrollTop: $('.slide[data-slide="' + dataslide + '"]').offset().top
-    }, 1000, 'easeInOutQuint');
-  }
 
   //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
   links.click(function (e) {
     e.preventDefault()
-    var dataslide = $(this).attr('data-slide')
-    var target_present = $('.slide[data-slide="' + dataslide + '"]').length
+    var id = $(this).attr('href')
+    var target_present = $(id).length
     if(target_present) // slide if we can
-      hideAndScroll(dataslide)
+      hideAndScroll(id)
     else
       window.location = this.href
   })
 
   $('.home-link').click(function(e){
     e.preventDefault()
-    var dataslide
-    dataslide = $(this).attr('data-slide')
     if(sideOpen)
-      hideAndScroll(dataslide)
+      hideAndScroll(null)
     else
-      goToByScroll(dataslide)
+      goToByScroll(null)
   })
 
   //When the user clicks on the button, get the get the data-slide attribute value of the button and pass that variable to the goToByScroll function
@@ -137,10 +144,20 @@ $(window).load( function() {
       hideSide()
   })
 
-  function hideAndScroll(dataslide) {
-    hideSide(function() {
-      goToByScroll(dataslide)
-    })
+  //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The Jquery
+  //easing plugin is also used, so we passed in the easing method of 'easeInOutQuint' which is available throught the plugin.
+  function goToByScroll(id) {
+    var duration = 1000
+    if(id) {
+      htmlbody.animate({
+        scrollTop: $(id).offset().top
+      }, duration, 'easeInOutQuint');
+      //window.location.hash = id;
+    }
+    else{
+      htmlbody.animate({ scrollTop: 0}, duration, 'easeInOutQuint');
+      //window.location.hash = '';
+    }
   }
 
   // Helper functions
@@ -166,6 +183,12 @@ $(window).load( function() {
     $(".layout-sidebar").css({'right': '0'})
     $(".movable").addClass('move')
     sideOpen = true
+  }
+
+  function hideAndScroll(id) {
+    hideSide(function() {
+      goToByScroll(id)
+    })
   }
 
   function isMobile() {
