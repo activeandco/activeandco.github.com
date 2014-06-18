@@ -21,7 +21,6 @@ $(window).load( function() {
   $('.competence').hover(
     function(){
       var icon = $(this).children('.competence-icon').eq(0)
-      console.log(icon)
       var color = icon.attr('data-color')
       icon.css('background-color', color)
       $('.word-emphasis').css('color', color)
