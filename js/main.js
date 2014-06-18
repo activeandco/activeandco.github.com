@@ -1,20 +1,25 @@
 // DOM loaded
 $(function(){
+  // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
+  var doc = document.documentElement;
+  doc.setAttribute('data-useragent', navigator.userAgent);
 })
 
-// set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
-var doc = document.documentElement;
-doc.setAttribute('data-useragent', navigator.userAgent);
 
 // Page loaded
 //$(window).bind("load", function() {
 $(window).load( function() {
   "use strict";
 
+  //window.onpopstate = function(event) {
+    //alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  //};
+
   $('.waiting').removeClass('animate')
   // inject contact info via js
   $('.phone-contact').append('+33 6 73 85 02 64')
   $('.mail-contact').append('<a href="mailto:hello@activeand.co">hello@activeand.co</a></div>')
+  
 
   // Home icon hovering
   var defaultIconColor =  "#FC0"
@@ -49,9 +54,10 @@ $(window).load( function() {
     }
   }, {
     offset: '40%'
-  }).waypoint(function(direction){
+  }).waypoint(function(direction) {
     var id = $(this).attr('id')
     if(direction === 'up') {
+      $(this).addClass('reached')
       highlightAndPushState(id)
     }
   }, {
@@ -100,12 +106,12 @@ $(window).load( function() {
 
   // show portfolio detail
   $('.face > a').click(function(e){
-    e.preventDefault()
-    var newLocation = this.href
-    $(".slide").removeClass('reached')
-    setTimeout(function(){
-      location.href = newLocation
-    }, 1000)
+    //e.preventDefault()
+    //var newLocation = this.href
+    //$(".slide").removeClass('reached')
+    //setTimeout(function(){
+      //location.href = newLocation
+    //}, 1000)
   })
 
   // Side bar stuffs
@@ -132,11 +138,9 @@ $(window).load( function() {
       htmlbody.animate({
         scrollTop: $(id).offset().top
       }, duration, 'easeInOutQuint');
-      //window.location.hash = id;
     }
     else{
       htmlbody.animate({ scrollTop: 0}, duration, 'easeInOutQuint');
-      //window.location.hash = '';
     }
   }
 
