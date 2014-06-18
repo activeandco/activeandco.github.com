@@ -6,6 +6,10 @@
     <title>Active and Co | {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="sE5vOFSDftf4i7aCOE8GpnHH8dX8LAoQzRuh-hFhRbA" />
+    <meta name="author" content="Active and Co" />
+    <meta name="description" content="Active and Co est une société spécialisée dans la conception et le développement d'applications Web et Mobiles, le webdesign et l'ergonomie." />
+    <meta property="og:title" content="Active and Co">
+    <meta property="og:description" content="Active and Co est une société spécialisée dans la conception et le développement d'applications Web et Mobiles, le webdesign et l'ergonomie.">
     <link rel="shortcut icon" href="/favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli:400' rel='stylesheet' type='text/css'>
@@ -15,8 +19,14 @@
   <body>
   {{ content }}
     <footer class="movable">
-      <div class="footer-content">
-        <p class="mention">© <span class="fn org">active and co</span> 2014</p>
+      <div class="footer-content" itemscope itemtype="http://schema.org/Organization">
+        <p class="mention">© <span itemprop="name">active and co</span> 2014</p>
+        <p class="mention">
+          <span itemprop="telephone">+33 6 73 85 02 64</span>
+        </p>
+        <p class="mention">
+          <a href="http://activeand.co" itemprop="url">http://activeand.co</a>
+        </p>
       </div>
     </footer>
     <script>
