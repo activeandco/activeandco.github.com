@@ -18,14 +18,17 @@ $(window).load( function() {
 
   // Home icon hovering
   var defaultIconColor =  "#FC0"
-  $('.competence-icon').hover(
+  $('.competence').hover(
     function(){
-      var color = $(this).attr('data-color')
-      $(this).css('background-color', color)
+      var icon = $(this).children('.competence-icon').eq(0)
+      console.log(icon)
+      var color = icon.attr('data-color')
+      icon.css('background-color', color)
       $('.word-emphasis').css('color', color)
     },
     function(){
-      $(this).css('background-color', defaultIconColor)
+      var icon = $(this).children('.competence-icon').eq(0)
+      icon.css('background-color', defaultIconColor)
       $('.word-emphasis').css('color', defaultIconColor)
     })
 
@@ -42,7 +45,6 @@ $(window).load( function() {
   section.waypoint(function (direction) {
     var id = $(this).attr('id')
     if(direction === 'down') {
-      console.log(id)
       $(this).addClass('reached')
       highlightAndPushState(id)
     }
@@ -51,7 +53,6 @@ $(window).load( function() {
   }).waypoint(function(direction){
     var id = $(this).attr('id')
     if(direction === 'up') {
-      console.log(id)
       highlightAndPushState(id)
     }
   }, {
