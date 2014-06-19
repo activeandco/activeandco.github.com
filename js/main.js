@@ -11,15 +11,28 @@ $(function(){
 $(window).load( function() {
   "use strict";
 
-  //window.onpopstate = function(event) {
-    //alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
-  //};
+  //Cache some variables
+  var links = $('.navigation').find('a'),
+  section = $('section'),
+  sectionUrl = $('.section-url'),
+  myWindow = $(window),
+  htmlbody = $('html,body');
+
+  window.onpopstate = function(event) {
+    // dont push state while scrolling...
+    //disableSectionUrlWaypoint()
+    //setTimeout(function(){
+      //enableSectionUrlWaypoint()
+    //}, 1500)
+    console.log("location: " + document.location.hash + ", state: " + JSON.stringify(event.state))
+    goToByScroll(document.location.hash)
+    //$('.section-url').append("asdlfkjf")
+  };
 
   $('.waiting').removeClass('animate')
   // inject contact info via js
   $('.phone-contact').append('+33 6 73 85 02 64')
   $('.mail-contact').append('<a href="mailto:hello@activeand.co">hello@activeand.co</a></div>')
-  
 
   // Home icon hovering
   var defaultIconColor =  "#FC0"
@@ -36,53 +49,54 @@ $(window).load( function() {
       $('.word-emphasis').css('color', defaultIconColor)
     })
 
-  //Cache some variables
-  var links = $('.navigation').find('a'),
-  section = $('section'),
-  myWindow = $(window),
-  htmlbody = $('html,body');
 
   //Setup waypoints plugin
   // Overlay on slides stuffs
 
-  // Navigation highlight effect (in both direction) and url update
+  // Remove overlay on reach, both directions
   section.waypoint(function (direction) {
-    var id = $(this).attr('id')
     if(direction === 'down') {
       $(this).addClass('reached')
-      highlightAndPushState(id)
     }
   }, {
     offset: '40%'
   }).waypoint(function(direction) {
-    var id = $(this).attr('id')
     if(direction === 'up') {
       $(this).addClass('reached')
-      highlightAndPushState(id)
     }
   }, {
     offset: '-40%'
   })
 
-  function highlightAndPushState(id) {
-    if(id) {
-      $('.navigation a[href!="#'+ id +'"]').removeClass('active')
-      $('.navigation a[href="#' + id + '"]').addClass('active')
-      if(id === 'top')
-        history.pushState({}, window.document.title, '#');
-      else
-        history.pushState({}, window.document.title, '#' + id);
-    }
-  }
+  // Navigation highlight effect and url update
+  // Wait 1 sec after loading: workaround for chrome back to top bug
+  setTimeout(function(){
+    sectionUrl.waypoint(function (direction) {
+      if(direction === 'down') {
+        var href = $(this).attr('href')
+        pushStateAndMenu(href)
+      }
+    }, {
+      offset: '1%'
+    }).waypoint(function(direction){
+      if(direction === 'up') {
+        var href = $(this).attr('href')
+        pushStateAndMenu(href)
+      }
+    },{
+      offset: '-1%'
+    })
+  }, 2000)
 
   //When the user clicks on the navigation links, get the data-slide attribute value of the link and pass that variable to the goToByScroll function
   links.click(function (e) {
     e.preventDefault()
     var id = $(this).attr('href')
-    if($(id).length) // slide if we can
+    if($(id).length) {// slide if we can
       hideAndScroll(id)
-    else
+    } else {
       window.location = this.href
+    }
   })
 
   // Portfolio Animations
@@ -104,16 +118,6 @@ $(window).load( function() {
     }
   )
 
-  // show portfolio detail
-  $('.face > a').click(function(e){
-    //e.preventDefault()
-    //var newLocation = this.href
-    //$(".slide").removeClass('reached')
-    //setTimeout(function(){
-      //location.href = newLocation
-    //}, 1000)
-  })
-
   // Side bar stuffs
   var sideOpen = false
 
@@ -133,17 +137,27 @@ $(window).load( function() {
   //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The Jquery
   //easing plugin is also used, so we passed in the easing method of 'easeInOutQuint' which is available throught the plugin.
   function goToByScroll(id) {
-    var duration = 1000
+    disableSectionUrlWaypoint()
+    var duration = 700
     if(id) {
       htmlbody.animate({
         scrollTop: $(id).offset().top
-      }, duration, 'easeInOutQuint');
+      }, duration, 'easeInOutQuint', enableSectionUrlWaypoint);
     }
     else{
-      htmlbody.animate({ scrollTop: 0}, duration, 'easeInOutQuint');
+      htmlbody.animate({ scrollTop: 0}, duration, 'easeInOutQuint', enableSectionUrlWaypoint);
     }
+    pushStateAndMenu(id)
   }
 
+  
+  function pushStateAndMenu(href) {
+    $('.navigation a[href!="'+ href +'"]').removeClass('active')
+    $('.navigation a[href="' + href + '"]').addClass('active')
+    if(document.location.hash != href ) { //  don't duplicate stuffs
+      history.pushState(null, null, href)
+    }
+  }
   // Helper functions
   function hideSide(cb) {
     var delay = parseFloat($('.movable').css('transitionDuration')) * 1000
@@ -169,6 +183,13 @@ $(window).load( function() {
     sideOpen = true
   }
 
+
+  function enableSectionUrlWaypoint() {
+    sectionUrl.waypoint('enable')
+  }
+  function disableSectionUrlWaypoint() {
+    sectionUrl.waypoint('disable')
+  }
   function hideAndScroll(id) {
     hideSide(function() {
       goToByScroll(id)
