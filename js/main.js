@@ -34,6 +34,10 @@ $(window).load( function() {
   $('.phone-contact').append('+33 6 73 85 02 64')
   $('.mail-contact').append('<a href="mailto:hello@activeand.co">hello@activeand.co</a></div>')
 
+  setTimeout(function(){
+    $('.browsehappy').remove()
+  }, 7000)
+
   // Home icon hovering
   var defaultIconColor =  "#FC0"
   $('.competence').hover(
