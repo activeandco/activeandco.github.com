@@ -511,7 +511,6 @@ sidebar-width = 260px
 
 .cube
   position: relative
-  //margin: 1px 1px auto
   height: 5em
   width: 5em
   transition: transform .3s ease
@@ -521,8 +520,6 @@ sidebar-width = 260px
 
 .cube:hover
   transform: rotateY(90deg)
-
-
 
 .face
   position: absolute
@@ -553,79 +550,45 @@ sidebar-width = 260px
 .cube .six
   transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
 
+html[data-useragent*='rv:11'] .face, html[data-useragent*='MSIE'] .face
+  transition background-color 200ms
+
 html[data-useragent*='rv:11'] .cube, html[data-useragent*='MSIE'] .cube
   transform none
-  transition none
-  transform-style: none
+  transform-style none
 
 html[data-useragent*='rv:11'] .cube:hover, html[data-useragent*='MSIE'] .cube:hover
-  color: blue;
-  transform: none
-  transition none
-  transform-style: none
-
-html[data-useragent*='rv:11'] .scene, html[data-useragent*='MSIE'] .scene
-  perspective none
-  transition none
-  transform-style: none
+  transform none
+  .face
+    background-color yellow
 
 html[data-useragent*='rv:11'] .cube .one, html[data-useragent*='MSIE'] .cube .one
-  transform: none;
-  transition none
-  transform-style: none
-  display none
-
-html[data-useragent*='rv:11'] .cube .two, html[data-useragent*='MSIE'] .cube .two
-  transform: none;
-  transition none
-  transform-style: none
-
 html[data-useragent*='rv:11'] .cube .three, html[data-useragent*='MSIE'] .cube .three
-  transform: none;
-  transition none
-  transform-style: none
-  display none
-
 html[data-useragent*='rv:11'] .cube .four, html[data-useragent*='MSIE'] .cube .four
-  transform: none;
-  transition none
-  transform-style: none
+html[data-useragent*='rv:11'] .cube .six, html[data-useragent*='MSIE'] .cube .six
+html[data-useragent*='rv:11'] .cube .two, html[data-useragent*='MSIE'] .cube .two
+  transform none
   display none
 
 html[data-useragent*='rv:11'] .cube .five, html[data-useragent*='MSIE'] .cube .five
-  transform: none;
-  transition none
-  transform-style: none
-
-html[data-useragent*='rv:11'] .cube .six, html[data-useragent*='MSIE'] .cube .six
-  transform: none;
-  transition none
-  transform-style: none
-  display none
+  transform none
 
 .crm-maranatha
   background-image: url(../img/portfolio/thumbs/crm-maranatha.jpg)
-
 .sant-et-diet
   background-image: url(../img/portfolio/thumbs/sant-et-diet.jpg)
-
 .csoftware
   background-image: url(../img/portfolio/thumbs/csoftware.png)
   background-position: 20px 20px;
-
 .ambre-marketing
   background-image: url(../img/portfolio/thumbs/ambre-marketing.gif)
   background-position: 20px 20px;
-
 .olivier-carvin
   background-image: url(../img/portfolio/thumbs/olivier-carvin.jpg)
-
 .riderpack
   background-image: url(../img/portfolio/thumbs/riderpack.jpg)
-
 .la-carriole
   background-image: url(../img/portfolio/thumbs/la-carriole.jpg)
-
 .mediarewards
   background-image: url(../img/portfolio/thumbs/mediarewards.svg)
   background-size: 50%
