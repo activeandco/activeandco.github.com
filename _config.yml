@@ -1,5 +1,11 @@
 name: Active and Co
-#markdown: redcarpet
 markdown: kramdown
-pygments: true
+highlighter: 'pygments'
+timezone: Europe/Paris
 relative_permalinks: false
+
+fr:
+  site-desc: Active and Co est une société spécialisée dans la conception et le développement d'applications Web et Mobiles, le webdesign et l'ergonomie.
+
+en:
+  site-desc: Active and Co is a company specialized into web and mobile software development and UX design.
