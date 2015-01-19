@@ -95,12 +95,17 @@ a
     font-size: 80%
 
 /*  Header */
+
 .lang-switch
- position absolute
- top 18px
- right 250px
- a
-   color black
+  position: absolute;
+  right: 56px;
+  top: 19px;
+  border: 1px solid #E4E4E4;
+  padding: 2px;
+  a
+    color black
+  a:hover
+    color #999
 
 .side-bar-toggle
   position: fixed
@@ -223,7 +228,7 @@ sidebar-width = 260px
   font-size: 3.5em
   text-align: right
   padding-right: 5%
-  margin: 1%
+  margin: 10px
   &, a
     text-transform: lowercase;
     color: #505050
@@ -235,9 +240,14 @@ sidebar-width = 260px
   content: '/'
 
 .section-name.home
-  &, a
+  padding-right 90px
+  color blue
+  font-size 1.6em
+  margin-top 14px
+  a
     color blue
-    font-size 1.2em
+  &:after
+    content: ''
 
 .button
   background-color: #333
