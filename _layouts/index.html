@@ -24,7 +24,7 @@ title: Développement d'applications Web et Mobiles
   <div itemscope itemtype="http://schema.org/Organization">
     <h1  class="section-name home"><a itemprop="name" class="section-url" href="#activeandco" id="activeandco">active and co</a></h1>
     <div class="lang-switch">
-      <a href="/" lang="en" hreflang="en">en</a>.<a href="/fr/index.html" lang="fr" hreflang="fr">fr</a>
+      <a href="/" lang="en" hreflang="en">en</a>.<a href="/fr/" lang="fr" hreflang="fr">fr</a>
     </div>
     <div class="logo-wrapper navigation">
       <a class="home-link" href="#activeandco">
@@ -104,7 +104,7 @@ title: Développement d'applications Web et Mobiles
   <div class="portfolio-item crm-maranatha">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>groupe maranatha</h2>
+        <h2>{{ page.work_section.maranatha.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -118,13 +118,14 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>CRM</p>
+      <p>{{ page.work_section.maranatha.desc }}</p>
     </div>
   </div>
+
   <div class="portfolio-item olivier-carvin">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>olivier carvin</h2>
+        <h2>{{ page.work_section.olivier_carvin.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -138,13 +139,13 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Site Corporate</p>
+      <p>{{ page.work_section.olivier_carvin.desc }}</p>
     </div>
   </div>
   <div class="portfolio-item la-carriole">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>la carriole</h2>
+        <h2>{{ page.work_section.la_carriole.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -158,13 +159,14 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>e-Commerce spécifique aux métiers de bouche</p>
+      <p>{{ page.work_section.la_carriole.desc }}</p>
     </div>
   </div>
+
   <div class="portfolio-item sant-et-diet">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>sant et diet</h2>
+        <h2>{{ page.work_section.sant_et_diet.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -178,13 +180,13 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Site Corporate</p>
+      <p>{{ page.work_section.sant_et_diet.desc }}</p>
     </div>
   </div>
   <div class="portfolio-item riderpack">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>riderpack</h2>
+        <h2>{{ page.work_section.riderpack.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -198,13 +200,14 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Maquettage IHM, Webdesign</p>
+      <p>{{ page.work_section.riderpack.desc }}</p>
     </div>
   </div>
+
   <div class="portfolio-item ambre-marketing">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>ambre marketing</h2>
+        <h2>{{ page.work_section.ambre.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -218,13 +221,14 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Audit, Consulting technique</p>
+      <p>{{ page.work_section.ambre.desc }}</p>
     </div>
   </div>
+
   <div class="portfolio-item mediarewards">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>médiarewards</h2>
+        <h2>{{ page.work_section.mediarewards.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -238,13 +242,14 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Proof of Concept, Webdesign</p>
+      <p>{{ page.work_section.mediarewards.desc }}</p>
     </div>
   </div>
+
   <div class="portfolio-item csoftware">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>c'software</h2>
+        <h2>{{ page.work_section.csoftware.title }}</h2>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -258,7 +263,7 @@ title: Développement d'applications Web et Mobiles
           <div class="face six"></div>
         </div>
       </div>
-      <p>Audit et Conseils</p>
+      <p>{{ page.work_section.csoftware.desc }}</p>
     </div>
   </div>
 
@@ -268,11 +273,11 @@ title: Développement d'applications Web et Mobiles
 </section><!--End Slide 3-->
 
 <section class="slide contact">
-  <h1 class="section-name"><a class="section-url" href="#contact" id="contact">Contact</a></h1>
+  <h1 class="section-name"><a class="section-url" href="#contact" id="contact">{{ page.contact_section.title }}</a></h1>
   <h2 class="need-quote">
-    {{ page.contact.project }}
+    {{ page.contact_section.project }}
   </h2>
-  <p class="contact-us">{{ page.contact.us }}</p>
+  <p class="contact-us">{{ page.contact_section.us }}</p>
   <address>
     <div class="phone-contact">
       <span class="icon-phone"></span>
