@@ -3,12 +3,6 @@ layout: default
 title: Développement d'applications Web et Mobiles
 ---
 
-{% if page.lang == 'en' %}
-  {% assign url_prefix =  '' %}
-{% else %}
-  {% assign url_prefix =  page.lang %}
-{% endif %}
-
 <div class="side-bar-toggle">
   <span class="icon-menu"></span>
 </div>
@@ -38,29 +32,29 @@ title: Développement d'applications Web et Mobiles
       </a>
     </div>
   </div>
-  <h1 class="baseline">Conception d'applications <span class="word-emphasis">web</span> et <span class="word-emphasis">mobiles</span></h1>
+  <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline.[1] }} </span>  {{ page.home_section.baseline.[2] }} <span class="word-emphasis">{{ page.home_section.baseline.[3] }}</span></h1>
   <div class="waiting animate"></div>
   <div class="overlay"></div>
   <div class="competences">
     <div class="competence">
       <div class="competence-icon" data-color="#4084C5"><div class="icon-code"></div></div>
-      <h2>Dévelopement web</h2>
-      <p>Des outils et applications qui s'adaptent à vos besoins.</p>
+      <h2>{{ page.home_section.webdev.title }}</h2>
+      <p>{{ page.home_section.webdev.desc }}</p>
     </div>
     <div class="competence">
       <div class="competence-icon" data-color="#E93F3F"><div class="icon-mobile"></div></div>
-      <h2>Mobile design</h2>
-      <p>Responsive web design.</p>
+      <h2>{{ page.home_section.mobile.title }}</h2>
+      <p>{{ page.home_section.mobile.desc }}</p>
     </div>
     <div class="competence">
       <div class="competence-icon" data-color="#31AD01"><div class="icon-screen"></div></div>
-      <h2>Web Design</h2>
-      <p>HTML5, CSS3.</p>
+      <h2>{{ page.home_section.webdesign.title }}</h2>
+      <p>{{ page.home_section.webdesign.desc }}</p>
     </div>
     <div class="competence">
       <div class="competence-icon" data-color="#9B006F"><div class="icon-lab"></div></div>
-      <h2>Labs</h2>
-      <p>Besoin d'un expert Ruby on Rails, Node.js ou mongoDB ? <a href="#contact">contactez-nous !</a></p>
+      <h2>{{ page.home_section.labs.title }}</h2>
+      <p>{{ page.home_section.labs.desc }} <a href="#contact">{{ page.home_section.labs.contact_us }}</a></p>
     </div>
   </div>
   <div class="visual">
@@ -72,31 +66,31 @@ title: Développement d'applications Web et Mobiles
 </section><!--End Slide 1-->
 
 <section class="slide slide-offer" >
-  <h1 class="section-name lighter-text"><a class="section-url" href="#offer" id="offer">Offre</a></h1>
+  <h1 class="section-name lighter-text"><a class="section-url" href="#offer" id="offer">{{ page.offer_section.title }}</a></h1>
   <div class="overlay"></div>
 
   <div class="offer">
-    <h2>Développement</h2>
+    <h2>{{ page.offer_section.dev.title }}</h2>
     <ul>
-      <li>Développements spécifiques</li>
-      <li>Développements de prototypes / POC</li>
+      {% for item in page.offer_section.dev.items %}
+      <li>{{ item }} </li>
+      {% endfor %}
     </ul>
   </div>
   <div class="offer">
-    <h2>Design / Web</h2>
+    <h2>{{ page.offer_section.design.title }}</h2>
     <ul>
-      <li>Ergonomie</li>
-      <li>Webdesign / Responsive Design</li>
-      <!--<li>Gestionnaire de contenu</li>-->
-      <!--<li>e-Commerce</li>-->
+      {% for item in page.offer_section.design.items %}
+      <li>{{ item }} </li>
+      {% endfor %}
     </ul>
   </div>
   <div class="offer">
-    <h2>Conseil</h2>
+    <h2>{{ page.offer_section.conseil.title }}</h2>
     <ul>
-      <li>Audit</li>
-      <li>Assistance technique</li>
-      <!--<li>Formation</li>-->
+      {% for item in page.offer_section.conseil.items %}
+      <li>{{ item }} </li>
+      {% endfor %}
     </ul>
   </div>
   <!--<a class="button" data-slide="4" title=""></a>-->
@@ -105,7 +99,7 @@ title: Développement d'applications Web et Mobiles
 <section class="slide portfolio" >
   <div class="overlay"></div>
 
-  <h1 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">Portfolio</a></h1>
+  <h1 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">{{ page.work_section.title }}</a></h1>
 
   <div class="portfolio-item crm-maranatha">
     <div class="portfolio-mask">
