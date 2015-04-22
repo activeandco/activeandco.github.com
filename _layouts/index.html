@@ -35,7 +35,11 @@ layout: default
       </a>
     </div>
   </div>
-  <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline.[1] }} </span>  {{ page.home_section.baseline.[2] }} <span class="word-emphasis">{{ page.home_section.baseline.[3] }}</span></h1>
+  {% if page.lang == 'fr' %}
+    <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline.[1] }} </span>  {{ page.home_section.baseline.[2] }} <span class="word-emphasis">{{ page.home_section.baseline.[3] }}</span></h1>
+  {% else %}
+  <h1 class="baseline"><span class="word-emphasis">{{ page.home_section.baseline[0] }}</span> {{ page.home_section.baseline.[1] }} <span class="word-emphasis"> {{ page.home_section.baseline.[2] }} </span> {{ page.home_section.baseline.[3] }}</h1>
+  {% endif %}
   <div class="waiting animate"></div>
   <div class="overlay"></div>
   <div class="competences">
