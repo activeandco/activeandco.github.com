@@ -45,11 +45,20 @@ $(window).load( function() {
     //setTimeout(function(){
       //enableSectionUrlWaypoint()
     //}, 1500)
-    console.log("location: " + document.location.hash + ", state: " + JSON.stringify(event.state))
+    //console.log("location: " + document.location.hash + ", state: " + JSON.stringify(event.state))
     goToByScroll(document.location.hash)
     //$('.section-url').append("asdlfkjf")
   };
 
+  //if (language == 'fr'){
+    //$('#lang-fr').addClass('current-lang')
+    //$('#lang-en').removeClass('current-lang')
+    //alert(language)
+  //} else {
+    //$('#lang-en').addClass('current-lang')
+    //$('#lang-fr').removeClass('current-lang')
+    //alert(language)
+  //}
   $('.waiting').removeClass('animate')
   // inject contact info via js
   $('.phone-contact').append('+33 6 73 85 02 64')

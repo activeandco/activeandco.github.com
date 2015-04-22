@@ -23,7 +23,11 @@ layout: default
   <div itemscope itemtype="http://schema.org/Organization">
     <h1  class="section-name home"><a itemprop="name" class="section-url" href="#activeandco" id="activeandco">active and co</a></h1>
     <div class="lang-switch">
-      <a href="/" lang="en" hreflang="en">en</a>.<a href="/fr/" lang="fr" hreflang="fr">fr</a>
+      {% if page.lang == 'fr' %}
+        <a href="/#" lang="en" hreflang="en">en</a>
+      {% else %}
+        <a href="/fr/" lang="fr" hreflang="fr">fr</a>
+      {% endif %}
     </div>
     <div class="logo-wrapper navigation">
       <a class="home-link" href="#activeandco">
