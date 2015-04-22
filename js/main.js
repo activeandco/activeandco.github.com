@@ -1,10 +1,31 @@
+// JS loaded
+// redirect fr
+console.log(window.location);
+var language = window.navigator.userLanguage || window.navigator.language;
+
+// si languare = fr, fr-ca et que url ne commence pas http://activeand.co/fr
+if (language == 'fr') {
+    if (window.location.href == 'http://activeand.co'
+        || window.location.href == 'http://activeand.co/') {
+      window.location.replace("http://activeand.co/fr");
+    }
+    else if (window.location.href == 'http://localhost:4000/') {
+      window.location.replace("http://localhost:4000/fr");
+    }
+}
 // DOM loaded
 $(function(){
-  // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
+  // String overload
+  if (typeof String.prototype.startsWith != 'function') {
+    String.prototype.startsWith = function (str){
+      return this.slice(0, str.length) == str;
+    };
+  }
+
+   // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
   var doc = document.documentElement;
   doc.setAttribute('data-useragent', navigator.userAgent);
 })
-
 
 // Page loaded
 //$(window).bind("load", function() {
