@@ -38,7 +38,7 @@ layout: default
   {% if page.lang == 'fr' %}
     <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline.[1] }} </span>  {{ page.home_section.baseline.[2] }} <span class="word-emphasis">{{ page.home_section.baseline.[3] }}</span></h1>
   {% else %}
-  <h1 class="baseline"><span class="word-emphasis">{{ page.home_section.baseline[0] }}</span> {{ page.home_section.baseline.[1] }} <span class="word-emphasis"> {{ page.home_section.baseline.[2] }} </span> {{ page.home_section.baseline.[3] }}</h1>
+    <h1 class="baseline"><span class="word-emphasis">{{ page.home_section.baseline[0] }}</span> {{ page.home_section.baseline.[1] }} <span class="word-emphasis"> {{ page.home_section.baseline.[2] }} </span> {{ page.home_section.baseline.[3] }}</h1>
   {% endif %}
   <div class="waiting animate"></div>
   <div class="overlay"></div>
@@ -73,11 +73,11 @@ layout: default
 </section><!--End Slide 1-->
 
 <section class="slide slide-offer" >
-  <h1 class="section-name lighter-text"><a class="section-url" href="#offer" id="offer">{{ page.offer_section.title }}</a></h1>
+  <h2 class="section-name lighter-text"><a class="section-url" href="#offer" id="offer">{{ page.offer_section.title }}</a></h2>
   <div class="overlay"></div>
 
   <div class="offer">
-    <h2>{{ page.offer_section.dev.title }}</h2>
+    <h3>{{ page.offer_section.dev.title }}</h3>
     <ul>
       {% for item in page.offer_section.dev.items %}
       <li>{{ item }} </li>
@@ -85,7 +85,7 @@ layout: default
     </ul>
   </div>
   <div class="offer">
-    <h2>{{ page.offer_section.design.title }}</h2>
+    <h3>{{ page.offer_section.design.title }}</h3>
     <ul>
       {% for item in page.offer_section.design.items %}
       <li>{{ item }} </li>
@@ -93,7 +93,7 @@ layout: default
     </ul>
   </div>
   <div class="offer">
-    <h2>{{ page.offer_section.conseil.title }}</h2>
+    <h3>{{ page.offer_section.conseil.title }}</h3>
     <ul>
       {% for item in page.offer_section.conseil.items %}
       <li>{{ item }} </li>
@@ -106,12 +106,12 @@ layout: default
 <section class="slide portfolio" >
   <div class="overlay"></div>
 
-  <h1 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">{{ page.work_section.title }}</a></h1>
+  <h2 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">{{ page.work_section.title }}</a></h2>
 
   <div class="portfolio-item crm-maranatha">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.maranatha.title }}</h2>
+        <h3>{{ page.work_section.maranatha.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -132,7 +132,7 @@ layout: default
   <div class="portfolio-item olivier-carvin">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.olivier_carvin.title }}</h2>
+        <h3>{{ page.work_section.olivier_carvin.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -152,7 +152,7 @@ layout: default
   <div class="portfolio-item la-carriole">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.la_carriole.title }}</h2>
+        <h3>{{ page.work_section.la_carriole.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -173,7 +173,7 @@ layout: default
   <div class="portfolio-item sant-et-diet">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.sant_et_diet.title }}</h2>
+        <h3>{{ page.work_section.sant_et_diet.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -193,7 +193,7 @@ layout: default
   <div class="portfolio-item riderpack">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.riderpack.title }}</h2>
+        <h3>{{ page.work_section.riderpack.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -214,7 +214,7 @@ layout: default
   <div class="portfolio-item ambre-marketing">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.ambre.title }}</h2>
+        <h3>{{ page.work_section.ambre.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -235,7 +235,7 @@ layout: default
   <div class="portfolio-item mediarewards">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.mediarewards.title }}</h2>
+        <h3>{{ page.work_section.mediarewards.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -256,7 +256,7 @@ layout: default
   <div class="portfolio-item csoftware">
     <div class="portfolio-mask">
       <div class="portfolio-title">
-        <h2>{{ page.work_section.csoftware.title }}</h2>
+        <h3>{{ page.work_section.csoftware.title }}</h3>
       </div>
     </div>
     <div class="portfolio-detail">
@@ -280,10 +280,10 @@ layout: default
 </section><!--End Slide 3-->
 
 <section class="slide contact">
-  <h1 class="section-name"><a class="section-url" href="#contact" id="contact">{{ page.contact_section.title }}</a></h1>
-  <h2 class="need-quote">
+  <h2 class="section-name"><a class="section-url" href="#contact" id="contact">{{ page.contact_section.title }}</a></h2>
+  <h3 class="need-quote">
     {{ page.contact_section.project }}
-  </h2>
+  </h3>
   <p class="contact-us">{{ page.contact_section.us }}</p>
   <address>
     <div class="phone-contact">
