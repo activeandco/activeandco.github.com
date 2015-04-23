@@ -1,18 +1,90 @@
 // JS loaded
 // redirect fr
-console.log(window.location);
-var language = window.navigator.userLanguage || window.navigator.language;
 
-// si languare = fr, fr-ca et que url ne commence pas http://activeand.co/fr
-if (language == 'fr') {
-    if (window.location.href == 'http://activeand.co'
-        || window.location.href == 'http://activeand.co/') {
-      window.location.replace("http://activeand.co/fr");
-    }
-    else if (window.location.href == 'http://localhost:4000/') {
-      window.location.replace("http://localhost:4000/fr");
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+  }
+  return "";
+}
+
+function switchLang(wantedLang) {
+    if(wantedLang != currentLang()) {
+        if(wantedLang == 'fr') {
+            var newUrl = window.location.protocol + '//' + window.location.host + "/fr" + window.location.pathname + window.location.hash;
+            window.location.replace(newUrl);
+        } else {
+            var path = window.location.pathname.slice(4);
+            var newUrl = window.location.protocol + '//' +window.location.host + path + window.location.hash;
+            window.location.replace(newUrl);
+        }
     }
 }
+
+// Get current lang of current page based on its url
+function currentLang() {
+    if(window.location.pathname.slice(0, 4) == '/fr/') {
+        return 'fr';
+    } else {
+        return 'en';
+    }
+}
+
+var language = window.navigator.userLanguage || window.navigator.language;
+language = language.slice(0,2);
+
+
+if(getCookie('lang') != '') {
+    switchLang(getCookie('lang'));
+}else {
+    switchLang(language);
+}
+
+
+// Scenario
+// J'arrive sur la home page depuis google : avec ou sans cookie : installation du cookie si cookie null ?
+// J'arrive sur une page interne : avec ou sans cookie
+// Je change la langue en clickant le lien fr/en : instalation du cookie
+// Donc: pour chaque chargement de page je verifie le cookie, je set si null, je redirige si language de page != cookie-lang
+// Pour la redirection: je test si path commence par /fr/, si oui le language et fr sinon en
+
+
+// Cookie mng
+// Si on est sur la home page: activeand.co/ || activeand.co/fr/
+// Si cookie set to en or fr
+// Language mng for home page only
+
+//if (window.location.href == 'http://activeand.co/'
+      //|| window.location.href == 'http://activeand.co/') {
+//if (getCookie('lang') == 'fr') {
+  //if (window.location.href == 'http://activeand.co'
+      //|| window.location.href == 'http://activeand.co/') {
+    //window.location.replace("http://activeand.co/fr");
+  //} else if (window.location.href == 'http://localhost:4000/') {
+    //window.location.replace("http://localhost:4000/fr");
+  //}
+//} else if (getCookie('lang') == 'en') {
+  //alert(getCookie('lang'));
+//} else if (language == 'fr') { // si languare = fr, fr-ca et que url ne commence pas http://activeand.co/fr
+  //if (window.location.href == 'http://activeand.co'
+      //|| window.location.href == 'http://activeand.co/') {
+    //window.location.replace("http://activeand.co/fr");
+  //} else if (window.location.href == 'http://localhost:4000/') {
+    //window.location.replace("http://localhost:4000/fr");
+  //}
+//}
+
 // DOM loaded
 $(function(){
   // String overload
@@ -22,7 +94,7 @@ $(function(){
     };
   }
 
-   // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
+  // set user agent for conditional css http://css-tricks.com/ie-10-specific-styles/
   var doc = document.documentElement;
   doc.setAttribute('data-useragent', navigator.userAgent);
 })
@@ -50,15 +122,14 @@ $(window).load( function() {
     //$('.section-url').append("asdlfkjf")
   };
 
-  //if (language == 'fr'){
-    //$('#lang-fr').addClass('current-lang')
-    //$('#lang-en').removeClass('current-lang')
-    //alert(language)
-  //} else {
-    //$('#lang-en').addClass('current-lang')
-    //$('#lang-fr').removeClass('current-lang')
-    //alert(language)
-  //}
+  // Language cookie stuffs
+  $('#lang-en').click(function(){
+    setCookie('lang','en', 20)
+  });
+  $('#lang-fr').click(function(){
+    setCookie('lang','fr', 20)
+  });
+
   $('.waiting').removeClass('animate')
   // inject contact info via js
   $('.phone-contact').append('+33 6 73 85 02 64')
