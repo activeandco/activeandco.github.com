@@ -106,173 +106,32 @@ layout: default
 <section class="slide portfolio" >
   <div class="overlay"></div>
 
-  <h2 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">{{ page.work_section.title }}</a></h2>
+  <h2 class="section-name"><a class="section-url" href="#portfolio" id="portfolio">{{ page.work_section_title }}</a></h2>
 
-  <div class="portfolio-item crm-maranatha">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.maranatha.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.maranatha.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.maranatha.rel-url }}">+</a></div>
-          <div class="face six"></div>
+  {% for work in page.work_section %}
+    <div class="portfolio-item {{ work[0] | replace:'_','-' }}">
+      <a href="{{ work[1].rel-url }}">
+        <div class="portfolio-mask">
+          <div class="portfolio-title">
+            <h3>{{ work[1].title | capitalize }}</h3>
+          </div>
         </div>
-      </div>
-      <p>{{ page.work_section.maranatha.desc }}</p>
-    </div>
-  </div>
-
-  <div class="portfolio-item olivier-carvin">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.olivier_carvin.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.olivier_carvin.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.olivier_carvin.rel-url }}">+</a></div>
-          <div class="face six"></div>
+      </a>
+      <div class="portfolio-detail">
+        <div class="scene">
+          <div class="cube">
+            <div class="face one"></div>
+            <div class="face two"><a href="{{ work[1].rel-url }}">+</a></div>
+            <div class="face three"></div>
+            <div class="face four"></div>
+            <div class="face five"><a href="{{ work[1].rel-url }}">+</a></div>
+            <div class="face six"></div>
+          </div>
         </div>
-      </div>
-      <p>{{ page.work_section.olivier_carvin.desc }}</p>
-    </div>
-  </div>
-  <div class="portfolio-item la-carriole">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.la_carriole.title }}</h3>
+        <p>{{ work[1].desc }}</p>
       </div>
     </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.la_carriole.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.la_carriole.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.la_carriole.desc }}</p>
-    </div>
-  </div>
-
-  <div class="portfolio-item sant-et-diet">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.sant_et_diet.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.sant_et_diet.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.sant_et_diet.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.sant_et_diet.desc }}</p>
-    </div>
-  </div>
-  <div class="portfolio-item riderpack">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.riderpack.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.riderpack.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.riderpack.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.riderpack.desc }}</p>
-    </div>
-  </div>
-
-  <div class="portfolio-item ambre-marketing">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.ambre.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.ambre.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.ambre.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.ambre.desc }}</p>
-    </div>
-  </div>
-
-  <div class="portfolio-item mediarewards">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.mediarewards.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.mediarewards.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.mediarewards.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.mediarewards.desc }}</p>
-    </div>
-  </div>
-
-  <div class="portfolio-item csoftware">
-    <div class="portfolio-mask">
-      <div class="portfolio-title">
-        <h3>{{ page.work_section.csoftware.title }}</h3>
-      </div>
-    </div>
-    <div class="portfolio-detail">
-      <div class="scene">
-        <div class="cube">
-          <div class="face one"></div>
-          <div class="face two"><a href="{{ page.work_section.csoftware.rel-url }}">+</a></div>
-          <div class="face three"></div>
-          <div class="face four"></div>
-          <div class="face five"><a href="{{ page.work_section.csoftware.rel-url }}">+</a></div>
-          <div class="face six"></div>
-        </div>
-      </div>
-      <p>{{ page.work_section.csoftware.desc }}</p>
-    </div>
-  </div>
+  {% endfor %}
 
   <div class="v-spacer"></div>
   <!--<a class="button" data-slide="5" title=""></a>-->

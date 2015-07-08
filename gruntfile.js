@@ -28,7 +28,7 @@ grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-stylus');
 
 // register at least this one task
-grunt.registerTask('default', [ 'uglify' ]);
+grunt.registerTask('default', [ 'watch' ]);
 
 
 };
