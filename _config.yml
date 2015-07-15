@@ -3,6 +3,8 @@ markdown: kramdown
 highlighter: 'pygments'
 timezone: Europe/Paris
 relative_permalinks: false
+url: http://activeand.co
+exclude: [node_modules]
 
 defaults:
   -
