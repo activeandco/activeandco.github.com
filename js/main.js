@@ -19,29 +19,63 @@ function getCookie(cname) {
   return "";
 }
 
-function switchLang(wantedLang) {
-    if(wantedLang != currentLang()) {
-        if(wantedLang == 'fr') {
-            var newUrl = window.location.protocol + '//' + window.location.host + "/fr" + window.location.pathname + window.location.hash;
-            window.location.replace(newUrl);
-        } else {
-            var path = window.location.pathname.slice(4);
-            var newUrl = window.location.protocol + '//' +window.location.host + path + window.location.hash;
-            window.location.replace(newUrl);
+function localizedPath(pathname, wantedLang) {
+    var path = pathname || '/';
+    var portfolioMatch;
+
+    if(wantedLang == 'fr') {
+        if(/^\/fr(?:\/|$)/.test(path)) {
+            return path;
         }
+
+        portfolioMatch = path.match(/^\/work\/([^\/]+)\/?$/);
+        if(portfolioMatch) {
+            return '/fr/portfolio/' + portfolioMatch[1] + '/';
+        }
+
+        if(path == '/') {
+            return '/fr/';
+        }
+
+        return '/fr' + path;
+    }
+
+    portfolioMatch = path.match(/^\/fr\/portfolio\/([^\/]+)\/?$/);
+    if(portfolioMatch) {
+        return '/work/' + portfolioMatch[1] + '/';
+    }
+
+    if(/^\/fr\/?$/.test(path)) {
+        return '/';
+    }
+
+    if(/^\/fr\//.test(path)) {
+        return path.slice(3);
+    }
+
+    return path;
+}
+
+function switchLang(wantedLang) {
+    wantedLang = wantedLang == 'fr' ? 'fr' : 'en';
+
+    if(wantedLang != currentLang()) {
+        var newPath = localizedPath(window.location.pathname, wantedLang);
+        var newUrl = window.location.protocol + '//' + window.location.host + newPath + window.location.search + window.location.hash;
+        window.location.replace(newUrl);
     }
 }
 
 // Get current lang of current page based on its url
 function currentLang() {
-    if(window.location.pathname.slice(0, 4) == '/fr/') {
+    if(/^\/fr(?:\/|$)/.test(window.location.pathname)) {
         return 'fr';
     } else {
         return 'en';
     }
 }
 
-var language = window.navigator.userLanguage || window.navigator.language;
+var language = window.navigator.userLanguage || window.navigator.language || 'en';
 language = language.slice(0,2);
 
 
@@ -104,12 +138,15 @@ $(function(){
 $(window).load( function() {
   "use strict";
 
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
+
   //Cache some variables
   var links = $('.navigation').find('a'),
   section = $('section'),
   sectionUrl = $('.section-url'),
   myWindow = $(window),
   htmlbody = $('html,body');
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   window.onpopstate = function(event) {
     // dont push state while scrolling...
@@ -131,9 +168,6 @@ $(window).load( function() {
   });
 
   $('.waiting').removeClass('animate')
-  // inject contact info via js
-  $('.phone-contact').append('+33 6 73 85 02 64')
-  $('.mail-contact').append('<a href="mailto:hello@activeand.co">hello@activeand.co</a></div>')
 
   setTimeout(function(){
     $('.browsehappy').remove()
@@ -239,11 +273,18 @@ $(window).load( function() {
       hideSide()
   })
 
+  $(document).keydown(function(event){
+    if(sideOpen && (event.key == 'Escape' || event.keyCode == 27)) {
+      event.preventDefault()
+      hideSide()
+    }
+  })
+
   //Create a function that will be passed a slide number and then will scroll to that slide using jquerys animate. The Jquery
   //easing plugin is also used, so we passed in the easing method of 'easeInOutQuint' which is available throught the plugin.
   function goToByScroll(id) {
     disableSectionUrlWaypoint()
-    var duration = 700
+    var duration = reducedMotion ? 0 : 700
     if(id) {
       htmlbody.animate({
         scrollTop: $(id).offset().top
@@ -264,28 +305,55 @@ $(window).load( function() {
     }
   }
   // Helper functions
-  function hideSide(cb) {
+  var menuButton = $('.icon-menu')
+  var closeButton = $('.icon-close')
+  var sidebar = $('.layout-sidebar')
+  var sidebarLinks = sidebar.find('a')
+
+  setSideState(false)
+
+  function setSideState(open) {
+    menuButton.add(closeButton).attr('aria-expanded', open ? 'true' : 'false')
+    sidebar.attr('aria-hidden', open ? 'false' : 'true')
+    sidebar.toggleClass('is-open', open)
+    if(open) {
+      sidebarLinks.removeAttr('tabindex')
+    } else {
+      sidebarLinks.attr('tabindex', '-1')
+    }
+  }
+
+  function hideSide(cb, restoreFocus) {
     var delay = parseFloat($('.movable').css('transitionDuration')) * 1000
-    $('.icon-close').hide('drop', 100, function(){
-      $('.icon-menu').show('fade', 200)
+    if(isNaN(delay) || reducedMotion) {
+      delay = 0
+    }
+    closeButton.hide(reducedMotion ? 0 : 'drop', reducedMotion ? 0 : 100, function(){
+      menuButton.show(reducedMotion ? 0 : 'fade', reducedMotion ? 0 : 200)
     })
     $(".movable").removeClass('move')
+    setSideState(false)
     // replace sidebar after movable transition
     setTimeout(function(){
       sideOpen = false
-      $(".layout-sidebar").css({'right': '-260px'})
+      sidebar.css({'right': '-260px'})
+      if(restoreFocus !== false) {
+        menuButton.focus()
+      }
       if(cb)
         cb()
     }, delay)
   }
 
   function showSide() {
-    $('.icon-menu').hide('drop', 200, function(){
-      $('.icon-close').show('fade', 1000)
+    menuButton.hide(reducedMotion ? 0 : 'drop', reducedMotion ? 0 : 200, function(){
+      closeButton.show(reducedMotion ? 0 : 'fade', reducedMotion ? 0 : 1000)
     })
-    $(".layout-sidebar").css({'right': '0'})
+    sidebar.css({'right': '0'})
     $(".movable").addClass('move')
     sideOpen = true
+    setSideState(true)
+    sidebarLinks.eq(0).focus()
   }
 
 
@@ -298,7 +366,7 @@ $(window).load( function() {
   function hideAndScroll(id) {
     hideSide(function() {
       goToByScroll(id)
-    })
+    }, false)
   }
 
   function isMobile() {
@@ -307,4 +375,3 @@ $(window).load( function() {
     return check;
   }
 });
-

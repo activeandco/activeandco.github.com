@@ -2,13 +2,29 @@
 layout: default
 ---
 
-<div class="side-bar-toggle">
-  <span class="icon-menu"></span>
-</div>
+{% if page.lang == 'fr' %}
+  {% assign open_menu_label = 'Ouvrir le menu' %}
+  {% assign close_menu_label = 'Fermer le menu' %}
+  {% assign primary_menu_label = 'Navigation principale' %}
+  {% assign offer_link_label = 'Aller à la section offre' %}
+  {% assign portfolio_link_label = 'Aller à la section portfolio' %}
+  {% assign contact_link_label = 'Aller à la section contact' %}
+  {% assign home_link_label = 'Retourner en haut de la page' %}
+{% else %}
+  {% assign open_menu_label = 'Open menu' %}
+  {% assign close_menu_label = 'Close menu' %}
+  {% assign primary_menu_label = 'Primary navigation' %}
+  {% assign offer_link_label = 'Go to the offer section' %}
+  {% assign portfolio_link_label = 'Go to the client work section' %}
+  {% assign contact_link_label = 'Go to the contact section' %}
+  {% assign home_link_label = 'Return to the top of the page' %}
+{% endif %}
 
-<aside class="layout-sidebar">
-  <div class="side-bar-toggle icon-close"></div>
-  <nav class="main" role="navigation">
+<button class="side-bar-toggle icon-menu" type="button" aria-label="{{ open_menu_label }}" aria-controls="site-navigation" aria-expanded="false"></button>
+
+<aside class="layout-sidebar" id="site-navigation">
+  <button class="side-bar-toggle icon-close" type="button" aria-label="{{ close_menu_label }}" aria-controls="site-navigation" aria-expanded="false"></button>
+  <nav class="main" aria-label="{{ primary_menu_label }}">
     <ul class="navigation">
       <li><a href="#activeandco" class="active">{{ page.nav.home }}</a></li>
       <li><a href="#offer">{{ page.nav.offer }}</a></li>
@@ -68,7 +84,7 @@ layout: default
     <p class="visual-text">> design / code / run</p>
   </div>
   <div class="navigation">
-    <a class="button" href="#offer" title="Suivant"></a>
+    <a class="button" href="#offer" aria-label="{{ offer_link_label }}"></a>
   </div>
 </section><!--End Slide 1-->
 
@@ -102,7 +118,7 @@ layout: default
   </div>
   <!--<a class="button" data-slide="4" title=""></a>-->
   <div class="navigation">
-    <a class="button" href="#portfolio" title="Suivant"></a>
+    <a class="button" href="#portfolio" aria-label="{{ portfolio_link_label }}"></a>
   </div>
 </section>
 
@@ -139,7 +155,7 @@ layout: default
   <div class="v-spacer"></div>
   <!--<a class="button" data-slide="5" title=""></a>-->
   <div class="navigation">
-    <a class="button" href="#contact" title="Suivant"></a>
+    <a class="button" href="#contact" aria-label="{{ contact_link_label }}"></a>
   </div>
 
 </section><!--End Slide 3-->
@@ -153,14 +169,16 @@ layout: default
   <address>
     <div class="phone-contact">
       <span class="icon-phone"></span>
+      <a href="tel:+33673850264" itemprop="telephone">+33 6 73 85 02 64</a>
     </div>
     <div class="mail-contact">
       <span class="icon-envelope">&nbsp;</span>
+      <a href="mailto:hello@activeand.co" itemprop="email">hello@activeand.co</a>
     </div>
   </address>
   <div class="overlay"></div>
   <div class="navigation">
-    <a class="button button-up" href="#activeandco" title="Home"></a>
+    <a class="button button-up" href="#activeandco" aria-label="{{ home_link_label }}"></a>
   </div>
 </section><!--End Slide 4-->
 </div>
