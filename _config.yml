@@ -9,12 +9,9 @@ exclude:
   - bin
   - css/main.styl
   - Dockerfile.codex
-  - Gemfile
-  - Gemfile.lock
   - node_modules
   - package-lock.json
   - package.json
-  - test
   - TODO.md
 
 defaults:

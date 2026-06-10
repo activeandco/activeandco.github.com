@@ -8,46 +8,24 @@ grey = #ECE5D7
 
 // Mixins
 transform()
-  -moz-transform arguments
-  -o-transform arguments
-  -webkit-transform arguments
-  -ms-transform arguments
   transform arguments
 
 border-radius(radius)
-  -moz-border-radius: radius;
-  -webkit-border-radius: radius;
-  -o-border-radius: radius;
   border-radius: radius;
 
 animation()
-  -webkit-animation arguments
-  -moz-animation arguments
-  -o-animation arguments
   animation arguments
 
 transition()
-  -moz-transition arguments
-  -o-transition arguments
-  -webkit-transition arguments
   transition arguments
 
 transition-delay()
-  -webkit-transition-delay: arguments
-  -moz-transition-delay: arguments
-  -o-transition-delay: arguments
   transition-delay: arguments
 
 box-shadow()
-  -moz-box-shadow arguments
-  -o-box-shadow arguments
-  -webkit-box-shadow arguments
   box-shadow arguments
 
 background-size()
-  -webkit-background-size arguments
-  -moz-background-size arguments
-  -o-background-size arguments
   background-size arguments
 
 *
@@ -190,7 +168,6 @@ sidebar-width = 260px
   background-color: #FFF
   border: 10px solid #EBE9E6
   box-shadow: 1px 1px 10px #555
-  filter: unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=3)')
   height: 300px
   left: -159px
   position: fixed
@@ -201,7 +178,6 @@ sidebar-width = 260px
 @media only screen and (min-width: 220px) and (max-width: 480px)
   .logo-wrapper
     transform rotate(0deg)
-    filter unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=0)')
     height 50px
     width 100%
     position relative
@@ -279,8 +255,6 @@ sidebar-width = 260px
 
 .button
   background-color: #333
-  background-image: url(../img/arrow.png)
-  background-position: 2px 5px;
   border-radius: 30px
   border: 2px solid #EEE
   bottom: 5px
@@ -290,9 +264,22 @@ sidebar-width = 260px
   opacity: .3
   position: absolute
   width: 50px
+
+.button:after
+  border-bottom: 3px solid #FFF
+  border-right: 3px solid #FFF
+  content: ''
+  height: 14px
+  left: 16px
+  position: absolute
+  top: 13px
+  transform: rotate(45deg)
+  width: 14px
+
 .button-up
-  background-image: url(../img/arrow-up.png)
-  background-position: 2px -2px;
+  &:after
+    top: 20px
+    transform: rotate(225deg)
 
 @media only screen and (min-width : 320px) and (max-width : 480px)
   .button
@@ -311,8 +298,17 @@ sidebar-width = 260px
 .visual
   padding-top 100px
   padding-bottom 100px
-  background url(../img/intro.jpg) no-repeat top right fixed;
+  background url(../img/intro.jpg) no-repeat top right fixed
+  background-image: unquote('image-set(url("../img/intro-960.avif") type("image/avif"), url("../img/intro-960.webp") type("image/webp"), url("../img/intro.jpg") type("image/jpeg"))')
   background-size cover
+
+@media only screen and (min-width: 961px)
+  .visual
+    background-image: unquote('image-set(url("../img/intro-1600.avif") type("image/avif"), url("../img/intro-1600.webp") type("image/webp"), url("../img/intro.jpg") type("image/jpeg"))')
+
+@media only screen and (min-width: 1601px)
+  .visual
+    background-image: unquote('image-set(url("../img/intro-2600.avif") type("image/avif"), url("../img/intro-2600.webp") type("image/webp"), url("../img/intro.jpg") type("image/jpeg"))')
 
 .word-emphasis
   transition: color 500ms
@@ -354,10 +350,6 @@ sidebar-width = 260px
 
 .competence
   text-align: center
-  -webkit-transition: -webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
-  -moz-transition: -moz-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
-  -o-transition: -o-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
-  -ms-transition: -ms-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
   transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175)
   transform: scale(1)
   float: left
@@ -516,7 +508,6 @@ sidebar-width = 260px
 
 .hover-in .portfolio-mask
   opacity: 0
-  filter: unquote('alpha(opacity=100)')
 
 .portfolio-title
   color: rgba(238, 238, 238, 0.29)
@@ -534,35 +525,19 @@ sidebar-width = 260px
   right: 0
   top: 100%
   overflow: hidden /* hide webkit cube overflow */
-  animation: .5s ease-in-out forwards
+  transition: top .5s ease-in-out
 
 .portfolio-detail p
   margin-top: 1em
   font-size: 80%
 
 .hover-in .portfolio-detail
-  -webkit-animation-name: inKeyframes
-  animation-name: inKeyframes
+  top: 15em
 
 .hover-out .portfolio-detail
-  -webkit-animation-name: outKeyframes
-  animation-name: outKeyframes
-
-@keyframes inKeyframes
-  20%
-    top: 12em
-  100%
-    top: 15em
-
-@keyframes outKeyframes
-  100%
-    top: 100%
+  top: 100%
 
 .scene
-  -webkit-perspective: 1400px
-  -webkit-perspective-origin: 50% 50%
-  -moz-perspective: 1400px
-  -moz-perspective-origin: 50% 50%
   perspective: 1400px
   perspective-origin: 50% 50%
   float: right
@@ -573,8 +548,6 @@ sidebar-width = 260px
   width: 5em
   transition: transform .3s ease
   transform-style: preserve-3d
-  -webkit-transition: -webkit-transform .3s ease
-  -webkit-transform-style: preserve-3d
 
 .cube:hover
   transform: rotateY(90deg)
@@ -608,51 +581,36 @@ sidebar-width = 260px
 .cube .six
   transform: rotateX(-90deg) translateZ(2.5em) rotate(180deg)
 
-html[data-useragent*='rv:11'] .face, html[data-useragent*='MSIE'] .face
-  transition background-color 200ms
-
-html[data-useragent*='rv:11'] .cube, html[data-useragent*='MSIE'] .cube
-  transform none
-  transform-style none
-
-html[data-useragent*='rv:11'] .cube:hover, html[data-useragent*='MSIE'] .cube:hover
-  transform none
-  .face
-    background-color yellow
-
-html[data-useragent*='rv:11'] .cube .one, html[data-useragent*='MSIE'] .cube .one
-html[data-useragent*='rv:11'] .cube .three, html[data-useragent*='MSIE'] .cube .three
-html[data-useragent*='rv:11'] .cube .four, html[data-useragent*='MSIE'] .cube .four
-html[data-useragent*='rv:11'] .cube .six, html[data-useragent*='MSIE'] .cube .six
-html[data-useragent*='rv:11'] .cube .two, html[data-useragent*='MSIE'] .cube .two
-  transform none
-  display none
-
-html[data-useragent*='rv:11'] .cube .five, html[data-useragent*='MSIE'] .cube .five
-  transform none
-
 .maranatha
   background-image: url(../img/portfolio/thumbs/crm-maranatha.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/crm-maranatha.avif") type("image/avif"), url("../img/portfolio/thumbs/crm-maranatha.webp") type("image/webp"), url("../img/portfolio/thumbs/crm-maranatha.jpg") type("image/jpeg"))')
 .sant-et-diet
   background-image: url(../img/portfolio/thumbs/sant-et-diet.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/sant-et-diet.avif") type("image/avif"), url("../img/portfolio/thumbs/sant-et-diet.webp") type("image/webp"), url("../img/portfolio/thumbs/sant-et-diet.jpg") type("image/jpeg"))')
 .csoftware
   background-image: url(../img/portfolio/thumbs/csoftware.png)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/csoftware.avif") type("image/avif"), url("../img/portfolio/thumbs/csoftware.webp") type("image/webp"), url("../img/portfolio/thumbs/csoftware.png") type("image/png"))')
   background-position: 20px 20px;
 .ambre-marketing
   background-image: url(../img/portfolio/thumbs/ambre-marketing.gif)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/ambre-marketing.avif") type("image/avif"), url("../img/portfolio/thumbs/ambre-marketing.webp") type("image/webp"), url("../img/portfolio/thumbs/ambre-marketing.gif") type("image/gif"))')
   background-position: 20px 20px;
 .olivier-carvin
   background-image: url(../img/portfolio/thumbs/olivier-carvin.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/olivier-carvin.avif") type("image/avif"), url("../img/portfolio/thumbs/olivier-carvin.webp") type("image/webp"), url("../img/portfolio/thumbs/olivier-carvin.jpg") type("image/jpeg"))')
 .riderpack
   background-image: url(../img/portfolio/thumbs/riderpack.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/riderpack.avif") type("image/avif"), url("../img/portfolio/thumbs/riderpack.webp") type("image/webp"), url("../img/portfolio/thumbs/riderpack.jpg") type("image/jpeg"))')
 .la-carriole
   background-image: url(../img/portfolio/thumbs/la-carriole.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/la-carriole.avif") type("image/avif"), url("../img/portfolio/thumbs/la-carriole.webp") type("image/webp"), url("../img/portfolio/thumbs/la-carriole.jpg") type("image/jpeg"))')
 .mediarewards
   background-image: url(../img/portfolio/thumbs/mediarewards.svg)
   background-size: 50%
   background-position: 20px 20px
 .reseau-en-scene
   background-image: url(../img/portfolio/thumbs/reseau-en-scene.jpg)
+  background-image: unquote('image-set(url("../img/portfolio/thumbs/reseau-en-scene.avif") type("image/avif"), url("../img/portfolio/thumbs/reseau-en-scene.webp") type("image/webp"), url("../img/portfolio/thumbs/reseau-en-scene.jpg") type("image/jpeg"))')
   background-position: 20px 20px
 
 /******************************
@@ -767,13 +725,13 @@ footer .madein
   border-bottom-color: blue
   animation: rotation 1s linear infinite
 
-@keyframes rotation
-  0%
-    transform: rotate(0deg)
-  50%
-    transform: rotate(180deg)
-  100%
-    transform: rotate(360deg)
+@css {
+  @keyframes rotation {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
 
 @media (prefers-reduced-motion: reduce)
   *,
@@ -913,15 +871,3 @@ footer .madein
   content: "";
   display: table;
   clear: both;
-
-.browsehappy
-  position: fixed
-  z-index: 1001
-  top: 10px
-  left: 20%
-  background-color: #FFF
-  border: 2px solid #FF7C7C
-  color: #000
-  padding 3px
-  a
-    color: blue

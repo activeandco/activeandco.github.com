@@ -7,16 +7,12 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "npm run build:assets && npm run build:site",
+    "build": "npm run build:assets",
     "build:assets": "npm run build:css && npm run build:js",
     "build:css": "stylus --compress css/main.styl --out css",
     "build:js": "esbuild _js/main.js --bundle --minify --format=iife --target=es2020 --outfile=jsm/main.min.js",
-    "build:site": "bundle exec jekyll build --trace",
-    "dev": "concurrently -k -n css,js,jekyll \"npm:watch:css\" \"npm:watch:js\" \"npm:serve\"",
-    "serve": "bundle exec jekyll serve --livereload",
-    "test": "npm run test:unit && npm run build && npm run test:site",
-    "test:site": "node --test test/site/*.test.js",
-    "test:unit": "node --test test/unit/*.test.js",
+    "dev": "concurrently -k -n css,js \"npm:watch:css\" \"npm:watch:js\"",
+    "test": "npm run build:assets",
     "watch:css": "stylus --watch css/main.styl --out css",
     "watch:js": "esbuild _js/main.js --bundle --format=iife --target=es2020 --outfile=jsm/main.min.js --watch"
   },

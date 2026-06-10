@@ -3,6 +3,11 @@ layout: default
 ---
 
 <section class="slide sticky-footer">
+{% if page.lang == 'fr' %}
+  {% assign screenshot_label = "capture d'écran" %}
+{% else %}
+  {% assign screenshot_label = 'screenshot' %}
+{% endif %}
 <div class="work-nav">
   <div class="navbar-inner" itemtype="https://schema.org/Organization">
     <nav class="breadcrumb">
@@ -13,7 +18,11 @@ layout: default
       {% endif %}
     </nav>
     <a href="/">
-      <img itemprop="logo" src="/img/logo-7.png" class="logo" alt="logo active and co" />
+      <picture>
+        <source srcset="/img/logo-7.avif" type="image/avif">
+        <source srcset="/img/logo-7.webp" type="image/webp">
+        <img itemprop="logo" src="/img/logo-7.png" class="logo" width="400" height="68" alt="Logo Active and Co">
+      </picture>
     </a>
   </div>
 </div>
@@ -47,8 +56,26 @@ layout: default
   {% endif %}
   <div class="snapshots">
       {% for src in page.snapshot-src %}
+        {% assign image = site.data.images[src] %}
+        {% assign image_base = src | remove: '.jpg' %}
         <div class="work-snap">
-          <img src="{{ src }}" alt="" />
+          <picture>
+            <source
+              srcset="{{ image_base }}-480.avif 480w, {{ image_base }}-800.avif 800w, {{ image_base }}.avif {{ image.width }}w"
+              sizes="80vw"
+              type="image/avif">
+            <source
+              srcset="{{ image_base }}-480.webp 480w, {{ image_base }}-800.webp 800w, {{ image_base }}.webp {{ image.width }}w"
+              sizes="80vw"
+              type="image/webp">
+            <img
+              src="{{ src }}"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              loading="lazy"
+              decoding="async"
+              alt="{{ page.work-title }} - {{ screenshot_label }} {{ forloop.index }}">
+          </picture>
         </div>
       {% endfor %}
   </div>
