@@ -30,7 +30,7 @@ sitemap:
     {% endunless %}
   {% endfor %}
   {% for page in site.pages %}
-    {% unless page.sitemap.exclude == "yes" and page.url != "/node_modules/grunt/node_modules/js-yaml/examples/sample_document.yaml" %}
+    {% unless page.sitemap.exclude == "yes" %}
       <url>
         <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
         {% if page.sitemap.lastmod %}

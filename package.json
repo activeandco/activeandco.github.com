@@ -1,10 +1,28 @@
 {
-  "name": "Active-and-co-web",
+  "name": "active-and-co-web",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "npm run build:assets && npm run build:site",
+    "build:assets": "npm run build:css && npm run build:js",
+    "build:css": "stylus --compress css/main.styl --out css",
+    "build:js": "esbuild _js/main.js --bundle --minify --format=iife --target=es2020 --outfile=jsm/main.min.js",
+    "build:site": "bundle exec jekyll build --trace",
+    "dev": "concurrently -k -n css,js,jekyll \"npm:watch:css\" \"npm:watch:js\" \"npm:serve\"",
+    "serve": "bundle exec jekyll serve --livereload",
+    "test": "npm run test:unit && npm run build && npm run test:site",
+    "test:site": "node --test test/site/*.test.js",
+    "test:unit": "node --test test/unit/*.test.js",
+    "watch:css": "stylus --watch css/main.styl --out css",
+    "watch:js": "esbuild _js/main.js --bundle --format=iife --target=es2020 --outfile=jsm/main.min.js --watch"
+  },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch" : "~0.6.1",
-    "grunt-contrib-stylus" : "~0.16.0"
+    "concurrently": "10.0.3",
+    "esbuild": "0.28.0",
+    "stylus": "0.64.0"
   }
 }

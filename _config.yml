@@ -1,10 +1,21 @@
 name: Active and Co
+description: Web and mobile application design and development.
 markdown: kramdown
 highlighter: 'pygments'
 timezone: Europe/Paris
 relative_permalinks: false
-url: http://activeand.co
-exclude: [node_modules]
+url: https://activeand.co
+exclude:
+  - bin
+  - css/main.styl
+  - Dockerfile.codex
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package-lock.json
+  - package.json
+  - test
+  - TODO.md
 
 defaults:
   -
@@ -12,3 +23,8 @@ defaults:
       path: ""
     values:
       lang: en
+  -
+    scope:
+      path: "pages/fr"
+    values:
+      lang: fr

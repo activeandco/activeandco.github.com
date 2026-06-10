@@ -36,7 +36,7 @@ layout: default
 
 <div class="movable">
 <section class="slide" data-slide="1">
-  <div itemscope itemtype="http://schema.org/Organization">
+  <div itemscope itemtype="https://schema.org/Organization">
     <h1  class="section-name home"><a itemprop="name" class="section-url" href="#activeandco" id="activeandco">active and co</a></h1>
     <div class="lang-switch">
       {% if page.lang == 'fr' %}
@@ -52,9 +52,9 @@ layout: default
     </div>
   </div>
   {% if page.lang == 'fr' %}
-    <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline.[1] }} </span>  {{ page.home_section.baseline.[2] }} <span class="word-emphasis">{{ page.home_section.baseline.[3] }}</span></h1>
+    <h1 class="baseline">{{ page.home_section.baseline[0] }}<span class="word-emphasis"> {{ page.home_section.baseline[1] }} </span>  {{ page.home_section.baseline[2] }} <span class="word-emphasis">{{ page.home_section.baseline[3] }}</span></h1>
   {% else %}
-    <h1 class="baseline"><span class="word-emphasis">{{ page.home_section.baseline[0] }}</span> {{ page.home_section.baseline.[1] }} <span class="word-emphasis"> {{ page.home_section.baseline.[2] }} </span> {{ page.home_section.baseline.[3] }}</h1>
+    <h1 class="baseline"><span class="word-emphasis">{{ page.home_section.baseline[0] }}</span> {{ page.home_section.baseline[1] }} <span class="word-emphasis"> {{ page.home_section.baseline[2] }} </span> {{ page.home_section.baseline[3] }}</h1>
   {% endif %}
   <div class="waiting animate"></div>
   <div class="overlay"></div>
